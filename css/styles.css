@@ -40,7 +40,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
-    padding-bottom: 250px;
+    padding-bottom: 120px;
 }
 
 .container {
@@ -1057,7 +1057,7 @@ body {
 .footer {
     background-color: var(--light-gray);
     border-top: 1px solid var(--border-color);
-    padding: 2rem 20px;
+    padding: 1rem 20px;
     text-align: center;
     position: sticky;
     bottom: 0;
@@ -1070,7 +1070,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
@@ -1356,7 +1356,7 @@ body {
     }
 
     body {
-        padding-bottom: 280px;
+        padding-bottom: 140px;
     }
 }
 @keyframes slideUp {
