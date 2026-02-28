@@ -560,5 +560,34 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    <!-- AI Chatbot Widget -->
+    <div id="chatbotWidget" class="chatbot-widget">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i> AI Assistant
+            </div>
+            <button class="chatbot-close" id="closeChatbot">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <p>👋 Hi! I'm Gaurav's AI Assistant. Ask me about his skills, experience, or projects!</p>
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="userInput" placeholder="Ask me anything..." class="chatbot-input">
+            <button id="sendMessage" class="chatbot-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Chatbot Button -->
+    <button id="chatbotToggle" class="chatbot-toggle" title="Open AI Assistant">
+        <i class="fas fa-comments"></i>
+        <span class="chatbot-badge">AI</span>
+    </button>
 </body>
 </html>

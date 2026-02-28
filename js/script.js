@@ -198,3 +198,99 @@ document.querySelectorAll('section').forEach(section => {
     section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(section);
 });
+
+// AI Chatbot Functionality
+const chatbotToggle = document.getElementById('chatbotToggle');
+const chatbotWidget = document.getElementById('chatbotWidget');
+const closeChatbot = document.getElementById('closeChatbot');
+const sendMessage = document.getElementById('sendMessage');
+const userInput = document.getElementById('userInput');
+const chatbotMessages = document.getElementById('chatbotMessages');
+
+// Chatbot responses
+const botResponses = {
+    'hello': 'Hey there! 👋 Welcome to my portfolio. How can I help you today?',
+    'hi': 'Hey there! 👋 Welcome to my portfolio. How can I help you today?',
+    'experience': '💼 I have 5+ years of experience as a Senior Software Engineer specializing in Salesforce development, Java, and modern web technologies.',
+    'skills': '🛠️ My key skills include: Salesforce Apex, Lightning Aura Components, Java, TypeScript, React, GitHub/GitLab, DevOps, and AI/LLM integration.',
+    'salesforce': '☁️ I\'m a Salesforce Trailhead All Star Ranger with expertise in Lightning Components, Apex programming, and cloud solutions. Check out my Trailblazer profile!',
+    'projects': '🚀 I\'ve worked on multiple projects including Salesforce implementations, Java applications, and VS Code extensions. Visit the Projects section to learn more!',
+    'certifications': '🏆 I hold certifications in Salesforce, Copado, Oracle, IBM, and more. Check the Certifications section for details!',
+    'contact': '📧 You can reach me via email at ggupta865@gmail.com or call +918869999358. Connect with me on LinkedIn too!',
+    'team': '👨‍💼 This portfolio was built by Gaurav Gupta - a passionate Senior Software Engineer based in Lucknow, Uttar Pradesh.',
+    'location': '📍 I\'m based in Lucknow, Uttar Pradesh 226016, India.',
+    'java': '☕ I\'m proficient in Java with expertise in building scalable backend solutions and enterprise applications.',
+    'typescript': '📘 I have strong experience with TypeScript and React for building modern, responsive web applications.',
+    'default': 'That\'s a great question! 🤔 Feel free to ask me about my experience, skills, projects, certifications, or how to contact me.'
+};
+
+// Toggle chatbot
+chatbotToggle.addEventListener('click', () => {
+    chatbotWidget.classList.toggle('active');
+});
+
+closeChatbot.addEventListener('click', () => {
+    chatbotWidget.classList.remove('active');
+});
+
+// Send message
+function sendUserMessage() {
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    // Display user message
+    const userMessageDiv = document.createElement('div');
+    userMessageDiv.className = 'message user-message';
+    userMessageDiv.innerHTML = `<p>${escapeHtml(message)}</p>`;
+    chatbotMessages.appendChild(userMessageDiv);
+
+    // Clear input
+    userInput.value = '';
+
+    // Scroll to bottom
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    // Get bot response
+    setTimeout(() => {
+        const botResponse = getBotResponse(message.toLowerCase());
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.className = 'message bot-message';
+        botMessageDiv.innerHTML = `<p>${botResponse}</p>`;
+        chatbotMessages.appendChild(botMessageDiv);
+
+        // Scroll to bottom
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }, 300);
+}
+
+// Get appropriate bot response
+function getBotResponse(message) {
+    for (const [key, response] of Object.entries(botResponses)) {
+        if (message.includes(key)) {
+            return response;
+        }
+    }
+    return botResponses['default'];
+}
+
+// Escape HTML to prevent XSS
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
+}
+
+// Send message on button click
+sendMessage.addEventListener('click', sendUserMessage);
+
+// Send message on Enter key
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendUserMessage();
+    }
+});
