@@ -179,7 +179,8 @@ body {
     height: 280px;
 }
 
-.profile-image {
+.profile-image,
+.tech-icon {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -224,6 +225,19 @@ body {
     margin-bottom: 1.5rem;
     opacity: 0.9;
     font-weight: 300;
+}
+
+.hero-bio {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 1.5rem 0 2rem 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: 0.95;
+    animation: slideUp 0.8s ease 0.3s both;
 }
 
 .hero-meta {
@@ -980,4 +994,5 @@ body {
 .empty-state p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
+}
 }

@@ -39,18 +39,42 @@
         <div class="container hero-container">
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%236366f1'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='48'%3EGG%3C/text%3E%3C/svg%3E" alt="Gaurav Gupta" class="profile-image">
+                    <svg class="tech-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="100" fill="#6366f1"/>
+                        <defs>
+                            <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Code brackets -->
+                        <g fill="white" opacity="0.95">
+                            <!-- Left bracket < -->
+                            <path d="M 60 70 L 80 100 L 60 130" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Right bracket > -->
+                            <path d="M 140 70 L 120 100 L 140 130" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Forward slash -->
+                            <line x1="85" y1="60" x2="115" y2="140" stroke="white" stroke-width="6" stroke-linecap="round"/>
+                        </g>
+                    </svg>
                     <div class="image-glow"></div>
                 </div>
             </div>
             <div class="hero-content">
                 <h1>Gaurav Gupta</h1>
                 <p class="tagline">Senior Software Engineer</p>
-                <p class="subtitle">Salesforce & Java Developer | Apex, Lightning | VS Code Extension Developer</p>
+                <p class="subtitle">Salesforce Specialist | Apex, Lightning | Java | AS400 | AI | VS Code Extension Developer | Salesforce Trailhead All Star Ranger | DevOps Developer | TypeScript & React | GitHub & GitLab</p>
                 <div class="hero-meta">
                     <span class="meta-item">💼 5+ Years Experience</span>
-                    <span class="meta-item">🌍 Noida, India</span>
+                    <span class="meta-item">🌍 Noida, Uttar Pradesh, India</span>
                     <span class="meta-item">🚀 Available for Opportunities</span>
+                </div>
+                <div class="hero-bio">
+                    <p>
+                        I'm a passionate Senior Software Engineer with expertise in Salesforce development, Java, and modern web technologies. 
+                        As a Salesforce Trailhead All Star Ranger, I specialize in building scalable solutions using Lightning Aura Components, Apex, AS400, and TypeScript/React. 
+                        I'm proficient in DevOps practices and version control (GitHub/GitLab), with hands-on experience in AI/LLM solutions and chatbot development.
+                    </p>
                 </div>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
