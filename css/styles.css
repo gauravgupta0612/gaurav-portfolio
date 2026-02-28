@@ -91,11 +91,21 @@ body {
     height: 32px;
     filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.3));
     transition: all 0.3s ease;
+    animation: spinLogo 8s linear infinite;
+}
+
+@keyframes spinLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .nav-brand:hover .logo-svg {
     filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.5));
-    transform: rotate(5deg);
+    animation: spinLogo 4s linear infinite;
 }
 
 .nav-brand h1 {
