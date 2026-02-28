@@ -1026,6 +1026,41 @@ body {
     text-align: center;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.visitor-counter p {
+    margin: 0;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.visitor-counter img {
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.visitor-counter img:hover {
+    transform: scale(1.05);
+}
+
 /* Animations */
 @keyframes slideUp {
     from {
@@ -1227,6 +1262,15 @@ body {
 
     .team-section h2 {
         font-size: 1.8rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .visitor-counter {
+        justify-content: center;
     }
 }
 
