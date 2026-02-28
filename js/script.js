@@ -207,30 +207,42 @@ const sendMessage = document.getElementById('sendMessage');
 const userInput = document.getElementById('userInput');
 const chatbotMessages = document.getElementById('chatbotMessages');
 
-// Chatbot responses
+// Chatbot responses - Enhanced with better keyword matching
 const botResponses = {
-    'hello': 'Hey there! 👋 Welcome to my portfolio. How can I help you today?',
-    'hi': 'Hey there! 👋 Welcome to my portfolio. How can I help you today?',
-    'experience': '💼 I have 5+ years of experience as a Senior Software Engineer specializing in Salesforce development, Java, and modern web technologies.',
-    'skills': '🛠️ My key skills include: Salesforce Apex, Lightning Aura Components, Java, TypeScript, React, GitHub/GitLab, DevOps, and AI/LLM integration.',
-    'salesforce': '☁️ I\'m a Salesforce Trailhead All Star Ranger with expertise in Lightning Components, Apex programming, and cloud solutions. Check out my Trailblazer profile!',
-    'projects': '🚀 I\'ve worked on multiple projects including Salesforce implementations, Java applications, and VS Code extensions. Visit the Projects section to learn more!',
-    'certifications': '🏆 I hold certifications in Salesforce, Copado, Oracle, IBM, and more. Check the Certifications section for details!',
-    'contact': '📧 You can reach me via email at ggupta865@gmail.com or call +918869999358. Connect with me on LinkedIn too!',
-    'team': '👨‍💼 This portfolio was built by Gaurav Gupta - a passionate Senior Software Engineer based in Lucknow, Uttar Pradesh.',
-    'location': '📍 I\'m based in Lucknow, Uttar Pradesh 226016, India.',
-    'java': '☕ I\'m proficient in Java with expertise in building scalable backend solutions and enterprise applications.',
-    'typescript': '📘 I have strong experience with TypeScript and React for building modern, responsive web applications.',
-    'default': 'That\'s a great question! 🤔 Feel free to ask me about my experience, skills, projects, certifications, or how to contact me.'
+    'hello|hi|hey': 'Hey there! 👋 Welcome to my portfolio. How can I help you today?',
+    'experience|work|job|career': '💼 I have 5+ years of experience as a Senior Software Engineer. Currently at ARCAD Software, specializing in Salesforce, Java, and modern tech.',
+    'skills': '🛠️ My key skills: Salesforce Apex, Lightning, Java, TypeScript, React, GitHub, DevOps, VS Code extensions, and AI/LLM integration.',
+    'salesforce': '☁️ Salesforce Trailhead All Star Ranger (213 badges, 83,875 points)! Expert in Lightning, Apex, Salesforce admin, and cloud solutions.',
+    'projects': '🚀 I develop: Salesforce CRM solutions, Java plugins, VS Code extensions, and AI chatbots. Check Projects section!',
+    'certifications': '🏆 Certifications: Copado, Oracle Cloud AI, IBM, GA4, and more. Check Certifications section for details!',
+    'contact|email|phone': '📧 ggupta865@gmail.com | 📱 +918869999358 | 💼 linkedin.com/in/gauravgupta865',
+    'team|about': '👨‍💼 Senior Software Engineer from Lucknow. Passionate about building innovative solutions!',
+    'location|lucknow': '📍 Lucknow, Uttar Pradesh 226016, India.',
+    'java': '☕ Java specialist in enterprise applications, plugin development, and scalable backend solutions.',
+    'typescript|react': '📘 Experienced with TypeScript/React for web apps, VS Code extensions, and responsive UIs.',
+    'ai|chatbot': '🤖 Specializing in AI/LLM integration and intelligent chatbot development.',
+    'default': 'That\'s a great question! 🤔 Try asking about experience, skills, projects, or certifications!'
 };
 
-// Toggle chatbot
-chatbotToggle.addEventListener('click', () => {
+// Toggle chatbot open/close
+chatbotToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     chatbotWidget.classList.toggle('active');
+    if (chatbotWidget.classList.contains('active')) {
+        userInput.focus();
+    }
 });
 
-closeChatbot.addEventListener('click', () => {
+closeChatbot.addEventListener('click', (e) => {
+    e.stopPropagation();
     chatbotWidget.classList.remove('active');
+});
+
+// Close chatbot when clicking outside
+document.addEventListener('click', (e) => {
+    if (!chatbotWidget.contains(e.target) && !chatbotToggle.contains(e.target)) {
+        chatbotWidget.classList.remove('active');
+    }
 });
 
 // Send message
@@ -263,11 +275,15 @@ function sendUserMessage() {
     }, 300);
 }
 
-// Get appropriate bot response
+// Get appropriate bot response with smart keyword matching
 function getBotResponse(message) {
     for (const [key, response] of Object.entries(botResponses)) {
-        if (message.includes(key)) {
-            return response;
+        // Handle pipe-separated keywords
+        const keywords = key.split('|');
+        for (const keyword of keywords) {
+            if (message.includes(keyword.trim())) {
+                return response;
+            }
         }
     }
     return botResponses['default'];

@@ -1166,14 +1166,21 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
-    display: none;
+    display: flex;
     flex-direction: column;
     z-index: 998;
-    animation: slideUp 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
 }
 
 .chatbot-widget.active {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
 }
 
 .chatbot-header {
