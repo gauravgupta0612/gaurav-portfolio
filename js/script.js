@@ -210,18 +210,21 @@ const chatbotMessages = document.getElementById('chatbotMessages');
 // Chatbot responses - Enhanced with better keyword matching
 const botResponses = {
     'hello|hi|hey': 'Hey there! 👋 Welcome to my portfolio. How can I help you today?',
+    'how are you|how are you doing|whats up|how you doing': '😊 I\'m doing great, thanks for asking! I\'m here to help you learn about my experience, skills, and projects. What would you like to know?',
+    'thanks|thank you|thanks so much|appreciate': '🙏 You\'re welcome! Happy to help. Feel free to ask me anything about my work and experience!',
     'experience|work|job|career': '💼 I have 5+ years of experience as a Senior Software Engineer. Currently at ARCAD Software, specializing in Salesforce, Java, and modern tech.',
     'skills': '🛠️ My key skills: Salesforce Apex, Lightning, Java, TypeScript, React, GitHub, DevOps, VS Code extensions, and AI/LLM integration.',
     'salesforce': '☁️ Salesforce Trailhead All Star Ranger (213 badges, 83,875 points)! Expert in Lightning, Apex, Salesforce admin, and cloud solutions.',
     'projects': '🚀 I develop: Salesforce CRM solutions, Java plugins, VS Code extensions, and AI chatbots. Check Projects section!',
     'certifications': '🏆 Certifications: Copado, Oracle Cloud AI, IBM, GA4, and more. Check Certifications section for details!',
     'contact|email|phone': '📧 ggupta865@gmail.com | 📱 +918869999358 | 💼 linkedin.com/in/gauravgupta865',
-    'team|about': '👨‍💼 Senior Software Engineer from Lucknow. Passionate about building innovative solutions!',
+    'team|about|who are you': '👨‍💼 I\'m Gaurav Gupta, Senior Software Engineer from Lucknow. Passionate about building innovative solutions and learning new technologies!',
     'location|lucknow': '📍 Lucknow, Uttar Pradesh 226016, India.',
     'java': '☕ Java specialist in enterprise applications, plugin development, and scalable backend solutions.',
     'typescript|react': '📘 Experienced with TypeScript/React for web apps, VS Code extensions, and responsive UIs.',
     'ai|chatbot': '🤖 Specializing in AI/LLM integration and intelligent chatbot development.',
-    'default': 'That\'s a great question! 🤔 Try asking about experience, skills, projects, or certifications!'
+    'help|what can you do|what can i ask': '❓ You can ask me about: experience, skills, salesforce, java, projects, certifications, contact info, location, team, or anything about my portfolio!',
+    'default': 'That\'s a great question! 🤔 Try asking about: experience, skills, projects, salesforce, certifications, or contact me. Type \'help\' for more options!'
 };
 
 // Toggle chatbot open/close
@@ -262,17 +265,53 @@ function sendUserMessage() {
     // Scroll to bottom
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-    // Get bot response
-    setTimeout(() => {
-        const botResponse = getBotResponse(message.toLowerCase());
-        const botMessageDiv = document.createElement('div');
-        botMessageDiv.className = 'message bot-message';
-        botMessageDiv.innerHTML = `<p>${botResponse}</p>`;
-        chatbotMessages.appendChild(botMessageDiv);
+    // Show typing indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message bot-message';
+    typingDiv.innerHTML = `<p>💭 Thinking...</p>`;
+    chatbotMessages.appendChild(typingDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-        // Scroll to bottom
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    // Get bot response from Groq API via backend
+    setTimeout(() => {
+        getGroqResponse(message).then(botResponse => {
+            // Remove typing indicator
+            typingDiv.remove();
+            
+            // Display bot response
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'message bot-message';
+            botMessageDiv.innerHTML = `<p>${escapeHtml(botResponse)}</p>`;
+            chatbotMessages.appendChild(botMessageDiv);
+            
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        });
     }, 300);
+}
+
+// AI Integration - Calls secure backend proxy
+async function getGroqResponse(userMessage) {
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: userMessage })
+        });
+
+        if (!response.ok) {
+            throw new Error('Chat API error');
+        }
+
+        const data = await response.json();
+        return data.response || getBotResponse(userMessage.toLowerCase());
+    } catch (error) {
+        console.error('Chat Error:', error);
+        // Fallback to local responses if API fails
+        return getBotResponse(userMessage.toLowerCase());
+    }
 }
 
 // Get appropriate bot response with smart keyword matching

@@ -1,54 +1,204 @@
-# Portfolio & Blog Website
+# Gaurav Gupta's Portfolio & Blog
 
-A modern, responsive portfolio and blog website built with HTML, CSS, and JavaScript. This website is designed to be deployed for free on GitHub Pages.
+A modern, responsive portfolio website with AI chatbot integration powered by Groq API.
 
 ## Features
 
-- ✅ **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
-- ✅ **Dark Mode** - Toggle between light and dark themes with theme persistence
-- ✅ **Portfolio Section** - Showcase your projects with descriptions and tags
-- ✅ **Blog Section** - Display your latest blog posts
-- ✅ **Contact Section** - Links to your social profiles and contact information
-- ✅ **Smooth Animations** - Interactive animations and transitions
-- ✅ **Accessibility** - Semantic HTML and ARIA labels
-- ✅ **Modern Design** - Clean, professional, and eye-catching UI
+✅ **Responsive Design** - Works seamlessly on mobile, tablet, and desktop  
+✅ **Dark Mode** - Theme toggle with localStorage persistence  
+✅ **AI Chatbot** - Intelligent chatbot powered by Groq's Llama 3.1 model  
+✅ **Glassmorphism Design** - Modern UI with glass effect styling  
+✅ **Smooth Animations** - CSS keyframes and scroll-triggered effects  
+✅ **Portfolio Showcase** - Display projects with tags and descriptions  
+✅ **Blog Section** - Featured blog posts with read time  
+✅ **Experience Timeline** - Professional work history with skills  
+✅ **Certifications** - Licenses and professional credentials  
+✅ **Contact Integration** - Direct email, phone, and social links  
+✅ **Visitor Counter** - Track website visits  
+✅ **Sticky Footer** - Always-visible footer with slide-up animation  
+
+## Tech Stack
+
+**Frontend:**
+- HTML5
+- CSS3 (with animations and responsive design)
+- JavaScript (vanilla)
+- Font Awesome Icons (CDN)
+
+**Backend:**
+- Node.js
+- Express.js
+- Groq API (for AI chatbot)
+- CORS enabled
 
 ## Project Structure
 
 ```
-.
-├── index.html           # Main HTML file
+├── index.html              # Main portfolio page
 ├── css/
-│   └── styles.css       # Main stylesheet with dark mode support
+│   └── styles.css         # All styling and animations
 ├── js/
-│   └── script.js        # JavaScript for interactivity
-├── README.md            # Project documentation
-└── .github/
-    └── copilot-instructions.md  # Copilot configuration
+│   └── script.js          # Frontend logic and chatbot
+├── media/
+│   ├── image (1).png      # Profile photo
+│   └── gg-logo.svg        # Animated GG logo
+├── server.js              # Express backend server
+├── package.json           # Node.js dependencies
+├── .env                   # Environment variables (secrets)
+├── .env.example           # Example environment file
+├── .gitignore             # Git ignore rules
+└── README.md              # This file
 ```
 
-## Getting Started
+## Installation & Setup
 
 ### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- Groq API Key (optional - fallback responses work without it)
 
-- A modern web browser
-- Git (for deployment to GitHub Pages)
-- A GitHub account
+### Step 1: Install Dependencies
+```bash
+npm install
+```
 
-### Local Development
+### Step 2: Configure Environment Variables
+1. Copy `.env.example` to `.env`:
+```bash
+cp .env.example .env
+```
 
-1. Open the project folder in VS Code
-2. Use Live Server extension (recommended):
-   - Install the "Live Server" extension from VS Code marketplace
-   - Right-click on `index.html` and select "Open with Live Server"
-   - The website will open at `http://localhost:5500`
+2. Add your Groq API key to `.env`:
+```
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=llama-3.1-8b-instant
+GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
+PORT=3000
+NODE_ENV=development
+```
 
-3. Or use any other local server:
-   ```bash
-   # Using Python 3
-   python -m http.server 8000
-   
-   # Using Python 2
+### Step 3: Start the Server
+```bash
+npm start
+```
+
+The server will start on `http://localhost:3000`
+
+### Step 4: Open in Browser
+Visit `http://localhost:3000` in your web browser
+
+## How the AI Chatbot Works
+
+1. **Frontend** (js/script.js)
+   - User types a message in the chatbot
+   - Message is sent to `/api/chat` endpoint
+   - Response is displayed in the chatbot widget
+
+2. **Backend** (server.js)
+   - Receives message from frontend
+   - Calls Groq API securely (API key stays on server)
+   - Returns intelligent AI response
+   - Falls back to keyword-based responses if Groq isn't available
+
+3. **Security**
+   - API key is stored in `.env` (never committed to Git)
+   - `.gitignore` prevents `.env` from being pushed
+   - Frontend never exposes sensitive credentials
+   - All API calls go through secure backend proxy
+
+## Groq API Setup
+
+### Getting a Groq API Key
+1. Visit https://console.groq.com
+2. Sign up for a free account
+3. Go to API keys section
+4. Create a new API key
+5. Copy the key to your `.env` file
+
+### Model Information
+- **Model**: `llama-3.1-8b-instant`
+- **Max Tokens**: 200 (for quick responses)
+- **Temperature**: 0.7 (balanced creativity)
+
+## Customization
+
+### Change Chatbot Responses
+Edit `js/script.js` in the `botResponses` object to customize fallback responses for keyword matching.
+
+### Update Portfolio Content
+- Edit `index.html` to change text content
+- Update `projectsData` array in `js/script.js` for projects
+- Update `blogPostsData` array in `js/script.js` for blog posts
+
+### Modify Styling
+- Edit `css/styles.css` for colors, fonts, and layouts
+- CSS variables at the top allow easy theme customization
+
+## Deployment
+
+### GitHub Pages (Static Frontend)
+1. Push code to GitHub repository
+2. Enable GitHub Pages in repository settings
+3. Choose main branch as source
+4. Add custom domain (optional)
+
+### Backend Hosting Options
+- **Heroku** - Free tier available
+- **Railway.app** - Simple deployment
+- **Render** - Free tier with good performance
+- **Fly.io** - Distributed hosting
+
+**Note**: GitHub Pages only hosts static files. Use one of the above services to host the Node.js backend.
+
+## Environment Variables
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| GROQ_API_KEY | Your Groq API key | gsk_xxxxxxx... |
+| GROQ_MODEL | AI model to use | llama-3.1-8b-instant |
+| GROQ_API_URL | Groq API endpoint | https://api.groq.com/... |
+| PORT | Server port | 3000 |
+| NODE_ENV | Environment | development / production |
+
+## Troubleshooting
+
+### Chatbot not responding
+- Check if server is running (`npm start`)
+- Check browser console for errors
+- Verify `.env` file has correct API key
+- Try fallback responses (keyword-based)
+
+### Styling not loading
+- Clear browser cache (Ctrl+Shift+Delete)
+- Check if `css/styles.css` path is correct
+- Verify CSS is linked in `index.html`
+
+### Images not loading
+- Check `media/` folder exists
+- Verify image file names match in HTML
+- Ensure correct file paths in `index.html`
+
+## Contact & Links
+
+- **Email**: ggupta865@gmail.com
+- **Phone**: +918869999358
+- **LinkedIn**: https://www.linkedin.com/in/gauravgupta865
+- **GitHub**: https://github.com/gauravgupta0612
+- **Salesforce Trailblazer**: https://www.salesforce.com/trailblazer/ggupta56
+
+## License
+
+MIT License - Feel free to use this portfolio as a template!
+
+## Support
+
+For issues or questions, feel free to reach out via email or LinkedIn.
+
+---
+
+**Built with ❤️ by Gaurav Gupta**  
+Last Updated: March 1, 2026
+
    python -m SimpleHTTPServer 8000
    
    # Using Node.js (with http-server)
