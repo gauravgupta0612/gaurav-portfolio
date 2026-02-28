@@ -74,6 +74,30 @@ body {
     padding: 0.75rem 20px;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-brand:hover {
+    transform: scale(1.05);
+}
+
+.logo-svg {
+    width: 45px;
+    height: 45px;
+    filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.3));
+    transition: all 0.3s ease;
+}
+
+.nav-brand:hover .logo-svg {
+    filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.5));
+    transform: rotate(5deg);
+}
+
 .nav-brand h1 {
     font-size: 1.5rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -1155,6 +1179,19 @@ body {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+
+    .nav-brand {
+        gap: 0.5rem;
+    }
+
+    .logo-svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.1rem;
     }
 
     .nav-menu.active {
