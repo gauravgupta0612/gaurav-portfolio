@@ -115,6 +115,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    white-space: nowrap;
+    margin: 0;
 }
 
 .nav-menu {
@@ -1452,7 +1454,8 @@ body {
     }
 
     .nav-brand h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        white-space: nowrap;
     }
 
     .nav-menu.active {
