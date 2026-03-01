@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Meeting - Gaurav Gupta</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/meetings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <!-- SVG Logo -->
+                <svg class="logo-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="logoGlow">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <circle cx="30" cy="30" r="28" fill="url(#logoGradient)" opacity="0.95"/>
+                    <circle cx="30" cy="30" r="28" fill="none" stroke="white" stroke-width="1.5" opacity="0.4" filter="url(#logoGlow)"/>
+                    <text x="30" y="39" font-size="22" font-weight="900" fill="white" text-anchor="middle" font-family="'Courier New', 'Monaco', monospace" letter-spacing="0.5" filter="url(#logoGlow)">GG</text>
+                </svg>
+                <h1><a href="index.html" style="color: inherit; text-decoration: none;">Gaurav Gupta</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="meetings.html" class="active">Meetings</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Meetings Hero Section -->
+    <section class="meetings-hero">
+        <div class="container">
+            <h1><i class="fas fa-calendar-check"></i> Schedule a Meeting</h1>
+            <p>Let's connect and discuss your ideas, projects, or opportunities!</p>
+        </div>
+    </section>
+
+    <!-- Meetings Content -->
+    <section class="meetings-section">
+        <div class="container">
+            <div class="meetings-wrapper">
+                <!-- Info Sidebar -->
+                <aside class="meetings-sidebar">
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-info-circle"></i> Meeting Info</h3>
+                        <p><strong>Duration:</strong> 30-60 minutes</p>
+                        <p><strong>Subject:</strong> Career, Projects, Consulting</p>
+                        <p><strong>Format:</strong> Video Call / Phone Call</p>
+                        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 1rem 0;">
+                        <p><strong>📞 Quick Call:</strong> +91-8869999358</p>
+                        <p><strong>📧 Email:</strong> ggupta865@gmail.com</p>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-clock"></i> Availability</h3>
+                        <div class="availability-list">
+                            <div class="availability-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">10 AM - 6 PM IST</span>
+                            </div>
+                            <div class="availability-item">
+                                <span class="day">Saturday</span>
+                                <span class="time">11 AM - 3 PM IST</span>
+                            </div>
+                            <div class="availability-item">
+                                <span class="day">Sunday</span>
+                                <span class="time">By appointment only</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3><i class="fas fa-users"></i> I Discuss</h3>
+                        <ul class="topics-list">
+                            <li><i class="fas fa-check-circle"></i> Salesforce Development</li>
+                            <li><i class="fas fa-check-circle"></i> Java & Cloud Computing</li>
+                            <li><i class="fas fa-check-circle"></i> Career Growth</li>
+                            <li><i class="fas fa-check-circle"></i> Project Consultation</li>
+                            <li><i class="fas fa-check-circle"></i> Tech Mentoring</li>
+                            <li><i class="fas fa-check-circle"></i> Job Opportunities</li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Booking Form -->
+                <main class="meetings-main">
+                    <div class="booking-card">
+                        <h2><i class="fas fa-book"></i> Book Your Slot</h2>
+                        <form id="meetingForm">
+                            <div class="form-group">
+                                <label for="meetingName">Your Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="meetingName" 
+                                    placeholder="Enter your full name" 
+                                    required
+                                    autocomplete="off"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="meetingEmail">Email Address *</label>
+                                <input 
+                                    type="email" 
+                                    id="meetingEmail" 
+                                    placeholder="your@email.com" 
+                                    required
+                                    autocomplete="off"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="meetingPhone">Phone Number *</label>
+                                <input 
+                                    type="tel" 
+                                    id="meetingPhone" 
+                                    placeholder="+91-XXXXX-XXXXX" 
+                                    required
+                                    autocomplete="off"
+                                >
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="meetingType">Meeting Type *</label>
+                                    <select id="meetingType" required>
+                                        <option value="">Select type...</option>
+                                        <option value="consultation">Consultation</option>
+                                        <option value="mentoring">Mentoring</option>
+                                        <option value="project">Project Discussion</option>
+                                        <option value="career">Career Advice</option>
+                                        <option value="networking">Networking</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meetingFormat">Format *</label>
+                                    <select id="meetingFormat" required>
+                                        <option value="">Select format...</option>
+                                        <option value="video">Video Call</option>
+                                        <option value="phone">Phone Call</option>
+                                        <option value="in-person">In-Person (Lucknow)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="meetingDate">Preferred Date *</label>
+                                    <input 
+                                        type="date" 
+                                        id="meetingDate" 
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meetingTime">Preferred Time (IST) *</label>
+                                    <input 
+                                        type="time" 
+                                        id="meetingTime" 
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="meetingDuration">Duration *</label>
+                                <select id="meetingDuration" required>
+                                    <option value="">Select duration...</option>
+                                    <option value="30">30 minutes</option>
+                                    <option value="45">45 minutes</option>
+                                    <option value="60">1 hour</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="meetingTopic">Topic / Description *</label>
+                                <textarea 
+                                    id="meetingTopic" 
+                                    placeholder="What would you like to discuss?" 
+                                    rows="4"
+                                    required
+                                    maxlength="500"
+                                ></textarea>
+                                <small id="topicCount">0/500</small>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-large">
+                                <i class="fas fa-check"></i> Confirm Booking
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Scheduled Meetings -->
+                    <div class="scheduled-meetings">
+                        <h2><i class="fas fa-list"></i> Your Scheduled Meetings</h2>
+                        <div id="meetingsList" class="meetings-list">
+                            <p class="no-meetings">No meetings scheduled yet</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-phone-alt"></i> Contact</h4>
+                <p>Phone: <a href="tel:+918869999358">+91-8869999358</a></p>
+                <p>Email: <a href="mailto:ggupta865@gmail.com">ggupta865@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                <p>Lucknow, Uttar Pradesh 226016, India</p>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-link"></i> Links</h4>
+                <p><a href="https://linkedin.com/in/gauravgupta865" target="_blank">LinkedIn</a></p>
+                <p><a href="https://github.com/gauravgupta0612" target="_blank">GitHub</a></p>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-eye"></i> Visitors</h4>
+                <p id="visitorCount" class="visitor-count">Loading...</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gaurav Gupta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/meetings.js"></script>
+</body>
+</html>
