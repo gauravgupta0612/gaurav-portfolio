@@ -209,7 +209,6 @@ def build_index():
       <div class="orbit"><div class="photo"><img src="media/image (1).png" alt="Gaurav Gupta"></div></div>
       <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v3.2.1 · {vrel} releases on GitHub</span></div></a>
       <a class="float f2" href="blog/tavrion-studio.html"><i class="fas fa-laptop-code"></i><div><strong>Tavrion Studio</strong><span>Windows .exe · v1.5.0</span></div></a>
-      <a class="float f3" href="rdi-9-9.html"><i class="fas fa-list-check"></i><div><strong>RDi 9.9 fix list</strong><span>Current: 9.9.0.8</span></div></a>
     </div>
   </div>
   <div class="marquee" aria-hidden="true"><div class="track">{marquee}</div></div>
