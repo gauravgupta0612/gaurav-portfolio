@@ -1,595 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Gupta - Portfolio & Blog</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaurav Gupta — Software Engineer · Projects, Journal &amp; Downloads</title>
+<meta name="description" content="Portfolio of Gaurav Gupta: Vanthrex for IBM i, Tavrion Studio, AI-Native Developer Platform and other developer tools, with release notes and downloads.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="Gaurav Gupta — Software Engineer · Projects, Journal &amp; Downloads">
+<meta property="og:description" content="Portfolio of Gaurav Gupta: Vanthrex for IBM i, Tavrion Studio, AI-Native Developer Platform and other developer tools, with release notes and downloads.">
+<link rel="icon" href="media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/classic.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <!-- SVG Logo -->
-                <svg class="logo-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                        </linearGradient>
-                        <filter id="logoGlow">
-                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <!-- Background Circle -->
-                    <circle cx="30" cy="30" r="28" fill="url(#logoGradient)" opacity="0.95"/>
-                    <!-- Border Circle with glow -->
-                    <circle cx="30" cy="30" r="28" fill="none" stroke="white" stroke-width="1.5" opacity="0.4" filter="url(#logoGlow)"/>
-                    <!-- GG Text - Stylish -->
-                    <text x="30" y="39" font-size="22" font-weight="900" fill="white" text-anchor="middle" font-family="'Courier New', 'Monaco', monospace" letter-spacing="0.5" filter="url(#logoGlow)">GG</text>
-                </svg>
-                <h1>Gaurav Gupta</h1>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="meetings.html">Meetings</a></li>
-                <li><a href="community.html">Community</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li>
-                    <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<header class="masthead">
+  <a class="monogram" href="index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="index.html" class="active">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="blog/index.html">Journal</a></li><li><a href="downloads.html">Downloads</a></li><li><a href="rdi-9-9.html">RDi 9.9</a></li><li><a href="index.html#experience">Experience</a></li><li><a href="meetings.html">Meetings</a></li><li><a href="community.html">Community</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+</nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <svg class="tech-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="100" fill="#6366f1"/>
-                        <defs>
-                            <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <!-- Code brackets -->
-                        <g fill="white" opacity="0.95">
-                            <!-- Left bracket < -->
-                            <path d="M 60 70 L 80 100 L 60 130" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Right bracket > -->
-                            <path d="M 140 70 L 120 100 L 140 130" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Forward slash -->
-                            <line x1="85" y1="60" x2="115" y2="140" stroke="white" stroke-width="6" stroke-linecap="round"/>
-                        </g>
-                    </svg>
-                    <div class="image-glow"></div>
-                </div>
-            </div>
-            <div class="hero-content">
-                <h1>Gaurav Gupta</h1>
-                <p class="tagline">Senior Software Engineer</p>
-                <p class="subtitle">Salesforce Specialist | Apex, Lightning | Java | AS400 | AI | VS Code Extension Developer | Salesforce Trailhead All Star Ranger | DevOps Developer | TypeScript & React | GitHub & GitLab</p>
-                <div class="hero-meta">
-                    <span class="meta-item">💼 5+ Years Experience</span>
-                    <span class="meta-item">🌍 Noida, Uttar Pradesh, India</span>
-                    <span class="meta-item">🚀 Available for Opportunities</span>
-                </div>
-                <div class="hero-bio">
-                    <p>
-                        I'm a passionate Senior Software Engineer with expertise in Salesforce development, Java, and modern web technologies. 
-                        As a Salesforce Trailhead All Star Ranger, I specialize in building scalable solutions using Lightning Aura Components, Apex, AS400, and TypeScript/React. 
-                        I'm proficient in DevOps practices and version control (GitHub/GitLab), with hands-on experience in AI/LLM solutions and chatbot development.
-                    </p>
-                </div>
-                <div class="trailblazer-section">
-                    <a href="https://www.salesforce.com/trailblazer/ggupta56" class="trailblazer-link" target="_blank">
-                        <div class="trailblazer-badge">
-                            <span class="badge-icon">🏆</span>
-                            <span class="badge-text">Salesforce Trailhead</span>
-                        </div>
-                        <div class="trailblazer-stats">
-                            <div class="stat">
-                                <span class="stat-value">213</span>
-                                <span class="stat-label">Badges</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">83,875</span>
-                                <span class="stat-label">Points</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">25</span>
-                                <span class="stat-label">Trails</span>
-                            </div>
-                        </div>
-                        <span class="view-profile">View Trailblazer Profile →</span>
-                    </a>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#experience" class="btn btn-secondary">Experience</a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <span>Scroll to explore</span>
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>
-                    I'm a Senior Software Engineer at ARCAD Software with 5+ years of experience in Salesforce development, Java, and VS Code extensions. I specialize in building scalable solutions using Lightning Aura Components, Apex, TypeScript, and React. I'm proficient in version control (GitHub/GitLab) and have expertise in AI-driven solutions including chatbot development with LLMs.
-                </p>
-                <p>
-                    I hold an MCA in Information Technology from the Institute of Management Studies, Ghaziabad, and am certified as a Copado Administrator and Developer. I'm dedicated to leveraging innovative technologies to deliver impactful, high-quality solutions.
-                </p>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li><span class="skill-badge">Salesforce</span></li>
-                        <li><span class="skill-badge">Java</span></li>
-                        <li><span class="skill-badge">Apex</span></li>
-                        <li><span class="skill-badge">Lightning</span></li>
-                        <li><span class="skill-badge">TypeScript</span></li>
-                        <li><span class="skill-badge">React</span></li>
-                        <li><span class="skill-badge">VS Code</span></li>
-                        <li><span class="skill-badge">GitHub</span></li>
-                        <li><span class="skill-badge">AI/LLMs</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>Experience & Journey</h2>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect">
-                        <h3>Senior Software Engineer</h3>
-                        <p class="company">ARCAD Software</p>
-                        <p class="duration">Dec 2025 - Present • 3 mos</p>
-                        <ul class="skills-list">
-                            <li>Java Development</li>
-                            <li>VS Code Extensions</li>
-                            <li>TypeScript & React</li>
-                            <li>AI/LLM Solutions</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect">
-                        <h3>Software Engineer</h3>
-                        <p class="company">ARCAD Software</p>
-                        <p class="duration">Jul 2023 - Dec 2025 • 2 yrs 6 mos</p>
-                        <ul class="skills-list">
-                            <li>Java Development</li>
-                            <li>GitHub/GitLab</li>
-                            <li>13+ Technical Skills</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect">
-                        <h3>Freelancer</h3>
-                        <p class="company">Freelancer.com</p>
-                        <p class="duration">Oct 2022 - Jun 2025 • 2 yrs 9 mos</p>
-                        <ul class="skills-list">
-                            <li>Salesforce Development</li>
-                            <li>Lightning Components</li>
-                            <li>Apex Programming</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect">
-                        <h3>Salesforce Developer</h3>
-                        <p class="company">Kloudrac Inc</p>
-                        <p class="duration">Apr 2020 - Oct 2020 • 7 mos</p>
-                        <ul class="skills-list">
-                            <li>GitHub</li>
-                            <li>Lightning</li>
-                            <li>Salesforce as a Service (SaaS)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect">
-                        <h3>Salesforce Consultant</h3>
-                        <p class="company">C&S ELECTRIC LTD</p>
-                        <p class="duration">Oct 2020 - Sep 2021 • 1 yr</p>
-                        <ul class="skills-list">
-                            <li>GitHub</li>
-                            <li>Salesforce.com</li>
-                            <li>Lightning</li>
-                            <li>Cloud Applications</li>
-                            <li>Apex Programming</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect">
-                        <h3>Salesforce Consultant</h3>
-                        <p class="company">Delhivery</p>
-                        <p class="duration">Nov 2021 - Jul 2022 • 9 mos</p>
-                        <ul class="skills-list">
-                            <li>Project Management</li>
-                            <li>Salesforce.com</li>
-                            <li>Lightning</li>
-                            <li>Salesforce Administration</li>
-                            <li>Salesforce Sales Cloud</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect">
-                        <h3>Intern - Salesforce</h3>
-                        <p class="company">Kcloud Technologies - World of Salesforce Cloud</p>
-                        <p class="duration">Jan 2020 - Apr 2020 • 4 mos</p>
-                        <ul class="skills-list">
-                            <li>Salesforce</li>
-                            <li>CRM</li>
-                            <li>Customer Relationship Management</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category glass-effect">
-                    <h3>Backend & Cloud</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Salesforce</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Java</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Apex Programming</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 92%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category glass-effect">
-                    <h3>Frontend & UI</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">TypeScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">React</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Lightning Aura Components</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 93%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category glass-effect">
-                    <h3>DevOps & Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">GitHub/GitLab</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">VS Code Extensions</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 87%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">AI/LLM Integration</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category glass-effect">
-                    <h3>Certifications & Qualifications</h3>
-                    <div class="certifications">
-                        <div class="cert-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>MCA - Information Technology</span>
-                            <p>Institute of Management Studies, Ghaziabad (2018-2020)</p>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>Copado Administrator & Developer</span>
-                            <p>Certified Professional</p>
-                        </div>
-                        <div class="cert-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>BCA - Information Technology</span>
-                            <p>Invertis University (2015-2018)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="team-section">
-        <div class="container">
-            <h2>Team</h2>
-            <div class="team-grid">
-                <div class="team-card glass-effect">
-                    <div class="team-image">
-                        <img src="media/image (1).png" alt="Gaurav Gupta" class="profile-img">
-                    </div>
-                    <div class="team-info">
-                        <h3>Gaurav Gupta</h3>
-                        <p class="team-role">Founder & Lead Developer</p>
-                        <p class="team-bio">
-                            Senior Software Engineer with 5+ years of expertise in Salesforce development, Java, 
-                            and modern web technologies. Salesforce Trailhead All Star Ranger with passion for 
-                            building scalable solutions and mentoring others.
-                        </p>
-                        <div class="team-links">
-                            <a href="https://www.linkedin.com/in/gauravgupta865" target="_blank" title="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/gauravgupta0612" target="_blank" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.salesforce.com/trailblazer/ggupta56" target="_blank" title="Salesforce Trailhead">
-                                <i class="fas fa-star"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-grid" id="projectsContainer">
-                <!-- Projects will be loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2>Latest Blog Posts</h2>
-            <div class="blog-grid" id="blogContainer">
-                <!-- Blog posts will be loaded here -->
-            </div>
-        </div>
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications-section">
-        <div class="container">
-            <h2>Licenses & Certifications</h2>
-            <div class="certifications-list">
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Dive Deeper into GA4 Data and Reports</h3>
-                        <span class="issuer">Skillshop</span>
-                    </div>
-                    <p class="cert-date">Issued Sep 2025 • Expires Sep 2026</p>
-                    <p class="cert-id">Credential ID: 161356851</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
-                        <span class="issuer">Oracle</span>
-                    </div>
-                    <p class="cert-date">Issued Sep 2025</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Oracle Cloud Infrastructure 2025 Data Science Professional</h3>
-                        <span class="issuer">Oracle</span>
-                    </div>
-                    <p class="cert-date">Issued Sep 2025</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>IBM i Ready</h3>
-                        <span class="issuer">IBM</span>
-                    </div>
-                    <p class="cert-date">Issued Sep 2025</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Build Smarter AI with Embeddings</h3>
-                        <span class="issuer">IBM</span>
-                    </div>
-                    <p class="cert-date">Issued Sep 2025</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Artificial Intelligence Fundamentals</h3>
-                        <span class="issuer">IBM</span>
-                    </div>
-                    <p class="cert-date">Issued Sep 2025</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Journey to Cloud: Envisioning Your Solution</h3>
-                        <span class="issuer">IBM</span>
-                    </div>
-                    <p class="cert-date">Issued Sep 2025</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Copado Certified Developer</h3>
-                        <span class="issuer">Copado</span>
-                    </div>
-                    <p class="cert-date">Issued Apr 2021 • Expired Apr 2021</p>
-                    <p class="cert-id">Credential ID: 012787</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>Copado Certified Administrator</h3>
-                        <span class="issuer">Copado</span>
-                    </div>
-                    <p class="cert-date">Issued Apr 2021 • Expired Apr 2021</p>
-                    <p class="cert-id">Credential ID: 012784</p>
-                </div>
-
-                <div class="certification-card glass-effect">
-                    <div class="certification-header">
-                        <h3>CCC (Course on Computer Concepts)</h3>
-                        <span class="issuer">NIELIT-India</span>
-                    </div>
-                    <p class="cert-date">Issued Mar 2016 • Expires Jan 2027</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'd love to hear from you. Feel free to reach out!</p>
-                <div class="contact-links">
-                    <a href="mailto:ggupta865@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="tel:+918869999358" class="contact-link">
-                        <i class="fas fa-phone"></i> Call
-                    </a>
-                    <a href="https://www.linkedin.com/in/gauravgupta865" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <p>&copy; 2026 Gaurav Gupta. All rights reserved.</p>
-                </div>
-                <div class="footer-section address-section">
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i>
-                        Lucknow, Uttar Pradesh 226016
-                    </p>
-                </div>
-                <div class="footer-section">
-                    <div class="visitor-counter">
-                        <p>Visitors:</p>
-                        <img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor Badge" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- AI Chatbot Widget -->
-    <div id="chatbotWidget" class="chatbot-widget">
-        <div class="chatbot-header">
-            <div class="chatbot-title">
-                <i class="fas fa-robot"></i> AI Assistant
-            </div>
-            <button class="chatbot-close" id="closeChatbot">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="chatbot-messages" id="chatbotMessages">
-            <div class="message bot-message">
-                <p>👋 Hi! I'm Gaurav's AI Assistant. Ask me about his skills, experience, or projects!</p>
-            </div>
-        </div>
-        <div class="chatbot-input-area">
-            <input type="text" id="userInput" placeholder="Ask me anything..." class="chatbot-input">
-            <button id="sendMessage" class="chatbot-send">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
+<main>
+<section id="about" class="wrap">
+  <div class="intro">
+    <figure class="portrait"><div class="frame"><img src="media/image (1).png" alt="Portrait of Gaurav Gupta"></div>
+      <figcaption>Noida &amp; Lucknow, India</figcaption></figure>
+    <div>
+      <h2>I build the tools that take IBM i development, and the developers who do it, into the next decade.</h2>
+      <p class="dropcap">For more than six years I have shipped software that real teams run every day: first enterprise CRM on Salesforce, then Java, Eclipse and VS Code tooling for IBM i at ARCAD Software, where I am a Senior Software Engineer and act as PMO for every R&amp;D product.</p>
+      <p><strong>My mission is simple:</strong> no developer should have to choose between a platform that runs the business and tools that feel modern. IBM i, z/OS and Java systems hold some of the world's most important data, and the people who look after them deserve editors that check code as they type, debuggers that just work, AI that protects their secrets, and deployments they can undo with one command.</p>
+      <p>Since 20 September 2026 I have designed, built and published <strong>9 products and 36 public releases</strong>, from Vanthrex, a complete IBM i workbench for VS Code, to Tavrion Studio, an Eclipse-ready IDE for Windows. Each has a story in the <a href="blog/index.html">Journal</a>, and every installer is on the <a href="downloads.html">Downloads</a> page.</p>
+      <div class="facts">
+        <div><strong>9</strong><span>new projects</span></div>
+        <div><strong>36</strong><span>public releases</span></div>
+        <div><strong>6+</strong><span>years' experience</span></div>
+      </div>
+      <a class="btn primary" href="#projects">See the projects</a>
+      <a class="btn" href="downloads.html">Downloads</a>
+      <a class="btn" href="https://github.com/gauravgupta0612">GitHub</a>
     </div>
+  </div>
+</section>
 
-    <!-- Floating Chatbot Button -->
-    <button id="chatbotToggle" class="chatbot-toggle" title="Open AI Assistant">
-        <i class="fas fa-comments"></i>
-        <span class="chatbot-badge">AI</span>
-    </button>
+<section id="projects" class="wrap">
+  <div class="section-head"><div class="kicker">The Workshop</div><h2>Recent Projects</h2><div class="ornament">✦ ✦ ✦</div>
+    <p>Everything I have built and released since 20 September 2026, newest first.</p></div>
+  <div class="catalogue"><article class="entry">
+  <span class="no">No. I</span>
+  <h3><a href="blog/ai-native-dev-platform.html">AI-Native Developer Platform</a></h3>
+  <div class="meta">Begun 13 November 2026<span class="badge-ver">v0.2.0</span></div>
+  <p>A security-first platform for building AI developer tools: multi-model routing, safe agents, code intelligence and enterprise controls.</p>
+  <div class="tags">TypeScript · Java · Python · LLM · MCP</div>
+  <p class="skills-used"><strong>Skills:</strong> TypeScript, Java 17, Python, LLM routing (OpenAI, Claude, Gemini, Ollama), agent design, MCP, code indexing (incl. IBM i RPG), security &amp; audit controls, CI/CD, npm &amp; JitPack publishing</p>
+  <div class="links"><a href="blog/ai-native-dev-platform.html">Read the story</a> <a href="https://github.com/gauravgupta0612/ai-native-dev-platform">⬇ Source & packages</a> <a href="https://github.com/gauravgupta0612/ai-native-dev-platform">Source</a></div>
+</article><article class="entry">
+  <span class="no">No. II</span>
+  <h3><a href="blog/tavrion-studio.html">Tavrion Studio</a></h3>
+  <div class="meta">Begun 12 November 2026<span class="badge-ver">v1.5.0</span></div>
+  <p>A VS Code-style IDE that opens, builds, runs and debugs Eclipse Java projects.</p>
+  <div class="tags">Electron · Java · Eclipse / OSGi · Monaco</div>
+  <p class="skills-used"><strong>Skills:</strong> Electron, Node.js, Java (javac, JDWP/jdb debugger), Eclipse JDT &amp; PDE model, OSGi (Equinox/Felix), p2 &amp; Maven resolution, Monaco editor, Windows installer (NSIS)</p>
+  <div class="links"><a href="blog/tavrion-studio.html">Read the story</a> <a href="https://github.com/gauravgupta0612/tavrion-studio/releases/latest">⬇ Windows installer (.exe)</a> <a href="https://github.com/gauravgupta0612/tavrion-studio">Source</a></div>
+</article><article class="entry">
+  <span class="no">No. III</span>
+  <h3><a href="blog/devflow.html">DevFlow</a></h3>
+  <div class="meta">Begun 19 October 2026<span class="badge-ver">v0.1.0</span></div>
+  <p>One VS Code extension for the daily developer workflow: Environment Doctor, Git Assistant, Build Doctor, API Workspace and a Project Dashboard.</p>
+  <div class="tags">VS Code · TypeScript · Developer productivity</div>
+  <p class="skills-used"><strong>Skills:</strong> VS Code API, TypeScript, Git hooks &amp; secret scanning, Maven/Gradle/npm/Python build diagnostics, REST tooling</p>
+  <div class="links"><a href="blog/devflow.html">Read the story</a></div>
+</article><article class="entry">
+  <span class="no">No. IV</span>
+  <h3><a href="blog/salesforce-devpilot-pack.html">Salesforce DevPilot Pack</a></h3>
+  <div class="meta">Begun 18 October 2026<span class="badge-ver">v1.0.0</span></div>
+  <p>A Salesforce developer pack for VS Code built around a Change Impact Analyzer, with health and release checks that run locally.</p>
+  <div class="tags">VS Code · Salesforce · Apex / LWC · CI reports</div>
+  <p class="skills-used"><strong>Skills:</strong> Salesforce DX, Apex, LWC, Aura, Flows, metadata dependency graphs, risk scoring, VS Code API, GitLab &amp; Jenkins reporting</p>
+  <div class="links"><a href="blog/salesforce-devpilot-pack.html">Read the story</a> <a href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack/releases/latest">⬇ Release v1.0.0</a> <a href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack">Source</a></div>
+</article><article class="entry">
+  <span class="no">No. V</span>
+  <h3><a href="blog/jarpilot.html">JarPilot for IBM i</a></h3>
+  <div class="meta">Begun 10 October 2026<span class="badge-ver">v1.2.1</span></div>
+  <p>Fast, safe JAR installation on the IBM i IFS: validate, checksum, back up, replace atomically and roll back with one command.</p>
+  <div class="tags">IBM i · Shell / PASE · PowerShell · CL</div>
+  <p class="skills-used"><strong>Skills:</strong> IBM i IFS &amp; PASE (QSH), CL (CRTBNDCL, CHGAUT, CHGOWN), SSH, PowerShell, Bash, SHA-256 integrity, atomic deployment &amp; rollback, VS Code extension</p>
+  <div class="links"><a href="blog/jarpilot.html">Read the story</a> <a href="https://github.com/gauravgupta0612/jatpilot/releases">⬇ Releases</a> <a href="https://github.com/gauravgupta0612/jatpilot">Source</a></div>
+</article><article class="entry">
+  <span class="no">No. VI</span>
+  <h3><a href="blog/routinel.html">Routinel – API Finder &amp; Client</a></h3>
+  <div class="meta">Begun 9 October 2026<span class="badge-ver">v1.3.0</span></div>
+  <p>Finds every HTTP API in your workspace, in any supported language, and calls it from a built-in Postman-style client.</p>
+  <div class="tags">VS Code · TypeScript · REST · OpenAPI</div>
+  <p class="skills-used"><strong>Skills:</strong> Static analysis of Express/NestJS/Spring/FastAPI/Django routes, OpenAPI 3, Postman v2.1, VS Code SecretStorage, mock servers, TypeScript</p>
+  <div class="links"><a href="blog/routinel.html">Read the story</a> <a href="https://github.com/gauravgupta0612/dataman-api-lens/releases/latest">⬇ VS Code extension (.vsix)</a> <a href="https://github.com/gauravgupta0612/dataman-api-lens">Source</a></div>
+</article><article class="entry">
+  <span class="no">No. VII</span>
+  <h3><a href="blog/devsuite.html">DevSuite</a></h3>
+  <div class="meta">Begun 9 October 2026<span class="badge-ver">v0.1</span></div>
+  <p>One shared analysis engine and five focused VS Code extensions: RepoPilot, DevImpact, CodeGuard, TraceLens and BugTrail.</p>
+  <div class="tags">VS Code · Monorepo · Static analysis · IBM i</div>
+  <p class="skills-used"><strong>Skills:</strong> Monorepo design, shared analysis engine, parsers for JS/TS, Python, Java, Go, C# and IBM i RPG/CL/DDS/SQL/COBOL, dependency graphs, GitHub Actions release pipelines</p>
+  <div class="links"><a href="blog/devsuite.html">Read the story</a> <a href="https://github.com/gauravgupta0612/devsuite/releases">⬇ VS Code extensions (.vsix)</a> <a href="https://github.com/gauravgupta0612/devsuite">Source</a></div>
+</article><article class="entry">
+  <span class="no">No. VIII</span>
+  <h3><a href="blog/ibm-i-zos-explorer.html">IBM i &amp; z/OS Explorer</a></h3>
+  <div class="meta">Begun 9 October 2026<span class="badge-ver">v1.1.0</span></div>
+  <p>One VS Code sidebar for IBM i (SSH + SQL) and z/OS (z/OSMF): data sets, members, IFS, USS, JCL, spool and commands.</p>
+  <div class="tags">VS Code · IBM i · z/OS · z/OSMF</div>
+  <p class="skills-used"><strong>Skills:</strong> IBM i (SSH, SQL, CL, spool, QSYSOPR), z/OS (z/OSMF REST, JCL, TSO, MVS console, PDS/PDSE, USS), VS Code API, TypeScript</p>
+  <div class="links"><a href="blog/ibm-i-zos-explorer.html">Read the story</a> <a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/latest">⬇ VS Code extension (.vsix)</a> <a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer">Source</a> <a href="https://gauravgupta0612.github.io/IBM-i-z-OS-Explorer-doc/">Docs</a></div>
+</article><article class="entry">
+  <span class="no">No. IX</span>
+  <h3><a href="blog/vanthrex-for-ibm-i.html">Vanthrex for IBM i</a></h3>
+  <div class="meta">Begun 3 October 2026<span class="badge-ver">v3.2.1</span></div>
+  <p>An all-in-one IBM i workbench for VS Code: connect, edit, compile, SQL, code checks, debugging and system tools.</p>
+  <div class="tags">VS Code · TypeScript · IBM i · RPG / CL / SQL</div>
+  <p class="skills-used"><strong>Skills:</strong> IBM i (RPGLE, CL, DDS, Db2 for i SQL, IFS, PASE), SSH &amp; Mapepire, IBM i Debug Service, QSYS2 services, work management &amp; security (*SECADM), VS Code API, TypeScript, i18n, Marketplace publishing</p>
+  <div class="links"><a href="blog/vanthrex-for-ibm-i.html">Read the story</a> <a href="https://github.com/gauravgupta0612/silverlake-ibmi/releases/latest">⬇ VS Code extension (.vsix)</a> <a href="https://github.com/gauravgupta0612/silverlake-ibmi">Source</a> <a href="https://gauravgupta0612.github.io/vanthrex-ibmi-docs/">Docs</a> <a href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi">Marketplace</a></div>
+</article></div>
+</section>
 
-    <script src="js/script.js"></script>
+<section id="journal" class="narrow">
+  <div class="section-head"><div class="kicker">From the Journal</div><h2>Latest Writing</h2><div class="ornament">✦ ✦ ✦</div></div>
+  <ul class="journal-list"><li><time datetime="2026-11-13">13 Nov 2026</time><div>
+  <h3><a href="blog/ai-native-dev-platform.html">Designing an AI-native developer platform</a></h3>
+  <p>One API for every model, agents that ask before they act, and your secrets kept on your machine. <span class="rt">· 6 min read</span></p></div></li><li><time datetime="2026-11-12">12 Nov 2026</time><div>
+  <h3><a href="blog/tavrion-studio.html">Tavrion Studio: an IDE that speaks Eclipse</a></h3>
+  <p>Why I built a lightweight, VS Code-style IDE for Eclipse workspaces, and what ships in the Windows installer. <span class="rt">· 7 min read</span></p></div></li><li><time datetime="2026-10-19">19 Oct 2026</time><div>
+  <h3><a href="blog/devflow.html">DevFlow: a productivity toolkit that works offline</a></h3>
+  <p>Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required. <span class="rt">· 5 min read</span></p></div></li><li><time datetime="2026-10-18">18 Oct 2026</time><div>
+  <h3><a href="blog/salesforce-devpilot-pack.html">Salesforce DevPilot Pack: know what your change will break</a></h3>
+  <p>Bringing my Salesforce years back into VS Code with dependency graphs, risk scores and one-click release checks. <span class="rt">· 5 min read</span></p></div></li><li><time datetime="2026-10-10">10 Oct 2026</time><div>
+  <h3><a href="blog/jarpilot.html">JarPilot: deploying JARs to IBM i without the drama</a></h3>
+  <p>Every install validated, checksummed, backed up and logged, with rollback one command away. <span class="rt">· 4 min read</span></p></div></li></ul>
+  <p style="text-align:center;margin-top:22px"><a class="btn" href="blog/index.html">All journal entries</a></p>
+</section>
+
+<section id="experience" class="narrow">
+  <div class="section-head"><div class="kicker">Curriculum Vitae</div><h2>Experience</h2><div class="ornament">✦ ✦ ✦</div></div>
+  <div class="cv"><div class="cv-row"><div class="when">Dec 2025 – Present</div><div><h3>Senior Software Engineer</h3><div class="org">ARCAD Software</div><p>IBM i developer tooling: Eclipse plug-ins for IBM RDi 9.8 / 9.9, VS Code extensions, the Java 8 → 17 migration of server products, and AI / MCP integration. PMO across all ARCAD R&amp;D products.</p></div></div><div class="cv-row"><div class="when">Jul 2023 – Dec 2025</div><div><h3>Software Engineer</h3><div class="org">ARCAD Software</div><p>Java and Eclipse plug-ins for IBM Rational Developer for i, IBM i integration (RPG, CL, Db2 for i, IFS), OSGi / Tycho builds, GitHub and GitLab.</p></div></div><div class="cv-row"><div class="when">Oct 2022 – Jun 2025</div><div><h3>Freelancer</h3><div class="org">Freelancer.com</div><p>Salesforce development, Lightning components, Apex.</p></div></div><div class="cv-row"><div class="when">Nov 2021 – Jul 2022</div><div><h3>Salesforce Consultant</h3><div class="org">Delhivery</div><p>Sales Cloud, administration, Lightning, project management.</p></div></div><div class="cv-row"><div class="when">Oct 2020 – Sep 2021</div><div><h3>Salesforce Consultant</h3><div class="org">C&amp;S Electric Ltd</div><p>Apex, Lightning and cloud applications.</p></div></div><div class="cv-row"><div class="when">Apr 2020 – Oct 2020</div><div><h3>Salesforce Developer</h3><div class="org">Kloudrac Inc</div><p>Lightning, GitHub, Salesforce as a Service.</p></div></div><div class="cv-row"><div class="when">Jan 2020 – Apr 2020</div><div><h3>Intern – Salesforce</h3><div class="org">Kcloud Technologies</div><p>Salesforce CRM.</p></div></div></div>
+</section>
+
+<section id="certifications" class="wrap">
+  <div class="two-col">
+    <div><div class="section-head" style="text-align:left"><div class="kicker">Credentials</div><h2>Certifications</h2></div><ul class="certs"><li>Dive Deeper into GA4 Data and Reports<span>Skillshop · Sep 2025</span></li><li>OCI 2025 AI Foundations Associate<span>Oracle · Sep 2025</span></li><li>OCI 2025 Data Science Professional<span>Oracle · Sep 2025</span></li><li>IBM i Ready<span>IBM · Sep 2025</span></li><li>Build Smarter AI with Embeddings<span>IBM · Sep 2025</span></li><li>Artificial Intelligence Fundamentals<span>IBM · Sep 2025</span></li><li>Journey to Cloud: Envisioning Your Solution<span>IBM · Sep 2025</span></li><li>Copado Certified Developer & Administrator<span>Copado · Apr 2021</span></li><li>CCC – Course on Computer Concepts<span>NIELIT India · Mar 2016</span></li></ul></div>
+    <div><div class="section-head" style="text-align:left"><div class="kicker">Craft</div><h2>Skills &amp; Education</h2></div>
+      <h3 class="skill-group">IBM i &amp; IBM Z</h3><ul class="skills-list"><li>RPG IV / RPGLE (free and fixed form)</li><li>CL programming &amp; commands</li><li>DDS: PF, LF, DSPF, PRTF</li><li>Db2 for i SQL &amp; QSYS2 services</li><li>IFS, PASE &amp; QSH</li><li>Work management, journals &amp; security</li><li>IBM Rational Developer for i (RDi 9.8 / 9.9)</li><li>IBM i Debug Service &amp; ACS</li><li>z/OS: JCL, TSO, z/OSMF, PDS/PDSE, USS</li><li>IBM i 7.4 – 7.6</li></ul><h3 class="skill-group">Java &amp; Eclipse</h3><ul class="skills-list"><li>Java 8 – 21</li><li>Eclipse RCP, PDE &amp; OSGi plug-ins</li><li>Tycho / Maven / p2 builds</li><li>JDWP debugging</li></ul><h3 class="skill-group">Developer tools &amp; web</h3><ul class="skills-list"><li>VS Code extension API</li><li>TypeScript, Node.js &amp; React</li><li>Electron desktop apps</li><li>Python</li></ul><h3 class="skill-group">AI &amp; platforms</h3><ul class="skills-list"><li>LLM integration &amp; routing</li><li>Model Context Protocol (MCP)</li><li>Agents with approval &amp; audit</li></ul><h3 class="skill-group">Salesforce</h3><ul class="skills-list"><li>Apex, Lightning, LWC, Aura</li><li>Salesforce DX &amp; Copado</li><li>Trailhead All Star Ranger</li></ul><h3 class="skill-group">Delivery</h3><ul class="skills-list"><li>GitHub, GitLab, Jenkins, Actions</li><li>Release &amp; product management (PMO)</li><li>Marketplace publishing</li></ul>
+      <ul class="certs" style="margin-top:22px"><li>MCA – Information Technology<span>Institute of Management Studies, Ghaziabad · 2018–2020</span></li>
+      <li>BCA – Information Technology<span>Invertis University · 2015–2018</span></li>
+      <li>Salesforce Trailhead All Star Ranger<span><a href="https://www.salesforce.com/trailblazer/ggupta56">213 badges · 83,875 points · 25 trails</a></span></li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="narrow contact">
+  <div class="section-head"><div class="kicker">Correspondence</div><h2>Get in Touch</h2><div class="ornament">✦ ✦ ✦</div>
+    <p>For questions about a project, a demo, or working together, write to me.</p></div>
+  <div class="links">
+    <a class="btn" href="mailto:ggupta865@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    <a class="btn" href="https://www.linkedin.com/in/gauravgupta865"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a class="btn" href="https://github.com/gauravgupta0612"><i class="fab fa-github"></i> GitHub</a>
+    <a class="btn" href="meetings.html"><i class="fas fa-calendar"></i> Book a meeting</a>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="js/site.js"></script>
 </body>
 </html>

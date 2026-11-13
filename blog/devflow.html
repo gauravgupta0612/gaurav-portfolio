@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevFlow: a productivity toolkit that works offline — Gaurav Gupta</title>
+<meta name="description" content="Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/devflow.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="DevFlow: a productivity toolkit that works offline — Gaurav Gupta">
+<meta property="og:description" content="Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · DevFlow</div>
+  <h1>DevFlow: a productivity toolkit that works offline</h1>
+  <p class="dek">Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-10-19">19 October 2026</time> · 5 min read · Latest v0.1.0</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>Many lost hours are not spent on hard problems. They go to a missing <code>node_modules</code>, a JDK that is one version too old, a secret pushed by accident, or a Jenkins log nobody wants to read. DevFlow, first built on 19 October 2026, deals with those small problems in one place, and it works offline.</p>
+<h2>Five tools in one</h2>
+<ul>
+<li><strong>Environment Doctor.</strong> Detects the project's stacks (Node, Java Maven/Gradle, Python, Go, .NET, Rust, Docker, Make), checks the required tools and versions, compares <code>.env</code> with <code>.env.example</code>, and offers one-click fixes.</li>
+<li><strong>Git Assistant.</strong> Summarises changes, scans added lines for secrets with 15 rules, writes a Conventional Commit message, and runs pre-commit and pre-push checks.</li>
+<li><strong>Build Doctor.</strong> More than 45 rules for Maven, Gradle, javac, SSL certificates, npm, Node, TypeScript, Jest and Python, applied to a selection, a log file, the clipboard or a build it runs for you.</li>
+<li><strong>API Workspace.</strong> <code>.http</code> and <code>.rest</code> files with Send Request and Compare Environments.</li>
+<li><strong>Project Dashboard.</strong> The state of the project on a single page.</li>
+</ul>
+<p>DevFlow 0.1.0 is packaged as a <code>.vsix</code>. It is not on GitHub yet; contact me if you would like to try it.</p>
+
+<h2>Skills applied</h2>
+<p class="skills-used">VS Code API, TypeScript, Git hooks &amp; secret scanning, Maven/Gradle/npm/Python build diagnostics, REST tooling</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">v0.1.0</span> · <span class="td">19 October 2026</span><br>First release: Environment Doctor, Git Assistant, Build Doctor, API Workspace, Project Dashboard.</li></ul><div class="callout"><h4>Get it</h4><p>Available on request: <a href="../index.html#contact">contact me</a>.</p></div>
+<p></p>
+</article>
+<nav class="post-nav"><a href="salesforce-devpilot-pack.html"><small>← Earlier</small>Salesforce DevPilot Pack: know what your change will break</a><a href="tavrion-studio.html" style="text-align:right"><small>Later →</small>Tavrion Studio: an IDE that speaks Eclipse</a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>

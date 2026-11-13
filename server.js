@@ -9,6 +9,19 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Force HTTPS (behind Heroku/Render/any proxy) and tell browsers to always use HTTPS
+app.enable('trust proxy');
+app.use((req, res, next) => {
+    const local = /^(localhost|127\.0\.0\.1)(:\d+)?$/.test(req.headers.host || '');
+    if (!local && !req.secure) {
+        return res.redirect(301, 'https://' + req.headers.host + req.originalUrl);
+    }
+    if (!local) {
+        res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    }
+    next();
+});
+
 // Middleware
 app.use(cors());
 app.use(express.json());

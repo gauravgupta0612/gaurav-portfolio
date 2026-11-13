@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevSuite: one engine, five focused extensions — Gaurav Gupta</title>
+<meta name="description" content="Why I split one large idea into small tools that share a single code-analysis core.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/devsuite.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="DevSuite: one engine, five focused extensions — Gaurav Gupta">
+<meta property="og:description" content="Why I split one large idea into small tools that share a single code-analysis core.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · DevSuite</div>
+  <h1>DevSuite: one engine, five focused extensions</h1>
+  <p class="dek">Why I split one large idea into small tools that share a single code-analysis core.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-10-09">9 October 2026</time> · 5 min read · Latest v0.1</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>Large extensions that try to do everything end up doing nothing well. DevSuite, started on 9 October 2026, takes the opposite approach: one shared analysis engine (<code>@devsuite/core</code>, with no VS Code dependency) and several small extensions, each focused on one job and each released on its own.</p>
+<h2>The five extensions</h2>
+<ul>
+<li><strong>RepoPilot:</strong> architecture, entry points, build commands, modules, a dependency map and an onboarding guide.</li>
+<li><strong>DevImpact:</strong> what a change affects, an impact score, and which tests to run.</li>
+<li><strong>CodeGuard:</strong> a prioritised risk report for changes (secrets, security, regressions, tests, config and IBM i), also available as a CLI and a pre-commit hook.</li>
+<li><strong>TraceLens:</strong> every API endpoint, traced through to database and external calls.</li>
+<li><strong>BugTrail:</strong> a searchable history of errors, attempts and fixes that warns you when a fixed bug comes back.</li>
+</ul>
+<p>The engine indexes JavaScript/TypeScript, Python, Java/Kotlin, Go, C# and IBM i RPG, CL, DDS, SQL and COBOL. The <strong>DevSuite Pack</strong> installs all five at once. Each extension has its own GitHub Actions release workflow.</p>
+
+<h2>Skills applied</h2>
+<p class="skills-used">Monorepo design, shared analysis engine, parsers for JS/TS, Python, Java, Go, C# and IBM i RPG/CL/DDS/SQL/COBOL, dependency graphs, GitHub Actions release pipelines</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">TraceLens v0.1.1</span> · <span class="td">10 October 2026</span></li><li><span class="tv">TraceLens v0.1.0</span> · <span class="td">10 October 2026</span></li><li><span class="tv">RepoPilot v0.1.4</span> · <span class="td">10 October 2026</span></li><li><span class="tv">RepoPilot v0.1.3</span> · <span class="td">10 October 2026</span></li><li><span class="tv">RepoPilot v0.1.2</span> · <span class="td">10 October 2026</span></li><li><span class="tv">RepoPilot v0.1.1</span> · <span class="td">10 October 2026</span></li><li><span class="tv">DevSuite Pack v0.1.0</span> · <span class="td">10 October 2026</span></li><li><span class="tv">DevImpact v0.1.0</span> · <span class="td">10 October 2026</span></li><li><span class="tv">CodeGuard v0.1.1</span> · <span class="td">10 October 2026</span></li><li><span class="tv">CodeGuard v0.1.0</span> · <span class="td">10 October 2026</span></li><li><span class="tv">BugTrail v0.1.0</span> · <span class="td">10 October 2026</span></li><li><span class="tv">RepoPilot v0.1.0</span> · <span class="td">9 October 2026</span></li></ul><div class="callout"><h4>Latest download: TraceLens v0.1.1</h4><ul><li><a href="https://github.com/gauravgupta0612/devsuite/releases/download/tracelens-v0.1.1/devsuite-tracelens-0.1.1.vsix">⬇ devsuite-tracelens-0.1.1.vsix</a> <span class="size">(38 KB)</span></li></ul><p>Every earlier version is on the <a href="../downloads.html#devsuite">Downloads page</a>.</p></div>
+<p><a href="https://github.com/gauravgupta0612/devsuite">Source on GitHub</a></p>
+</article>
+<nav class="post-nav"><a href="ibm-i-zos-explorer.html"><small>← Earlier</small>IBM i &amp; z/OS Explorer: two platforms, one sidebar</a><a href="routinel.html" style="text-align:right"><small>Later →</small>Routinel: find every API in your code and call it</a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>

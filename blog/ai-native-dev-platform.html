@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Designing an AI-native developer platform — Gaurav Gupta</title>
+<meta name="description" content="One API for every model, agents that ask before they act, and your secrets kept on your machine.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/ai-native-dev-platform.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="Designing an AI-native developer platform — Gaurav Gupta">
+<meta property="og:description" content="One API for every model, agents that ask before they act, and your secrets kept on your machine.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · AI-Native Developer Platform</div>
+  <h1>Designing an AI-native developer platform</h1>
+  <p class="dek">One API for every model, agents that ask before they act, and your secrets kept on your machine.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-11-13">13 November 2026</time> · 6 min read · Latest v0.2.0</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>Most AI coding tools tie you to one model, send your code wherever they like, and give you very little control. I wanted the opposite: a platform where the organisation decides which model sees what, where agents can explore freely but cannot change anything without approval, and where the whole thing can be audited.</p>
+<p>The AI-Native Developer Platform grew out of a "NextGen AI IDE" architecture I sketched earlier this year. The first public version went up on GitHub on 13 November 2026 and is tagged <code>v0.2.0</code>.</p>
+<figure><img src="../media/projects/ai-platform-architecture.png" alt="AI-Native Developer Platform architecture overview"><figcaption>Architecture overview: router, agents, tools, knowledge layer and enterprise controls.</figcaption></figure>
+<h2>Principles</h2>
+<ul>
+<li><strong>Any model, one API.</strong> OpenAI, Anthropic Claude, Google Gemini, local Ollama models or your own gateway, with per-task routing, retry and fallback.</li>
+<li><strong>Your data stays yours.</strong> Prompts that contain card numbers, phone numbers, keys or other sensitive data stay on the local model automatically, and secrets are masked before anything leaves the machine.</li>
+<li><strong>Agents that are safe to run.</strong> Agents can read, search and analyse code on their own. Writing files and running commands always require approval, and budgets stop runaway loops and costs.</li>
+<li><strong>Understands the code base.</strong> Semantic search, a symbol index (TypeScript, Java, Python and IBM i RPG) and a knowledge graph that answers "what breaks if I change this?".</li>
+<li><strong>Enterprise-ready.</strong> Layered policies, a tamper-evident audit log, an encrypted key vault, signed extensions, cost reports and an air-gapped mode.</li>
+<li><strong>Zero runtime dependencies.</strong> The shared library exists in TypeScript, Java and Python and uses only each language's standard library.</li>
+</ul>
+<h2>Try it</h2>
+<p>You need Node.js 22+ and git: clone the repository, run <code>npm install</code> and <code>npm test</code>, then <code>npm start -- /path/to/project</code> to open the interactive AI shell. With no API key it falls back to a local Ollama model, or to an offline echo model, so you can explore every feature first.</p>
+
+<h2>Skills applied</h2>
+<p class="skills-used">TypeScript, Java 17, Python, LLM routing (OpenAI, Claude, Gemini, Ollama), agent design, MCP, code indexing (incl. IBM i RPG), security &amp; audit controls, CI/CD, npm &amp; JitPack publishing</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">v0.2.0</span> · <span class="td">13 November 2026</span><br>First public version on GitHub; CI, npm package and JitPack build.</li></ul><div class="callout"><h4>Get it</h4><p><a href="https://github.com/gauravgupta0612/ai-native-dev-platform">Source & packages</a></p></div>
+<p><a href="https://github.com/gauravgupta0612/ai-native-dev-platform">Source on GitHub</a></p>
+</article>
+<nav class="post-nav"><a href="tavrion-studio.html"><small>← Earlier</small>Tavrion Studio: an IDE that speaks Eclipse</a><span></span></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>

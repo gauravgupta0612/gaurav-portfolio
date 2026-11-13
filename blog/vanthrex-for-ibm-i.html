@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanthrex for IBM i: thirty releases in five weeks — Gaurav Gupta</title>
+<meta name="description" content="How a weekend VS Code experiment became a full IBM i workbench, release by release.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/vanthrex-for-ibm-i.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="Vanthrex for IBM i: thirty releases in five weeks — Gaurav Gupta">
+<meta property="og:description" content="How a weekend VS Code experiment became a full IBM i workbench, release by release.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · Vanthrex for IBM i</div>
+  <h1>Vanthrex for IBM i: thirty releases in five weeks</h1>
+  <p class="dek">How a weekend VS Code experiment became a full IBM i workbench, release by release.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-10-03">3 October 2026</time> · 11 min read · Latest v3.2.1</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>IBM i developers deserve tools that are as pleasant as the ones the rest of the industry takes for granted. Vanthrex started on 3 October 2026 as <em>Silverlake for IBM i</em>, a small VS Code extension to browse libraries and edit source members. Five weeks and about thirty releases later, it is an all-in-one workbench that covers the whole working day of an RPG, CL and SQL developer.</p>
+<figure><img src="../media/projects/vanthrex-rpg-checks.png" alt="RPG checks in the editor and the Problems view"><figcaption>More than 50 checks for RPG, CL and SQL while you type, shown in <em>Problems</em>.</figcaption></figure>
+<h2>The idea</h2>
+<p>Install, add a connection, open a member, press <kbd>Ctrl+S</kbd> and <kbd>Ctrl+Alt+C</kbd>. Everything else should be discoverable from one shortcut (<kbd>Ctrl+Alt+A</kbd>) that shows the tools that fit the file you are in. If you are coming from Code for IBM i, <em>Import My Code for IBM i Setup…</em> brings your connections, library lists and compile actions over in one step.</p>
+<h2>Highlights</h2>
+<ul>
+<li><strong>Editing:</strong> SEU-style source dates, RPG semantic highlighting, DDS and CL checks, a CL formatter, fixed-to-free conversion and quick fixes.</li>
+<li><strong>Understanding code:</strong> call graphs, "who calls each exported procedure", flowcharts, DSPF screen preview and database diagrams.</li>
+<li><strong>Running safely:</strong> Production and Read-only connection modes, a self-check, and error messages that tell you what to do next.</li>
+<li><strong>System insight:</strong> System Tracker, performance monitor, Library Space Map, Batch Job Timeline, Index Advisor and journal explorer.</li>
+<li><strong>AI with guard rails:</strong> the <code>@vanthrex</code> chat participant only reads, and secrets, personal data and sensitive columns are masked before anything reaches a model.</li>
+<li><strong>AS/400 at heart:</strong> GO menus, PDM-style lists and green-screen commands for people who grew up on a 5250.</li>
+</ul>
+<figure><img src="../media/projects/vanthrex-quick-fix.png" alt="Quick fix adding an IF NOT %FOUND test after CHAIN"><figcaption>Quick fixes: <kbd>Ctrl+.</kbd> on a warning adds the missing code.</figcaption></figure>
+<h2>Install</h2>
+<p>Install it from the VS Code Marketplace (<code>code --install-extension gauravgupta0612.vanthrex-ibmi</code>), or download the <code>.vsix</code> from GitHub Releases and use <em>Extensions → … → Install from VSIX</em>. Full documentation is on the <a href="https://gauravgupta0612.github.io/vanthrex-ibmi-docs/">Vanthrex documentation site</a>.</p>
+
+<h2>Skills applied</h2>
+<p class="skills-used">IBM i (RPGLE, CL, DDS, Db2 for i SQL, IFS, PASE), SSH &amp; Mapepire, IBM i Debug Service, QSYS2 services, work management &amp; security (*SECADM), VS Code API, TypeScript, i18n, Marketplace publishing</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">v3.3.0</span> · <span class="td">Upcoming</span><br>Security Audit Journal heat map, Disk Units Map, embedded SQL statistics.</li><li><span class="tv">v3.2.1</span> · <span class="td">5 November 2026</span><br>Fix: IFS Space Map on home folders.</li><li><span class="tv">v3.2.0</span> · <span class="td">5 November 2026</span><br>Visual insights: Library Space Map, Batch Job Timeline, Index Advice Chart.</li><li><span class="tv">v3.1.0</span> · <span class="td">4 November 2026</span><br>DDS checks, CL formatter, RPG semantic highlighting.</li><li><span class="tv">v3.0.0</span> · <span class="td">4 November 2026</span><br>GO menus AS/400-style, import from Code for IBM i, team setup files, code health report.</li><li><span class="tv">v2.6.0</span> · <span class="td">3 November 2026</span><br>About 150 everyday RPG features and 19 new code checks.</li><li><span class="tv">v2.5.0</span> · <span class="td">3 November 2026</span><br>AI with data protection: secrets, personal data and sensitive columns masked.</li><li><span class="tv">v2.4.0</span> · <span class="td">26 October 2026</span><br>Local development: deploy changes to the IFS, compile local files, build projects.</li><li><span class="tv">v2.3.0</span> · <span class="td">17 October 2026</span><br>Create libraries and IFS files from anywhere; automatic reconnect.</li><li><span class="tv">v2.2.0</span> · <span class="td">15 October 2026</span><br>System Tracker: the whole system on one page.</li><li><span class="tv">v2.1.0</span> · <span class="td">12 October 2026</span><br>Security Admin centre for *SECADM users.</li><li><span class="tv">v2.0.0</span> · <span class="td">12 October 2026</span><br>20 new features: RPG code generation for tables, SQL formatter, find & replace across members.</li><li><span class="tv">v1.3.0</span> · <span class="td">12 October 2026</span><br>DSPF screen preview, database diagram, compare two systems.</li><li><span class="tv">v1.2.0</span> · <span class="td">12 October 2026</span><br>Production and Read-only protection, Self-Check, errors that explain themselves.</li><li><span class="tv">v1.1.0</span> · <span class="td">11 October 2026</span><br>Export/import Excel, CSV and JSON; live performance monitor.</li><li><span class="tv">v1.0.0</span> · <span class="td">11 October 2026</span><br>Storage & cleanup advisor, live alerts, message files.</li><li><span class="tv">v0.11.0</span> · <span class="td">11 October 2026</span><br>Work management, users & security, save and restore.</li><li><span class="tv">v0.10.0</span> · <span class="td">11 October 2026</span><br>User interface translated into French, Spanish, German, Italian and Portuguese.</li><li><span class="tv">v0.9.0</span> · <span class="td">11 October 2026</span><br>Journal Explorer, Check Authority, data queues and data areas.</li><li><span class="tv">v0.8.0</span> · <span class="td">11 October 2026</span><br>Index Advisor, compare table data DEV ↔ PROD, message help on hover.</li><li><span class="tv">v0.7.1</span> · <span class="td">10 October 2026</span><br>Run SQL Query from anywhere, with a sortable result grid.</li><li><span class="tv">v0.7.0</span> · <span class="td">9 October 2026</span><br>Who calls each exported procedure of a service program.</li><li><span class="tv">v0.6.1</span> · <span class="td">5 October 2026</span><br>Stable (no longer Preview) on the Marketplace; automated publishing.</li><li><span class="tv">v0.6.0</span> · <span class="td">5 October 2026</span><br><code>@vanthrex</code> chat assistant: /explain, /document, /review, /modernize; read-only by design.</li><li><span class="tv">v0.5.0</span> · <span class="td">3 October 2026</span><br>Debug Program: full VS Code debug sessions through the IBM i Debug Service.</li><li><span class="tv">v0.4.0</span> · <span class="td">3 October 2026</span><br>Object information page; members always open with the Mapepire SQL engine.</li><li><span class="tv">v0.3.1</span> · <span class="td">4 October 2026</span><br>Documentation site goes online.</li><li><span class="tv">v0.3.0</span> · <span class="td">3 October 2026</span><br>Renamed <strong>Vanthrex for IBM i</strong>; first Marketplace release; SEU-style source dates.</li><li><span class="tv">v0.2.0</span> · <span class="td">3 October 2026</span><br>System dashboard, Active Jobs and Messages views.</li><li><span class="tv">v0.1.0</span> · <span class="td">3 October 2026</span><br>First release as <em>Silverlake</em>: guided connection, libraries & source browser, quick-action menu.</li></ul><div class="callout"><h4>Latest download: Vanthrex for IBM i v3.2.1</h4><ul><li><a href="https://github.com/gauravgupta0612/silverlake-ibmi/releases/download/v3.2.1/vanthrex-ibmi-3.2.1.vsix">⬇ vanthrex-ibmi-3.2.1.vsix</a> <span class="size">(5.1 MB)</span></li></ul><p>Every earlier version is on the <a href="../downloads.html#vanthrex-for-ibm-i">Downloads page</a>.</p></div>
+<p><a href="https://github.com/gauravgupta0612/silverlake-ibmi">Source on GitHub</a> · <a href="https://gauravgupta0612.github.io/vanthrex-ibmi-docs/">Documentation</a> · <a href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi">VS Code Marketplace</a></p>
+</article>
+<nav class="post-nav"><span></span><a href="ibm-i-zos-explorer.html" style="text-align:right"><small>Later →</small>IBM i &amp; z/OS Explorer: two platforms, one sidebar</a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>

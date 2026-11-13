@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM i &amp; z/OS Explorer: two platforms, one sidebar — Gaurav Gupta</title>
+<meta name="description" content="A single extension for developers who work on both IBM midrange and mainframe systems.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/ibm-i-zos-explorer.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="IBM i &amp; z/OS Explorer: two platforms, one sidebar — Gaurav Gupta">
+<meta property="og:description" content="A single extension for developers who work on both IBM midrange and mainframe systems.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · IBM i &amp; z/OS Explorer</div>
+  <h1>IBM i &amp; z/OS Explorer: two platforms, one sidebar</h1>
+  <p class="dek">A single extension for developers who work on both IBM midrange and mainframe systems.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-10-09">9 October 2026</time> · 4 min read · Latest v1.1.0</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>Many enterprise developers move between IBM i and z/OS during the same week, and usually need two sets of tools to do it. IBM i &amp; z/OS Explorer, released on 9 October 2026, puts both behind one icon in the VS Code sidebar.</p>
+<h2>z/OS, over z/OSMF REST</h2>
+<ul>
+<li>Data sets, PDS/PDSE members and USS files: browse, edit and save back, with an ETag check if someone else changed the member.</li>
+<li>Submit JCL, follow jobs and read spool output; run TSO and MVS console commands.</li>
+<li>Search inside a PDS, copy and rename members, view data set attributes, and generate compile/link/run JCL from templates (1.1.0).</li>
+</ul>
+<h2>IBM i, over SSH and SQL</h2>
+<ul>
+<li>Libraries, source members and IFS; library list and current library; compile with errors in <em>Problems</em>.</li>
+<li>Run CL and SQL (sortable grid with CSV export), view spooled files, active jobs and job logs, and reply to QSYSOPR messages.</li>
+<li>Object actions such as DSPOBJD, DSPPGMREF and DSPFFD, plus an SSH (PASE) terminal.</li>
+</ul>
+<p>Documentation: <a href="https://gauravgupta0612.github.io/IBM-i-z-OS-Explorer-doc/">IBM i &amp; z/OS Explorer docs</a>.</p>
+
+<h2>Skills applied</h2>
+<p class="skills-used">IBM i (SSH, SQL, CL, spool, QSYSOPR), z/OS (z/OSMF REST, JCL, TSO, MVS console, PDS/PDSE, USS), VS Code API, TypeScript</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">v1.1.0</span> · <span class="td">9 October 2026</span><br>Search in PDS, copy/rename members and data sets, data set attributes.</li><li><span class="tv">v1.0.0</span> · <span class="td">9 October 2026</span><br>First release: z/OS via z/OSMF, IBM i via SSH + SQL.</li></ul><div class="callout"><h4>Latest download: IBM i &amp; z/OS Explorer v1.1.0</h4><ul><li><a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/download/v1.1.0/ibmi-zos-explorer-1.1.0.vsix">⬇ ibmi-zos-explorer-1.1.0.vsix</a> <span class="size">(145 KB)</span></li></ul><p>Every earlier version is on the <a href="../downloads.html#ibm-i-zos-explorer">Downloads page</a>.</p></div>
+<p><a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer">Source on GitHub</a> · <a href="https://gauravgupta0612.github.io/IBM-i-z-OS-Explorer-doc/">Documentation</a></p>
+</article>
+<nav class="post-nav"><a href="vanthrex-for-ibm-i.html"><small>← Earlier</small>Vanthrex for IBM i: thirty releases in five weeks</a><a href="devsuite.html" style="text-align:right"><small>Later →</small>DevSuite: one engine, five focused extensions</a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>

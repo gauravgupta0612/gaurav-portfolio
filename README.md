@@ -367,3 +367,19 @@ For issues or questions:
 6. **Add custom domain** - Point your purchased domain to the site
 
 Happy building! 🚀
+
+## Projects, Journal and Downloads (Nov 2026)
+
+The home page, `blog/` (one journal entry per project) and `downloads.html` (every release with its .exe / .vsix files) are generated:
+
+- Project text and release notes: `tools/content.py`
+- Release files and dates: `data/releases.json`, fetched from GitHub Releases
+
+After publishing a new release, run `python tools/update-releases.py` (refreshes the release list and rebuilds the pages), then commit and push.
+To add a new project, add it to `PROJECTS` and `ORDER` in `tools/content.py` and its repository to `REPOS` in `tools/update-releases.py`.
+
+### RDi 9.9 fix list page
+`rdi-9-9.html` is generated from `tools/rdi.py`. When IBM publishes a new fix pack (see https://www.ibm.com/support/pages/fix-list-rational-developer-i), add a row at the top of `RDI99`, move the "current" flag (`True`) to it, and run `python tools/build.py .`.
+
+### HTTPS
+Every page upgrades insecure requests and redirects http → https in the browser; `server.js` also redirects to HTTPS and sends an HSTS header when the Node server is used.

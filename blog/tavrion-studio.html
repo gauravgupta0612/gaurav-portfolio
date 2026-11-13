@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tavrion Studio: an IDE that speaks Eclipse — Gaurav Gupta</title>
+<meta name="description" content="Why I built a lightweight, VS Code-style IDE for Eclipse workspaces, and what ships in the Windows installer.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/tavrion-studio.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="Tavrion Studio: an IDE that speaks Eclipse — Gaurav Gupta">
+<meta property="og:description" content="Why I built a lightweight, VS Code-style IDE for Eclipse workspaces, and what ships in the Windows installer.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · Tavrion Studio</div>
+  <h1>Tavrion Studio: an IDE that speaks Eclipse</h1>
+  <p class="dek">Why I built a lightweight, VS Code-style IDE for Eclipse workspaces, and what ships in the Windows installer.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-11-12">12 November 2026</time> · 7 min read · Latest v1.5.0</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>Eclipse is still where much of the enterprise Java world lives, with plug-in projects, <code>.target</code> platforms and carefully tuned launch configurations. VS Code feels lighter and faster, but it has never quite understood an Eclipse workspace. Tavrion Studio is my attempt to have both: the editor experience of VS Code with an engine that reads Eclipse projects the way Eclipse does.</p>
+<p>The project began on 12 November 2026 under the working name <em>Nexora Studio</em>. Four builds (1.0 to 1.3) went out under that name the same day. To avoid any naming conflicts, it was renamed <strong>Tavrion Studio</strong> for version 1.4, and the source moved to its own public repository.</p>
+<h2>What it does</h2>
+<ul>
+<li><strong>Eclipse compatibility.</strong> Reads <code>.project</code>, <code>.classpath</code> and JDT compliance settings, builds dependent projects first in Eclipse order, and imports and exports Eclipse <code>.launch</code> files.</li>
+<li><strong>Run and debug.</strong> Launch configurations live in <code>.tavrion/launch.json</code>. The debugger is built on JDWP and jdb and supports conditional breakpoints, hit counts, logpoints, Run to Line, watch expressions, a call stack and hover-to-inspect values.</li>
+<li><strong>Java editing on Monaco.</strong> Eclipse templates (<code>sysout</code>, <code>main</code>, <code>foreach</code>…), auto-import, Organize Imports, Outline, Go to Definition and Open Type, with javac errors shown inline.</li>
+<li><strong>PDE and OSGi.</strong> Set a <code>.target</code> file as the target platform. Bundles come from local p2 and Maven caches first, then from the p2 repositories, and Equinox or Felix launches start with the Gogo shell.</li>
+<li><strong>Developer Toolbox.</strong> Environment Doctor, a TODO/FIXME finder, Ports and Processes, and a REST client, all one shortcut away.</li>
+<li><strong>Beyond Java.</strong> It also opens TypeScript, React, React Native/Expo, Python, Go, Rust, C/C++ and .NET projects.</li>
+</ul>
+<h2>Download</h2>
+<p>Tavrion Studio ships as two Windows executables on every release: <em>Setup</em> (Start menu and desktop shortcuts, with a choice of install folder) and <em>Portable</em> (no installation needed). It needs a JDK, version 8 or later; 11, 17 or 21 is recommended.</p>
+<div class="callout"><h4>Note on Windows SmartScreen</h4><p>The executables are not code-signed yet, so Windows may show a warning. Choose <em>More info → Run anyway</em>.</p></div>
+
+<h2>Skills applied</h2>
+<p class="skills-used">Electron, Node.js, Java (javac, JDWP/jdb debugger), Eclipse JDT &amp; PDE model, OSGi (Equinox/Felix), p2 &amp; Maven resolution, Monaco editor, Windows installer (NSIS)</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">v1.5.0</span> · <span class="td">13 November 2026</span><br>Current release; Setup and Portable .exe files on GitHub Releases.</li><li><span class="tv">v1.4.0</span> · <span class="td">13 November 2026</span><br>Renamed <strong>Tavrion Studio</strong>; first public release with Setup and Portable .exe files.</li><li><span class="tv">v1.0.0 – 1.3.0</span> · <span class="td">12 November 2026</span><br>Built as <em>Nexora Studio</em>: Eclipse model, build, run and debug engine, and the Windows installer.</li></ul><div class="callout"><h4>Latest download: Tavrion Studio 1.5.0</h4><ul><li><a href="https://github.com/gauravgupta0612/Tavrion-studio/releases/download/v1.5.0/Tavrion.Studio.Portable.1.5.0.exe">⬇ Tavrion.Studio.Portable.1.5.0.exe</a> <span class="size">(79.8 MB)</span></li><li><a href="https://github.com/gauravgupta0612/Tavrion-studio/releases/download/v1.5.0/Tavrion.Studio.Setup.1.5.0.exe">⬇ Tavrion.Studio.Setup.1.5.0.exe</a> <span class="size">(80.0 MB)</span></li></ul><p>Every earlier version is on the <a href="../downloads.html#tavrion-studio">Downloads page</a>.</p></div>
+<p><a href="https://github.com/gauravgupta0612/tavrion-studio">Source on GitHub</a></p>
+</article>
+<nav class="post-nav"><a href="devflow.html"><small>← Earlier</small>DevFlow: a productivity toolkit that works offline</a><a href="ai-native-dev-platform.html" style="text-align:right"><small>Later →</small>Designing an AI-native developer platform</a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JarPilot: deploying JARs to IBM i without the drama — Gaurav Gupta</title>
+<meta name="description" content="Every install validated, checksummed, backed up and logged, with rollback one command away.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/jarpilot.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="JarPilot: deploying JARs to IBM i without the drama — Gaurav Gupta">
+<meta property="og:description" content="Every install validated, checksummed, backed up and logged, with rollback one command away.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · JarPilot for IBM i</div>
+  <h1>JarPilot: deploying JARs to IBM i without the drama</h1>
+  <p class="dek">Every install validated, checksummed, backed up and logged, with rollback one command away.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-10-10">10 October 2026</time> · 4 min read · Latest v1.2.1</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>Copying a JAR into the IFS sounds simple until a half-written file, a wrong owner or a missing backup takes a server down. JarPilot, started on 10 October 2026, turns that copy into a repeatable, safe procedure.</p>
+<h2>How each install works</h2>
+<p>Validate the JAR → SHA-256 check → back up the current JAR → atomic replace → <code>CHGAUT</code>/<code>CHGOWN</code> → optional restart CL → log and history. If something is wrong, a single <code>rollback</code> restores the previous version, and <code>-DryRun</code> previews every step first.</p>
+<h2>Use it from anywhere</h2>
+<ul>
+<li><strong>From Windows:</strong> <code>jarpilot.ps1</code> uploads and installs over SSH in one command.</li>
+<li><strong>On IBM i:</strong> <code>jarpilot.sh</code> runs in PASE/QSH.</li>
+<li><strong>From 5250 or the job scheduler:</strong> a CL wrapper, <code>CALL JARPILOT</code>.</li>
+<li><strong>From the editor:</strong> a VS Code extension. Right-click a <code>.jar</code> and choose <em>Install</em>.</li>
+<li><strong>Server setup:</strong> upload a setup JAR and JarPilot answers the installer's questions, checking each answer on the IBM i first so a second server never reuses an existing directory or library.</li>
+</ul>
+
+<h2>Skills applied</h2>
+<p class="skills-used">IBM i IFS &amp; PASE (QSH), CL (CRTBNDCL, CHGAUT, CHGOWN), SSH, PowerShell, Bash, SHA-256 integrity, atomic deployment &amp; rollback, VS Code extension</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">v1.2.1</span> · <span class="td">13 October 2026</span><br>VS Code extension (.vsix) and assistant plugin.</li><li><span class="tv">v1.1.0</span> · <span class="td">13 October 2026</span><br>Guided server setup from a setup JAR.</li><li><span class="tv">v1.0.0</span> · <span class="td">10 October 2026</span><br>First release: core installer, PowerShell and CL wrappers.</li></ul><div class="callout"><h4>Latest download: JarPilot v1.0.0</h4><ul><li><a href="https://github.com/gauravgupta0612/jatpilot/releases/tag/v1.0.0">Release page</a></li></ul><p>Every earlier version is on the <a href="../downloads.html#jarpilot">Downloads page</a>.</p></div>
+<p><a href="https://github.com/gauravgupta0612/jatpilot">Source on GitHub</a></p>
+</article>
+<nav class="post-nav"><a href="routinel.html"><small>← Earlier</small>Routinel: find every API in your code and call it</a><a href="salesforce-devpilot-pack.html" style="text-align:right"><small>Later →</small>Salesforce DevPilot Pack: know what your change will break</a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>

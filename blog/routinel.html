@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Routinel: find every API in your code and call it — Gaurav Gupta</title>
+<meta name="description" content="Route + Sentinel: endpoint discovery, a Postman-style client and a mock server, all inside VS Code.">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="canonical" href="https://gaurav-gupta.co.in/blog/routinel.html">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<meta property="og:title" content="Routinel: find every API in your code and call it — Gaurav Gupta">
+<meta property="og:description" content="Route + Sentinel: endpoint discovery, a Postman-style client and a mock server, all inside VS Code.">
+<link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/classic.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
+  <p class="name">Gaurav Gupta</p>
+  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
+  <hr class="double-rule">
+</header>
+<nav class="nav" aria-label="Main">
+  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
+  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</nav>
+
+<main class="narrow">
+<header class="article-head">
+  <div class="kicker">The Journal · Routinel – API Finder &amp; Client</div>
+  <h1>Routinel: find every API in your code and call it</h1>
+  <p class="dek">Route + Sentinel: endpoint discovery, a Postman-style client and a mock server, all inside VS Code.</p>
+  <div class="byline">By Gaurav Gupta · <time datetime="2026-10-09">9 October 2026</time> · 5 min read · Latest v1.3.0</div>
+</header>
+<hr class="double-rule">
+<article class="article">
+
+<p>Joining a new code base usually starts with the same question: which endpoints does this service expose, and what do they expect? Routinel (from <em>Route</em> and <em>Sentinel</em>), first released on 9 October 2026, scans the workspace and answers it, then lets you call each endpoint without leaving the editor.</p>
+<figure><img src="../media/projects/routinel-client.png" alt="Routinel request and response view"><figcaption>The built-in client: params, headers, body, auth and a pretty-printed response.</figcaption></figure>
+<h2>Highlights</h2>
+<ul>
+<li><strong>Automatic discovery</strong> across Express, Koa, Fastify, NestJS, Next.js, FastAPI, Flask, Django/DRF, Spring and more, including router prefixes and context paths.</li>
+<li><strong>Parameters from code:</strong> path, query, headers, cookies, form fields, uploads and JSON bodies generated from your DTOs and models.</li>
+<li><strong>A Postman-style client</strong> with environments, secrets kept in the OS keychain, request chaining, collections and history.</li>
+<li><strong>Import and export</strong> Postman v2.1 collections and OpenAPI 3, plus code generation for cURL, PowerShell, fetch and Python.</li>
+<li><strong>Mock server (1.3.0)</strong> that serves every discovered API locally from saved mocks, OpenAPI examples or generated responses.</li>
+</ul>
+
+<h2>Skills applied</h2>
+<p class="skills-used">Static analysis of Express/NestJS/Spring/FastAPI/Django routes, OpenAPI 3, Postman v2.1, VS Code SecretStorage, mock servers, TypeScript</p>
+<h2>Release history</h2><ul class="timeline"><li><span class="tv">v1.3.0</span> · <span class="td">10 October 2026</span><br>Mock server for every discovered API.</li><li><span class="tv">v1.2.1</span> · <span class="td">9 October 2026</span><br>Maintenance release.</li><li><span class="tv">v1.1.2</span> · <span class="td">9 October 2026</span><br>Marketplace publisher <code>gauravgupta0612</code>; repository links.</li><li><span class="tv">v1.1.1</span> · <span class="td">9 October 2026</span><br>Project names when adding folders or Git repositories.</li><li><span class="tv">v1.1.0</span> · <span class="td">9 October 2026</span><br>Renamed <strong>Routinel</strong>.</li><li><span class="tv">v1.0.0</span> · <span class="td">9 October 2026</span><br>First release (as Dataman API Lens).</li></ul><div class="callout"><h4>Latest download: Routinel v1.3.0</h4><ul><li><a href="https://github.com/gauravgupta0612/dataman-api-lens/releases/download/v1.3.0/routinel-1.3.0.vsix">⬇ routinel-1.3.0.vsix</a> <span class="size">(304 KB)</span></li></ul><p>Every earlier version is on the <a href="../downloads.html#routinel">Downloads page</a>.</p></div>
+<p><a href="https://github.com/gauravgupta0612/dataman-api-lens">Source on GitHub</a></p>
+</article>
+<nav class="post-nav"><a href="devsuite.html"><small>← Earlier</small>DevSuite: one engine, five focused extensions</a><a href="jarpilot.html" style="text-align:right"><small>Later →</small>JarPilot: deploying JARs to IBM i without the drama</a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <span class="fleuron">❦</span>
+    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
+    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
+    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  </div>
+</footer>
+
+<div id="chatbotWidget" class="chatbot-widget">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+    <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
+  <div class="chatbot-messages" id="chatbotMessages">
+    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+  </div>
+  <div class="chatbot-input-area">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<script src="../js/site.js"></script>
+</body>
+</html>
