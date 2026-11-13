@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DevFlow: a productivity toolkit that works offline — Gaurav Gupta</title>
 <meta name="description" content="Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.">
+<meta name="theme-color" content="#0b1020">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="canonical" href="https://gaurav-gupta.co.in/blog/devflow.html">
-<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));
+try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
 <meta property="og:title" content="DevFlow: a productivity toolkit that works offline — Gaurav Gupta">
 <meta property="og:description" content="Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gaurav-gupta.co.in/blog/devflow.html">
 <link rel="icon" href="../media/gg-logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../css/classic.css">
+<link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
-<header class="masthead">
-  <a class="monogram" href="../index.html" aria-label="Home">GG</a>
-  <p class="name">Gaurav Gupta</p>
-  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
-  <hr class="double-rule">
+<div class="progress" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="../index.html" aria-label="Gaurav Gupta, home"><span class="logo">GG</span><span class="brand-name">Gaurav Gupta</span></a>
+    <nav class="nav" aria-label="Main"><ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active" aria-current="page">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
+    <div class="top-actions">
+      <button class="icon-btn theme-btn" aria-label="Switch light or dark theme" title="Light / dark"><i class="fas fa-circle-half-stroke"></i></button>
+      <a class="btn primary sm hide-sm" href="../downloads.html"><i class="fas fa-download"></i> Downloads</a>
+      <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
 </header>
-<nav class="nav" aria-label="Main">
-  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
-  <ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#about">About</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
-</nav>
 
 <main class="narrow">
 <header class="article-head">
-  <div class="kicker">The Journal · DevFlow</div>
+  <span class="eyebrow">The Journal · DevFlow</span>
   <h1>DevFlow: a productivity toolkit that works offline</h1>
   <p class="dek">Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.</p>
   <div class="byline">By Gaurav Gupta · <time datetime="2026-10-19">19 October 2026</time> · 5 min read · Latest v0.1.0</div>
@@ -56,26 +63,28 @@
 <nav class="post-nav"><a href="salesforce-devpilot-pack.html"><small>← Earlier</small>Salesforce DevPilot Pack: know what your change will break</a><a href="tavrion-studio.html" style="text-align:right"><small>Later →</small>Tavrion Studio: an IDE that speaks Eclipse</a></nav>
 </main>
 <footer class="footer">
-  <div class="wrap">
-    <span class="fleuron">❦</span>
-    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
-    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="../downloads.html">Downloads</a></p>
-    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  <div class="wrap footer-grid">
+    <div><a class="brand" href="../index.html"><span class="logo">GG</span><span class="brand-name">Gaurav Gupta</span></a>
+      <p class="muted">Modern developer tools for IBM i, Java and AI. Built in Lucknow, India.</p></div>
+    <div><h4>Explore</h4><a href="../index.html#projects">Projects</a><a href="../blog/index.html">Journal</a><a href="../downloads.html">Downloads</a><a href="../rdi-9-9.html">RDi 9.9 fix list</a></div>
+    <div><h4>Connect</h4><a href="https://github.com/gauravgupta0612"><i class="fab fa-github"></i> GitHub</a><a href="https://www.linkedin.com/in/gauravgupta865"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="https://www.salesforce.com/trailblazer/ggupta56"><i class="fas fa-star"></i> Trailblazer</a><a href="../meetings.html"><i class="fas fa-calendar"></i> Book a meeting</a></div>
   </div>
+  <div class="wrap footer-bottom"><span>&copy; 2026 Gaurav Gupta</span><span class="secure"><i class="fas fa-lock"></i> Served over HTTPS</span><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count" loading="lazy"></div>
 </footer>
+<button class="to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-<div id="chatbotWidget" class="chatbot-widget">
-  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+<div id="chatbotWidget" class="chatbot-widget" role="dialog" aria-label="Assistant">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-sparkles"></i> Ask about my work</div>
     <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
   <div class="chatbot-messages" id="chatbotMessages">
-    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+    <div class="message bot-message"><p>Hi! Ask me about Gaurav's projects, releases, IBM i skills or experience.</p></div>
   </div>
   <div class="chatbot-input-area">
-    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input" aria-label="Your question">
     <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>
-<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant" aria-label="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
 <script src="../js/site.js"></script>
 </body>
 </html>

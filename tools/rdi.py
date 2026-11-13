@@ -36,8 +36,8 @@ def build_rdi(out, head, masthead, footer, tail):
                 "IBM Rational Developer for i 9.9: every fix pack from GA to 9.9.0.8 with dates, APAR fixes and download links, plus the 9.8 fix pack history.",
                 "", path="rdi-9-9.html") + masthead("", "rdi") + f"""
 <main class="wrap">
-<section>
-  <div class="section-head"><div class="kicker">Reference · IBM i</div><h2>IBM Rational Developer for i 9.9</h2><div class="ornament">✦ ✦ ✦</div>
+<section class="section">
+  <div class="section-head"><span class="eyebrow">Reference · IBM i</span><h2>IBM Rational Developer for i 9.9</h2>
     <p>Every 9.9 version and fix pack in one place, with release dates, what each one fixed, and where to download it. Current level: <strong>9.9.0.8 (FP8)</strong>.</p></div>
 
   <div class="narrow" style="padding:0">

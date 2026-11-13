@@ -1,197 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gaurav Gupta — Software Engineer · Projects, Journal &amp; Downloads</title>
-<meta name="description" content="Portfolio of Gaurav Gupta: Vanthrex for IBM i, Tavrion Studio, AI-Native Developer Platform and other developer tools, with release notes and downloads.">
+<title>Gaurav Gupta — Developer tools for IBM i, Java &amp; AI</title>
+<meta name="description" content="Gaurav Gupta builds modern developer tools for IBM i, Java and AI: Vanthrex for IBM i, Tavrion Studio, the AI-Native Developer Platform and more, with release notes and downloads.">
+<meta name="theme-color" content="#0b1020">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <link rel="canonical" href="https://gaurav-gupta.co.in/">
-<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));</script>
-<meta property="og:title" content="Gaurav Gupta — Software Engineer · Projects, Journal &amp; Downloads">
-<meta property="og:description" content="Portfolio of Gaurav Gupta: Vanthrex for IBM i, Tavrion Studio, AI-Native Developer Platform and other developer tools, with release notes and downloads.">
+<script>if (location.protocol === "http:" && !/^(localhost|127[.]|192[.]168[.])/.test(location.hostname)) location.replace("https:" + location.href.substring(5));
+try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+<meta property="og:title" content="Gaurav Gupta — Developer tools for IBM i, Java &amp; AI">
+<meta property="og:description" content="Gaurav Gupta builds modern developer tools for IBM i, Java and AI: Vanthrex for IBM i, Tavrion Studio, the AI-Native Developer Platform and more, with release notes and downloads.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gaurav-gupta.co.in/">
 <link rel="icon" href="media/gg-logo.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="css/classic.css">
+<link rel="stylesheet" href="css/premium.css">
 </head>
 <body>
-<header class="masthead">
-  <a class="monogram" href="index.html" aria-label="Home">GG</a>
-  <p class="name">Gaurav Gupta</p>
-  <p class="motto">Software engineer · IBM i, Java &amp; developer tools · Salesforce</p>
-  <hr class="double-rule">
+<div class="progress" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="index.html" aria-label="Gaurav Gupta, home"><span class="logo">GG</span><span class="brand-name">Gaurav Gupta</span></a>
+    <nav class="nav" aria-label="Main"><ul><li><a href="index.html" class="active" aria-current="page">Home</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="blog/index.html">Journal</a></li><li><a href="downloads.html">Downloads</a></li><li><a href="rdi-9-9.html">RDi 9.9</a></li><li><a href="index.html#experience">Experience</a></li><li><a href="meetings.html">Meetings</a></li><li><a href="community.html">Community</a></li><li><a href="index.html#contact">Contact</a></li></ul></nav>
+    <div class="top-actions">
+      <button class="icon-btn theme-btn" aria-label="Switch light or dark theme" title="Light / dark"><i class="fas fa-circle-half-stroke"></i></button>
+      <a class="btn primary sm hide-sm" href="downloads.html"><i class="fas fa-download"></i> Downloads</a>
+      <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
 </header>
-<nav class="nav" aria-label="Main">
-  <button class="nav-toggle" aria-label="Open menu">☰ Menu</button>
-  <ul><li><a href="index.html" class="active">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="blog/index.html">Journal</a></li><li><a href="downloads.html">Downloads</a></li><li><a href="rdi-9-9.html">RDi 9.9</a></li><li><a href="index.html#experience">Experience</a></li><li><a href="meetings.html">Meetings</a></li><li><a href="community.html">Community</a></li><li><a href="index.html#contact">Contact</a></li></ul>
-</nav>
 
 <main>
-<section id="about" class="wrap">
-  <div class="intro">
-    <figure class="portrait"><div class="frame"><img src="media/image (1).png" alt="Portrait of Gaurav Gupta"></div>
-      <figcaption>Noida &amp; Lucknow, India</figcaption></figure>
-    <div>
-      <h2>I build the tools that take IBM i development, and the developers who do it, into the next decade.</h2>
-      <p class="dropcap">For more than six years I have shipped software that real teams run every day: first enterprise CRM on Salesforce, then Java, Eclipse and VS Code tooling for IBM i at ARCAD Software, where I am a Senior Software Engineer and act as PMO for every R&amp;D product.</p>
-      <p><strong>My mission is simple:</strong> no developer should have to choose between a platform that runs the business and tools that feel modern. IBM i, z/OS and Java systems hold some of the world's most important data, and the people who look after them deserve editors that check code as they type, debuggers that just work, AI that protects their secrets, and deployments they can undo with one command.</p>
-      <p>Since 20 September 2026 I have designed, built and published <strong>9 products and 36 public releases</strong>, from Vanthrex, a complete IBM i workbench for VS Code, to Tavrion Studio, an Eclipse-ready IDE for Windows. Each has a story in the <a href="blog/index.html">Journal</a>, and every installer is on the <a href="downloads.html">Downloads</a> page.</p>
-      <div class="facts">
-        <div><strong>9</strong><span>new projects</span></div>
-        <div><strong>36</strong><span>public releases</span></div>
-        <div><strong>6+</strong><span>years' experience</span></div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="pill"><span class="dot"></span> Senior Software Engineer · ARCAD Software · 6+ years</span>
+      <h1>I build the tools that bring <span class="grad">IBM i, Java &amp; AI</span> development into the next decade.</h1>
+      <p class="lead">IBM i, z/OS and Java systems run some of the world's most important businesses. The developers who look after them deserve editors that check code as they type, debuggers that just work, AI that protects their secrets, and deployments they can undo with one command. That is what I build.</p>
+      <div class="cta">
+        <a class="btn primary lg" href="#projects"><i class="fas fa-cubes"></i> Explore projects</a>
+        <a class="btn ghost lg" href="downloads.html"><i class="fas fa-download"></i> Downloads</a>
+        <a class="btn ghost lg icon-only" href="https://github.com/gauravgupta0612" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
-      <a class="btn primary" href="#projects">See the projects</a>
-      <a class="btn" href="downloads.html">Downloads</a>
-      <a class="btn" href="https://github.com/gauravgupta0612">GitHub</a>
+      <dl class="stats">
+        <div><dt data-count="9">9</dt><dd>products since Sep 2026</dd></div>
+        <div><dt data-count="36">36</dt><dd>public releases</dd></div>
+        <div><dt data-count="6" data-suffix="+">6+</dt><dd>years shipping software</dd></div>
+        <div><dt data-count="213">213</dt><dd>Trailhead badges</dd></div>
+      </dl>
+    </div>
+    <div class="hero-visual">
+      <div class="orbit"><div class="photo"><img src="media/image (1).png" alt="Gaurav Gupta"></div></div>
+      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v3.2.1 · 14 releases on GitHub</span></div></a>
+      <a class="float f2" href="blog/tavrion-studio.html"><i class="fas fa-laptop-code"></i><div><strong>Tavrion Studio</strong><span>Windows .exe · v1.5.0</span></div></a>
+      <a class="float f3" href="rdi-9-9.html"><i class="fas fa-list-check"></i><div><strong>RDi 9.9 fix list</strong><span>Current: 9.9.0.8</span></div></a>
     </div>
   </div>
+  <div class="marquee" aria-hidden="true"><div class="track"><span>IBM i</span><span>RPGLE</span><span>CL</span><span>Db2 for i</span><span>RDi 9.9</span><span>z/OS</span><span>Java 21</span><span>Eclipse / OSGi</span><span>VS Code</span><span>TypeScript</span><span>Electron</span><span>LLMs</span><span>MCP</span><span>Salesforce</span><span>GitHub Actions</span><span>IBM i</span><span>RPGLE</span><span>CL</span><span>Db2 for i</span><span>RDi 9.9</span><span>z/OS</span><span>Java 21</span><span>Eclipse / OSGi</span><span>VS Code</span><span>TypeScript</span><span>Electron</span><span>LLMs</span><span>MCP</span><span>Salesforce</span><span>GitHub Actions</span></div></div>
 </section>
 
-<section id="projects" class="wrap">
-  <div class="section-head"><div class="kicker">The Workshop</div><h2>Recent Projects</h2><div class="ornament">✦ ✦ ✦</div>
-    <p>Everything I have built and released since 20 September 2026, newest first.</p></div>
-  <div class="catalogue"><article class="entry">
-  <span class="no">No. I</span>
-  <h3><a href="blog/ai-native-dev-platform.html">AI-Native Developer Platform</a></h3>
-  <div class="meta">Begun 13 November 2026<span class="badge-ver">v0.2.0</span></div>
-  <p>A security-first platform for building AI developer tools: multi-model routing, safe agents, code intelligence and enterprise controls.</p>
-  <div class="tags">TypeScript · Java · Python · LLM · MCP</div>
-  <p class="skills-used"><strong>Skills:</strong> TypeScript, Java 17, Python, LLM routing (OpenAI, Claude, Gemini, Ollama), agent design, MCP, code indexing (incl. IBM i RPG), security &amp; audit controls, CI/CD, npm &amp; JitPack publishing</p>
-  <div class="links"><a href="blog/ai-native-dev-platform.html">Read the story</a> <a href="https://github.com/gauravgupta0612/ai-native-dev-platform">⬇ Source & packages</a> <a href="https://github.com/gauravgupta0612/ai-native-dev-platform">Source</a></div>
-</article><article class="entry">
-  <span class="no">No. II</span>
-  <h3><a href="blog/tavrion-studio.html">Tavrion Studio</a></h3>
-  <div class="meta">Begun 12 November 2026<span class="badge-ver">v1.5.0</span></div>
-  <p>A VS Code-style IDE that opens, builds, runs and debugs Eclipse Java projects.</p>
-  <div class="tags">Electron · Java · Eclipse / OSGi · Monaco</div>
-  <p class="skills-used"><strong>Skills:</strong> Electron, Node.js, Java (javac, JDWP/jdb debugger), Eclipse JDT &amp; PDE model, OSGi (Equinox/Felix), p2 &amp; Maven resolution, Monaco editor, Windows installer (NSIS)</p>
-  <div class="links"><a href="blog/tavrion-studio.html">Read the story</a> <a href="https://github.com/gauravgupta0612/tavrion-studio/releases/latest">⬇ Windows installer (.exe)</a> <a href="https://github.com/gauravgupta0612/tavrion-studio">Source</a></div>
-</article><article class="entry">
-  <span class="no">No. III</span>
-  <h3><a href="blog/devflow.html">DevFlow</a></h3>
-  <div class="meta">Begun 19 October 2026<span class="badge-ver">v0.1.0</span></div>
-  <p>One VS Code extension for the daily developer workflow: Environment Doctor, Git Assistant, Build Doctor, API Workspace and a Project Dashboard.</p>
-  <div class="tags">VS Code · TypeScript · Developer productivity</div>
-  <p class="skills-used"><strong>Skills:</strong> VS Code API, TypeScript, Git hooks &amp; secret scanning, Maven/Gradle/npm/Python build diagnostics, REST tooling</p>
-  <div class="links"><a href="blog/devflow.html">Read the story</a></div>
-</article><article class="entry">
-  <span class="no">No. IV</span>
-  <h3><a href="blog/salesforce-devpilot-pack.html">Salesforce DevPilot Pack</a></h3>
-  <div class="meta">Begun 18 October 2026<span class="badge-ver">v1.0.0</span></div>
-  <p>A Salesforce developer pack for VS Code built around a Change Impact Analyzer, with health and release checks that run locally.</p>
-  <div class="tags">VS Code · Salesforce · Apex / LWC · CI reports</div>
-  <p class="skills-used"><strong>Skills:</strong> Salesforce DX, Apex, LWC, Aura, Flows, metadata dependency graphs, risk scoring, VS Code API, GitLab &amp; Jenkins reporting</p>
-  <div class="links"><a href="blog/salesforce-devpilot-pack.html">Read the story</a> <a href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack/releases/latest">⬇ Release v1.0.0</a> <a href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack">Source</a></div>
-</article><article class="entry">
-  <span class="no">No. V</span>
-  <h3><a href="blog/jarpilot.html">JarPilot for IBM i</a></h3>
-  <div class="meta">Begun 10 October 2026<span class="badge-ver">v1.2.1</span></div>
-  <p>Fast, safe JAR installation on the IBM i IFS: validate, checksum, back up, replace atomically and roll back with one command.</p>
-  <div class="tags">IBM i · Shell / PASE · PowerShell · CL</div>
-  <p class="skills-used"><strong>Skills:</strong> IBM i IFS &amp; PASE (QSH), CL (CRTBNDCL, CHGAUT, CHGOWN), SSH, PowerShell, Bash, SHA-256 integrity, atomic deployment &amp; rollback, VS Code extension</p>
-  <div class="links"><a href="blog/jarpilot.html">Read the story</a> <a href="https://github.com/gauravgupta0612/jatpilot/releases">⬇ Releases</a> <a href="https://github.com/gauravgupta0612/jatpilot">Source</a></div>
-</article><article class="entry">
-  <span class="no">No. VI</span>
-  <h3><a href="blog/routinel.html">Routinel – API Finder &amp; Client</a></h3>
-  <div class="meta">Begun 9 October 2026<span class="badge-ver">v1.3.0</span></div>
-  <p>Finds every HTTP API in your workspace, in any supported language, and calls it from a built-in Postman-style client.</p>
-  <div class="tags">VS Code · TypeScript · REST · OpenAPI</div>
-  <p class="skills-used"><strong>Skills:</strong> Static analysis of Express/NestJS/Spring/FastAPI/Django routes, OpenAPI 3, Postman v2.1, VS Code SecretStorage, mock servers, TypeScript</p>
-  <div class="links"><a href="blog/routinel.html">Read the story</a> <a href="https://github.com/gauravgupta0612/dataman-api-lens/releases/latest">⬇ VS Code extension (.vsix)</a> <a href="https://github.com/gauravgupta0612/dataman-api-lens">Source</a></div>
-</article><article class="entry">
-  <span class="no">No. VII</span>
-  <h3><a href="blog/devsuite.html">DevSuite</a></h3>
-  <div class="meta">Begun 9 October 2026<span class="badge-ver">v0.1</span></div>
-  <p>One shared analysis engine and five focused VS Code extensions: RepoPilot, DevImpact, CodeGuard, TraceLens and BugTrail.</p>
-  <div class="tags">VS Code · Monorepo · Static analysis · IBM i</div>
-  <p class="skills-used"><strong>Skills:</strong> Monorepo design, shared analysis engine, parsers for JS/TS, Python, Java, Go, C# and IBM i RPG/CL/DDS/SQL/COBOL, dependency graphs, GitHub Actions release pipelines</p>
-  <div class="links"><a href="blog/devsuite.html">Read the story</a> <a href="https://github.com/gauravgupta0612/devsuite/releases">⬇ VS Code extensions (.vsix)</a> <a href="https://github.com/gauravgupta0612/devsuite">Source</a></div>
-</article><article class="entry">
-  <span class="no">No. VIII</span>
-  <h3><a href="blog/ibm-i-zos-explorer.html">IBM i &amp; z/OS Explorer</a></h3>
-  <div class="meta">Begun 9 October 2026<span class="badge-ver">v1.1.0</span></div>
-  <p>One VS Code sidebar for IBM i (SSH + SQL) and z/OS (z/OSMF): data sets, members, IFS, USS, JCL, spool and commands.</p>
-  <div class="tags">VS Code · IBM i · z/OS · z/OSMF</div>
-  <p class="skills-used"><strong>Skills:</strong> IBM i (SSH, SQL, CL, spool, QSYSOPR), z/OS (z/OSMF REST, JCL, TSO, MVS console, PDS/PDSE, USS), VS Code API, TypeScript</p>
-  <div class="links"><a href="blog/ibm-i-zos-explorer.html">Read the story</a> <a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/latest">⬇ VS Code extension (.vsix)</a> <a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer">Source</a> <a href="https://gauravgupta0612.github.io/IBM-i-z-OS-Explorer-doc/">Docs</a></div>
-</article><article class="entry">
-  <span class="no">No. IX</span>
-  <h3><a href="blog/vanthrex-for-ibm-i.html">Vanthrex for IBM i</a></h3>
-  <div class="meta">Begun 3 October 2026<span class="badge-ver">v3.2.1</span></div>
-  <p>An all-in-one IBM i workbench for VS Code: connect, edit, compile, SQL, code checks, debugging and system tools.</p>
-  <div class="tags">VS Code · TypeScript · IBM i · RPG / CL / SQL</div>
-  <p class="skills-used"><strong>Skills:</strong> IBM i (RPGLE, CL, DDS, Db2 for i SQL, IFS, PASE), SSH &amp; Mapepire, IBM i Debug Service, QSYS2 services, work management &amp; security (*SECADM), VS Code API, TypeScript, i18n, Marketplace publishing</p>
-  <div class="links"><a href="blog/vanthrex-for-ibm-i.html">Read the story</a> <a href="https://github.com/gauravgupta0612/silverlake-ibmi/releases/latest">⬇ VS Code extension (.vsix)</a> <a href="https://github.com/gauravgupta0612/silverlake-ibmi">Source</a> <a href="https://gauravgupta0612.github.io/vanthrex-ibmi-docs/">Docs</a> <a href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi">Marketplace</a></div>
+<section id="projects" class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Projects</span><h2>Products I've shipped since 20 September 2026</h2>
+      <p>Nine tools, each with a story, a release history and a download. Filter by the area you care about.</p></div>
+    <div class="filters" role="group" aria-label="Filter projects"><button class="filter on" data-filter="all">All</button><button class="filter" data-filter="ibmi">IBM i / z</button><button class="filter" data-filter="vscode">VS Code</button><button class="filter" data-filter="java">Java & Eclipse</button><button class="filter" data-filter="ai">AI</button><button class="filter" data-filter="desktop">Desktop apps</button><button class="filter" data-filter="salesforce">Salesforce</button></div>
+    <div class="grid projects-grid"><article class="card project reveal" data-cats="ai java">
+  <div class="card-media"><img src="media/projects/ai-platform-architecture.png" alt="AI-Native Developer Platform screenshot" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v0.2.0</span><span class="date">13 Nov 2026</span></div>
+    <h3><a href="blog/ai-native-dev-platform.html">AI-Native Developer Platform</a></h3>
+    <p>A security-first platform for building AI developer tools: multi-model routing, safe agents, code intelligence and enterprise controls.</p>
+    <div class="chips"><span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">LLM</span><span class="chip">MCP</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>TypeScript, Java 17, Python, LLM routing (OpenAI, Claude, Gemini, Ollama), agent design, MCP, code indexing (incl. IBM i RPG), security &amp; audit controls, CI/CD, npm &amp; JitPack publishing</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/ai-native-dev-platform.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/ai-native-dev-platform"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/ai-native-dev-platform" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="java desktop">
+  <div class="card-media art art-tavrion-studio"><img class="card-icon" src="media/projects/tavrion-icon.png" alt="" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v1.5.0</span><span class="date">12 Nov 2026</span></div>
+    <h3><a href="blog/tavrion-studio.html">Tavrion Studio</a></h3>
+    <p>A VS Code-style IDE that opens, builds, runs and debugs Eclipse Java projects.</p>
+    <div class="chips"><span class="chip">Electron</span><span class="chip">Java</span><span class="chip">Eclipse / OSGi</span><span class="chip">Monaco</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>Electron, Node.js, Java (javac, JDWP/jdb debugger), Eclipse JDT &amp; PDE model, OSGi (Equinox/Felix), p2 &amp; Maven resolution, Monaco editor, Windows installer (NSIS)</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/tavrion-studio.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/tavrion-studio/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/tavrion-studio" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="vscode">
+  <div class="card-media art art-devflow"><img class="card-icon" src="media/projects/devflow-icon.png" alt="" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v0.1.0</span><span class="date">19 Oct 2026</span></div>
+    <h3><a href="blog/devflow.html">DevFlow</a></h3>
+    <p>One VS Code extension for the daily developer workflow: Environment Doctor, Git Assistant, Build Doctor, API Workspace and a Project Dashboard.</p>
+    <div class="chips"><span class="chip">VS Code</span><span class="chip">TypeScript</span><span class="chip">Developer productivity</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>VS Code API, TypeScript, Git hooks &amp; secret scanning, Maven/Gradle/npm/Python build diagnostics, REST tooling</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/devflow.html">Read story <i class="fas fa-arrow-right"></i></a><span class="icon-links"></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="vscode salesforce">
+  <div class="card-media art art-salesforce-devpilot-pack"><img class="card-icon" src="media/projects/devpilot-icon.png" alt="" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v1.0.0</span><span class="date">18 Oct 2026</span></div>
+    <h3><a href="blog/salesforce-devpilot-pack.html">Salesforce DevPilot Pack</a></h3>
+    <p>A Salesforce developer pack for VS Code built around a Change Impact Analyzer, with health and release checks that run locally.</p>
+    <div class="chips"><span class="chip">VS Code</span><span class="chip">Salesforce</span><span class="chip">Apex / LWC</span><span class="chip">CI reports</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>Salesforce DX, Apex, LWC, Aura, Flows, metadata dependency graphs, risk scoring, VS Code API, GitLab &amp; Jenkins reporting</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/salesforce-devpilot-pack.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="ibmi">
+  <div class="card-media art art-jarpilot"><i class="fas fa-rocket"></i></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v1.2.1</span><span class="date">10 Oct 2026</span></div>
+    <h3><a href="blog/jarpilot.html">JarPilot for IBM i</a></h3>
+    <p>Fast, safe JAR installation on the IBM i IFS: validate, checksum, back up, replace atomically and roll back with one command.</p>
+    <div class="chips"><span class="chip">IBM i</span><span class="chip">Shell / PASE</span><span class="chip">PowerShell</span><span class="chip">CL</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>IBM i IFS &amp; PASE (QSH), CL (CRTBNDCL, CHGAUT, CHGOWN), SSH, PowerShell, Bash, SHA-256 integrity, atomic deployment &amp; rollback, VS Code extension</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/jarpilot.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/jatpilot/releases"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/jatpilot" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="vscode">
+  <div class="card-media"><img src="media/projects/routinel-client.png" alt="Routinel – API Finder &amp; Client screenshot" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v1.3.0</span><span class="date">9 Oct 2026</span></div>
+    <h3><a href="blog/routinel.html">Routinel – API Finder &amp; Client</a></h3>
+    <p>Finds every HTTP API in your workspace, in any supported language, and calls it from a built-in Postman-style client.</p>
+    <div class="chips"><span class="chip">VS Code</span><span class="chip">TypeScript</span><span class="chip">REST</span><span class="chip">OpenAPI</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>Static analysis of Express/NestJS/Spring/FastAPI/Django routes, OpenAPI 3, Postman v2.1, VS Code SecretStorage, mock servers, TypeScript</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/routinel.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/dataman-api-lens/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/dataman-api-lens" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="vscode ibmi">
+  <div class="card-media art art-devsuite"><i class="fas fa-layer-group"></i></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v0.1</span><span class="date">9 Oct 2026</span></div>
+    <h3><a href="blog/devsuite.html">DevSuite</a></h3>
+    <p>One shared analysis engine and five focused VS Code extensions: RepoPilot, DevImpact, CodeGuard, TraceLens and BugTrail.</p>
+    <div class="chips"><span class="chip">VS Code</span><span class="chip">Monorepo</span><span class="chip">Static analysis</span><span class="chip">IBM i</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>Monorepo design, shared analysis engine, parsers for JS/TS, Python, Java, Go, C# and IBM i RPG/CL/DDS/SQL/COBOL, dependency graphs, GitHub Actions release pipelines</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/devsuite.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/devsuite/releases"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/devsuite" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="vscode ibmi">
+  <div class="card-media art art-ibm-i-zos-explorer"><i class="fas fa-server"></i></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v1.1.0</span><span class="date">9 Oct 2026</span></div>
+    <h3><a href="blog/ibm-i-zos-explorer.html">IBM i &amp; z/OS Explorer</a></h3>
+    <p>One VS Code sidebar for IBM i (SSH + SQL) and z/OS (z/OSMF): data sets, members, IFS, USS, JCL, spool and commands.</p>
+    <div class="chips"><span class="chip">VS Code</span><span class="chip">IBM i</span><span class="chip">z/OS</span><span class="chip">z/OSMF</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>IBM i (SSH, SQL, CL, spool, QSYSOPR), z/OS (z/OSMF REST, JCL, TSO, MVS console, PDS/PDSE, USS), VS Code API, TypeScript</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/ibm-i-zos-explorer.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer" aria-label="Source code"><i class="fab fa-github"></i></a><a href="https://gauravgupta0612.github.io/IBM-i-z-OS-Explorer-doc/" aria-label="Documentation"><i class="fas fa-book"></i></a></span></div>
+  </div>
+</article><article class="card project reveal" data-cats="vscode ibmi ai">
+  <div class="card-media"><img src="media/projects/vanthrex-rpg-checks.png" alt="Vanthrex for IBM i screenshot" loading="lazy"></div>
+  <div class="card-body">
+    <div class="card-top"><span class="ver">v3.2.1</span><span class="date">3 Oct 2026</span></div>
+    <h3><a href="blog/vanthrex-for-ibm-i.html">Vanthrex for IBM i</a></h3>
+    <p>An all-in-one IBM i workbench for VS Code: connect, edit, compile, SQL, code checks, debugging and system tools.</p>
+    <div class="chips"><span class="chip">VS Code</span><span class="chip">TypeScript</span><span class="chip">IBM i</span><span class="chip">RPG / CL / SQL</span></div>
+    <details class="skills-more"><summary>Skills used</summary><p>IBM i (RPGLE, CL, DDS, Db2 for i SQL, IFS, PASE), SSH &amp; Mapepire, IBM i Debug Service, QSYS2 services, work management &amp; security (*SECADM), VS Code API, TypeScript, i18n, Marketplace publishing</p></details>
+    <div class="card-actions"><a class="btn ghost sm" href="blog/vanthrex-for-ibm-i.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/silverlake-ibmi/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/silverlake-ibmi" aria-label="Source code"><i class="fab fa-github"></i></a><a href="https://gauravgupta0612.github.io/vanthrex-ibmi-docs/" aria-label="Documentation"><i class="fas fa-book"></i></a><a href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi" aria-label="VS Code Marketplace"><i class="fas fa-store"></i></a></span></div>
+  </div>
 </article></div>
-</section>
-
-<section id="journal" class="narrow">
-  <div class="section-head"><div class="kicker">From the Journal</div><h2>Latest Writing</h2><div class="ornament">✦ ✦ ✦</div></div>
-  <ul class="journal-list"><li><time datetime="2026-11-13">13 Nov 2026</time><div>
-  <h3><a href="blog/ai-native-dev-platform.html">Designing an AI-native developer platform</a></h3>
-  <p>One API for every model, agents that ask before they act, and your secrets kept on your machine. <span class="rt">· 6 min read</span></p></div></li><li><time datetime="2026-11-12">12 Nov 2026</time><div>
-  <h3><a href="blog/tavrion-studio.html">Tavrion Studio: an IDE that speaks Eclipse</a></h3>
-  <p>Why I built a lightweight, VS Code-style IDE for Eclipse workspaces, and what ships in the Windows installer. <span class="rt">· 7 min read</span></p></div></li><li><time datetime="2026-10-19">19 Oct 2026</time><div>
-  <h3><a href="blog/devflow.html">DevFlow: a productivity toolkit that works offline</a></h3>
-  <p>Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required. <span class="rt">· 5 min read</span></p></div></li><li><time datetime="2026-10-18">18 Oct 2026</time><div>
-  <h3><a href="blog/salesforce-devpilot-pack.html">Salesforce DevPilot Pack: know what your change will break</a></h3>
-  <p>Bringing my Salesforce years back into VS Code with dependency graphs, risk scores and one-click release checks. <span class="rt">· 5 min read</span></p></div></li><li><time datetime="2026-10-10">10 Oct 2026</time><div>
-  <h3><a href="blog/jarpilot.html">JarPilot: deploying JARs to IBM i without the drama</a></h3>
-  <p>Every install validated, checksummed, backed up and logged, with rollback one command away. <span class="rt">· 4 min read</span></p></div></li></ul>
-  <p style="text-align:center;margin-top:22px"><a class="btn" href="blog/index.html">All journal entries</a></p>
-</section>
-
-<section id="experience" class="narrow">
-  <div class="section-head"><div class="kicker">Curriculum Vitae</div><h2>Experience</h2><div class="ornament">✦ ✦ ✦</div></div>
-  <div class="cv"><div class="cv-row"><div class="when">Dec 2025 – Present</div><div><h3>Senior Software Engineer</h3><div class="org">ARCAD Software</div><p>IBM i developer tooling: Eclipse plug-ins for IBM RDi 9.8 / 9.9, VS Code extensions, the Java 8 → 17 migration of server products, and AI / MCP integration. PMO across all ARCAD R&amp;D products.</p></div></div><div class="cv-row"><div class="when">Jul 2023 – Dec 2025</div><div><h3>Software Engineer</h3><div class="org">ARCAD Software</div><p>Java and Eclipse plug-ins for IBM Rational Developer for i, IBM i integration (RPG, CL, Db2 for i, IFS), OSGi / Tycho builds, GitHub and GitLab.</p></div></div><div class="cv-row"><div class="when">Oct 2022 – Jun 2025</div><div><h3>Freelancer</h3><div class="org">Freelancer.com</div><p>Salesforce development, Lightning components, Apex.</p></div></div><div class="cv-row"><div class="when">Nov 2021 – Jul 2022</div><div><h3>Salesforce Consultant</h3><div class="org">Delhivery</div><p>Sales Cloud, administration, Lightning, project management.</p></div></div><div class="cv-row"><div class="when">Oct 2020 – Sep 2021</div><div><h3>Salesforce Consultant</h3><div class="org">C&amp;S Electric Ltd</div><p>Apex, Lightning and cloud applications.</p></div></div><div class="cv-row"><div class="when">Apr 2020 – Oct 2020</div><div><h3>Salesforce Developer</h3><div class="org">Kloudrac Inc</div><p>Lightning, GitHub, Salesforce as a Service.</p></div></div><div class="cv-row"><div class="when">Jan 2020 – Apr 2020</div><div><h3>Intern – Salesforce</h3><div class="org">Kcloud Technologies</div><p>Salesforce CRM.</p></div></div></div>
-</section>
-
-<section id="certifications" class="wrap">
-  <div class="two-col">
-    <div><div class="section-head" style="text-align:left"><div class="kicker">Credentials</div><h2>Certifications</h2></div><ul class="certs"><li>Dive Deeper into GA4 Data and Reports<span>Skillshop · Sep 2025</span></li><li>OCI 2025 AI Foundations Associate<span>Oracle · Sep 2025</span></li><li>OCI 2025 Data Science Professional<span>Oracle · Sep 2025</span></li><li>IBM i Ready<span>IBM · Sep 2025</span></li><li>Build Smarter AI with Embeddings<span>IBM · Sep 2025</span></li><li>Artificial Intelligence Fundamentals<span>IBM · Sep 2025</span></li><li>Journey to Cloud: Envisioning Your Solution<span>IBM · Sep 2025</span></li><li>Copado Certified Developer & Administrator<span>Copado · Apr 2021</span></li><li>CCC – Course on Computer Concepts<span>NIELIT India · Mar 2016</span></li></ul></div>
-    <div><div class="section-head" style="text-align:left"><div class="kicker">Craft</div><h2>Skills &amp; Education</h2></div>
-      <h3 class="skill-group">IBM i &amp; IBM Z</h3><ul class="skills-list"><li>RPG IV / RPGLE (free and fixed form)</li><li>CL programming &amp; commands</li><li>DDS: PF, LF, DSPF, PRTF</li><li>Db2 for i SQL &amp; QSYS2 services</li><li>IFS, PASE &amp; QSH</li><li>Work management, journals &amp; security</li><li>IBM Rational Developer for i (RDi 9.8 / 9.9)</li><li>IBM i Debug Service &amp; ACS</li><li>z/OS: JCL, TSO, z/OSMF, PDS/PDSE, USS</li><li>IBM i 7.4 – 7.6</li></ul><h3 class="skill-group">Java &amp; Eclipse</h3><ul class="skills-list"><li>Java 8 – 21</li><li>Eclipse RCP, PDE &amp; OSGi plug-ins</li><li>Tycho / Maven / p2 builds</li><li>JDWP debugging</li></ul><h3 class="skill-group">Developer tools &amp; web</h3><ul class="skills-list"><li>VS Code extension API</li><li>TypeScript, Node.js &amp; React</li><li>Electron desktop apps</li><li>Python</li></ul><h3 class="skill-group">AI &amp; platforms</h3><ul class="skills-list"><li>LLM integration &amp; routing</li><li>Model Context Protocol (MCP)</li><li>Agents with approval &amp; audit</li></ul><h3 class="skill-group">Salesforce</h3><ul class="skills-list"><li>Apex, Lightning, LWC, Aura</li><li>Salesforce DX &amp; Copado</li><li>Trailhead All Star Ranger</li></ul><h3 class="skill-group">Delivery</h3><ul class="skills-list"><li>GitHub, GitLab, Jenkins, Actions</li><li>Release &amp; product management (PMO)</li><li>Marketplace publishing</li></ul>
-      <ul class="certs" style="margin-top:22px"><li>MCA – Information Technology<span>Institute of Management Studies, Ghaziabad · 2018–2020</span></li>
-      <li>BCA – Information Technology<span>Invertis University · 2015–2018</span></li>
-      <li>Salesforce Trailhead All Star Ranger<span><a href="https://www.salesforce.com/trailblazer/ggupta56">213 badges · 83,875 points · 25 trails</a></span></li></ul>
-    </div>
   </div>
 </section>
 
-<section id="contact" class="narrow contact">
-  <div class="section-head"><div class="kicker">Correspondence</div><h2>Get in Touch</h2><div class="ornament">✦ ✦ ✦</div>
-    <p>For questions about a project, a demo, or working together, write to me.</p></div>
-  <div class="links">
-    <a class="btn" href="mailto:ggupta865@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-    <a class="btn" href="https://www.linkedin.com/in/gauravgupta865"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a class="btn" href="https://github.com/gauravgupta0612"><i class="fab fa-github"></i> GitHub</a>
-    <a class="btn" href="meetings.html"><i class="fas fa-calendar"></i> Book a meeting</a>
+<section class="section spotlight">
+  <div class="wrap spot-grid">
+    <div class="reveal">
+      <span class="eyebrow">Flagship</span>
+      <h2>Vanthrex for IBM i</h2>
+      <p class="lead">A complete IBM i workbench for VS Code: more than 50 RPG, CL, SQL and DDS checks as you type, one-click quick fixes, debugging, a System Tracker, GO menus for AS/400 veterans, and an AI assistant that never sees your secrets.</p>
+      <ul class="ticks"><li>About 30 releases in five weeks</li><li>Translated into 5 languages</li><li>Production-safe connections with Read-only mode</li><li>One-step import from Code for IBM i</li></ul>
+      <div class="cta"><a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi"><i class="fas fa-store"></i> VS Code Marketplace</a><a class="btn ghost" href="blog/vanthrex-for-ibm-i.html">Read the story</a></div>
+    </div>
+    <div class="spot-shot reveal"><div class="window"><div class="window-bar"><span></span><span></span><span></span></div><img src="media/projects/vanthrex-toolbox.png" alt="Vanthrex Developer Toolbox in VS Code" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section id="journal" class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Journal</span><h2>Stories behind the releases</h2>
+      <p>Why each tool exists, what it does, and how it changed from version to version.</p></div>
+    <div class="grid posts-grid"><a class="card post reveal" href="blog/ai-native-dev-platform.html">
+  <span class="post-meta">13 Nov 2026 · 6 min read</span>
+  <h3>Designing an AI-native developer platform</h3><p>One API for every model, agents that ask before they act, and your secrets kept on your machine.</p><span class="more">Read <i class="fas fa-arrow-right"></i></span></a><a class="card post reveal" href="blog/tavrion-studio.html">
+  <span class="post-meta">12 Nov 2026 · 7 min read</span>
+  <h3>Tavrion Studio: an IDE that speaks Eclipse</h3><p>Why I built a lightweight, VS Code-style IDE for Eclipse workspaces, and what ships in the Windows installer.</p><span class="more">Read <i class="fas fa-arrow-right"></i></span></a><a class="card post reveal" href="blog/devflow.html">
+  <span class="post-meta">19 Oct 2026 · 5 min read</span>
+  <h3>DevFlow: a productivity toolkit that works offline</h3><p>Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.</p><span class="more">Read <i class="fas fa-arrow-right"></i></span></a><a class="card post reveal" href="blog/salesforce-devpilot-pack.html">
+  <span class="post-meta">18 Oct 2026 · 5 min read</span>
+  <h3>Salesforce DevPilot Pack: know what your change will break</h3><p>Bringing my Salesforce years back into VS Code with dependency graphs, risk scores and one-click release checks.</p><span class="more">Read <i class="fas fa-arrow-right"></i></span></a><a class="card post reveal" href="blog/jarpilot.html">
+  <span class="post-meta">10 Oct 2026 · 4 min read</span>
+  <h3>JarPilot: deploying JARs to IBM i without the drama</h3><p>Every install validated, checksummed, backed up and logged, with rollback one command away.</p><span class="more">Read <i class="fas fa-arrow-right"></i></span></a><a class="card post reveal" href="blog/routinel.html">
+  <span class="post-meta">9 Oct 2026 · 5 min read</span>
+  <h3>Routinel: find every API in your code and call it</h3><p>Route + Sentinel: endpoint discovery, a Postman-style client and a mock server, all inside VS Code.</p><span class="more">Read <i class="fas fa-arrow-right"></i></span></a></div>
+    <div class="center"><a class="btn ghost" href="blog/index.html">All journal entries <i class="fas fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Skills</span><h2>From RPG to LLMs</h2>
+      <p>Deep IBM i and Java roots, with modern tooling, AI and Salesforce on top.</p></div>
+    <div class="grid skills-grid"><div class="card skill reveal"><div class="skill-head"><i class="fas fa-server"></i><h3>IBM i &amp; IBM Z</h3></div><div class="chips"><span class="chip">RPG IV / RPGLE</span><span class="chip">CL</span><span class="chip">DDS (PF, LF, DSPF, PRTF)</span><span class="chip">Db2 for i SQL</span><span class="chip">QSYS2 services</span><span class="chip">IFS · PASE · QSH</span><span class="chip">Work management &amp; security</span><span class="chip">RDi 9.8 / 9.9</span><span class="chip">IBM i Debug Service</span><span class="chip">ACS</span><span class="chip">z/OS JCL · TSO</span><span class="chip">z/OSMF · USS</span><span class="chip">IBM i 7.4 – 7.6</span></div></div><div class="card skill reveal"><div class="skill-head"><i class="fas fa-mug-hot"></i><h3>Java &amp; Eclipse</h3></div><div class="chips"><span class="chip">Java 8 – 21</span><span class="chip">Eclipse RCP</span><span class="chip">PDE &amp; OSGi</span><span class="chip">Tycho · Maven · p2</span><span class="chip">JDWP debugging</span></div></div><div class="card skill reveal"><div class="skill-head"><i class="fas fa-code"></i><h3>Developer tools &amp; web</h3></div><div class="chips"><span class="chip">VS Code extension API</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">React</span><span class="chip">Electron</span><span class="chip">Python</span></div></div><div class="card skill reveal"><div class="skill-head"><i class="fas fa-brain"></i><h3>AI &amp; platforms</h3></div><div class="chips"><span class="chip">LLM routing</span><span class="chip">Model Context Protocol</span><span class="chip">Agents with approval</span><span class="chip">Secret &amp; PII masking</span></div></div><div class="card skill reveal"><div class="skill-head"><i class="fas fa-cloud"></i><h3>Salesforce</h3></div><div class="chips"><span class="chip">Apex</span><span class="chip">Lightning · LWC · Aura</span><span class="chip">Salesforce DX</span><span class="chip">Copado</span><span class="chip">Trailhead All Star Ranger</span></div></div><div class="card skill reveal"><div class="skill-head"><i class="fas fa-diagram-project"></i><h3>Delivery</h3></div><div class="chips"><span class="chip">GitHub · GitLab</span><span class="chip">Jenkins · Actions</span><span class="chip">Release management (PMO)</span><span class="chip">Marketplace publishing</span></div></div></div>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="wrap exp-grid">
+    <div class="reveal"><span class="eyebrow">Experience</span><h2>6+ years of shipping software</h2>
+      <p class="muted">From Salesforce consulting to IBM i developer tools, always close to the people who use what I build.</p>
+      <a class="trail card" href="https://www.salesforce.com/trailblazer/ggupta56"><i class="fas fa-trophy"></i><div><strong>Trailhead All Star Ranger</strong><span>213 badges · 83,875 points · 25 trails</span></div></a></div>
+    <ol class="xp"><li class="reveal"><span class="when">Dec 2025 – Present</span><h3>Senior Software Engineer</h3><span class="org">ARCAD Software</span><p>IBM i developer tooling: Eclipse plug-ins for IBM RDi 9.8 / 9.9, VS Code extensions, the Java 8 → 17 migration of server products, and AI / MCP integration. PMO across all ARCAD R&amp;D products.</p></li><li class="reveal"><span class="when">Jul 2023 – Dec 2025</span><h3>Software Engineer</h3><span class="org">ARCAD Software</span><p>Java and Eclipse plug-ins for IBM Rational Developer for i, IBM i integration (RPG, CL, Db2 for i, IFS), OSGi / Tycho builds, GitHub and GitLab.</p></li><li class="reveal"><span class="when">Oct 2022 – Jun 2025</span><h3>Freelancer</h3><span class="org">Freelancer.com</span><p>Salesforce development, Lightning components, Apex.</p></li><li class="reveal"><span class="when">Nov 2021 – Jul 2022</span><h3>Salesforce Consultant</h3><span class="org">Delhivery</span><p>Sales Cloud, administration, Lightning, project management.</p></li><li class="reveal"><span class="when">Oct 2020 – Sep 2021</span><h3>Salesforce Consultant</h3><span class="org">C&amp;S Electric Ltd</span><p>Apex, Lightning and cloud applications.</p></li><li class="reveal"><span class="when">Apr 2020 – Oct 2020</span><h3>Salesforce Developer</h3><span class="org">Kloudrac Inc</span><p>Lightning, GitHub, Salesforce as a Service.</p></li><li class="reveal"><span class="when">Jan 2020 – Apr 2020</span><h3>Intern – Salesforce</h3><span class="org">Kcloud Technologies</span><p>Salesforce CRM.</p></li></ol>
+  </div>
+</section>
+
+<section id="certifications" class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Credentials</span><h2>Certifications &amp; education</h2></div>
+    <div class="grid certs-grid"><div class="cert reveal"><i class="fas fa-award"></i><div><strong>IBM i Ready</strong><span>IBM · Sep 2025</span></div></div><div class="cert reveal"><i class="fas fa-brain"></i><div><strong>Build Smarter AI with Embeddings</strong><span>IBM · Sep 2025</span></div></div><div class="cert reveal"><i class="fas fa-robot"></i><div><strong>Artificial Intelligence Fundamentals</strong><span>IBM · Sep 2025</span></div></div><div class="cert reveal"><i class="fas fa-cloud"></i><div><strong>Journey to Cloud: Envisioning Your Solution</strong><span>IBM · Sep 2025</span></div></div><div class="cert reveal"><i class="fas fa-database"></i><div><strong>OCI 2025 Data Science Professional</strong><span>Oracle · Sep 2025</span></div></div><div class="cert reveal"><i class="fas fa-microchip"></i><div><strong>OCI 2025 AI Foundations Associate</strong><span>Oracle · Sep 2025</span></div></div><div class="cert reveal"><i class="fas fa-chart-line"></i><div><strong>Dive Deeper into GA4 Data and Reports</strong><span>Skillshop · Sep 2025</span></div></div><div class="cert reveal"><i class="fas fa-code-branch"></i><div><strong>Copado Certified Developer &amp; Administrator</strong><span>Copado · Apr 2021</span></div></div><div class="cert reveal"><i class="fas fa-graduation-cap"></i><div><strong>MCA – Information Technology</strong><span>IMS Ghaziabad · 2018–2020</span></div></div><div class="cert reveal"><i class="fas fa-graduation-cap"></i><div><strong>BCA – Information Technology</strong><span>Invertis University · 2015–2018</span></div></div></div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div><h2>Let's build something developers love.</h2><p>Questions about a tool, a demo for your team, or working together. I usually reply within a day.</p></div>
+      <div class="cta">
+        <a class="btn light" href="mailto:ggupta865@gmail.com"><i class="fas fa-envelope"></i> Email me</a>
+        <a class="btn outline-light" href="https://www.linkedin.com/in/gauravgupta865"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a class="btn outline-light" href="meetings.html"><i class="fas fa-calendar"></i> Book a meeting</a>
+      </div>
+    </div>
   </div>
 </section>
 </main>
 <footer class="footer">
-  <div class="wrap">
-    <span class="fleuron">❦</span>
-    <p>&copy; 2026 Gaurav Gupta · Lucknow, Uttar Pradesh, India</p>
-    <p><a href="https://github.com/gauravgupta0612">GitHub</a> · <a href="https://www.linkedin.com/in/gauravgupta865">LinkedIn</a> · <a href="https://www.salesforce.com/trailblazer/ggupta56">Trailblazer</a> · <a href="downloads.html">Downloads</a></p>
-    <p><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count"></p>
+  <div class="wrap footer-grid">
+    <div><a class="brand" href="index.html"><span class="logo">GG</span><span class="brand-name">Gaurav Gupta</span></a>
+      <p class="muted">Modern developer tools for IBM i, Java and AI. Built in Lucknow, India.</p></div>
+    <div><h4>Explore</h4><a href="index.html#projects">Projects</a><a href="blog/index.html">Journal</a><a href="downloads.html">Downloads</a><a href="rdi-9-9.html">RDi 9.9 fix list</a></div>
+    <div><h4>Connect</h4><a href="https://github.com/gauravgupta0612"><i class="fab fa-github"></i> GitHub</a><a href="https://www.linkedin.com/in/gauravgupta865"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="https://www.salesforce.com/trailblazer/ggupta56"><i class="fas fa-star"></i> Trailblazer</a><a href="meetings.html"><i class="fas fa-calendar"></i> Book a meeting</a></div>
   </div>
+  <div class="wrap footer-bottom"><span>&copy; 2026 Gaurav Gupta</span><span class="secure"><i class="fas fa-lock"></i> Served over HTTPS</span><img src="https://visitor-badge.laobi.icu/badge?page_id=gauravgupta0612.gaurav-portfolio" alt="Visitor count" loading="lazy"></div>
 </footer>
+<button class="to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-<div id="chatbotWidget" class="chatbot-widget">
-  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-feather-pointed"></i> Ask about my work</div>
+<div id="chatbotWidget" class="chatbot-widget" role="dialog" aria-label="Assistant">
+  <div class="chatbot-header"><div class="chatbot-title"><i class="fas fa-sparkles"></i> Ask about my work</div>
     <button class="chatbot-close" id="closeChatbot" aria-label="Close"><i class="fas fa-times"></i></button></div>
   <div class="chatbot-messages" id="chatbotMessages">
-    <div class="message bot-message"><p>Hello! Ask me about Gaurav's projects, releases, skills or experience.</p></div>
+    <div class="message bot-message"><p>Hi! Ask me about Gaurav's projects, releases, IBM i skills or experience.</p></div>
   </div>
   <div class="chatbot-input-area">
-    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input">
+    <input type="text" id="userInput" placeholder="Ask me anything…" class="chatbot-input" aria-label="Your question">
     <button id="sendMessage" class="chatbot-send" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>
-<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+<button id="chatbotToggle" class="chatbot-toggle" title="Open assistant" aria-label="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
 <script src="js/site.js"></script>
 </body>
 </html>

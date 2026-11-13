@@ -1,11 +1,75 @@
-// Classical site — navigation + chatbot
+// Site UI: theme, navigation, scroll effects, filters, search + chatbot
 (function () {
-  const toggle = document.querySelector('.nav-toggle');
-  const list = document.querySelector('.nav ul');
-  if (toggle && list) {
-    toggle.addEventListener('click', () => list.classList.toggle('open'));
-    list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => list.classList.remove('open')));
+  const root = document.documentElement;
+  const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+                  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+  // Theme toggle
+  document.querySelectorAll('.theme-btn').forEach(btn => btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next); store.set('gg-theme', next);
+  }));
+
+  // Mobile navigation
+  const toggle = document.querySelector('.nav-toggle'), nav = document.querySelector('.nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => { const o = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', o); });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
   }
+
+  // Header shadow, reading progress, back-to-top
+  const bar = document.querySelector('.topbar'), prog = document.querySelector('.progress'), top = document.querySelector('.to-top');
+  const onScroll = () => {
+    const y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    if (bar) bar.classList.toggle('scrolled', y > 10);
+    if (prog) prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    if (top) top.classList.toggle('show', y > 700);
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  if (top) top.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Reveal on scroll + animated counters
+  const counters = document.querySelectorAll('[data-count]');
+  const count = el => {
+    const end = +el.dataset.count, suf = el.dataset.suffix || '', t0 = performance.now(), d = 1200;
+    const step = t => { const p = Math.min(1, (t - t0) / d); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      if (e.target.dataset.count) count(e.target);
+      io.unobserve(e.target);
+    }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    counters.forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+  // Project filters
+  const filters = document.querySelectorAll('.filter');
+  filters.forEach(f => f.addEventListener('click', () => {
+    filters.forEach(x => x.classList.toggle('on', x === f));
+    const k = f.dataset.filter;
+    document.querySelectorAll('.project').forEach(c => {
+      const show = k === 'all' || (c.dataset.cats || '').split(' ').includes(k);
+      c.classList.toggle('hide', !show); if (show) c.classList.add('in');
+    });
+  }));
+
+  // Downloads search
+  const q = document.getElementById('dlSearch');
+  if (q) q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase();
+    document.querySelectorAll('table.ledger').forEach(t => {
+      const capHit = t.caption && t.caption.textContent.toLowerCase().includes(v);
+      let any = false;
+      t.querySelectorAll('tbody tr').forEach(r => { const hit = !v || capHit || r.textContent.toLowerCase().includes(v); r.classList.toggle('hide', !hit); any = any || hit; });
+      t.classList.toggle('hide', !any);
+    });
+  });
 })();
 
 if (document.getElementById('chatbotToggle')) {
