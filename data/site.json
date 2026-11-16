@@ -1,0 +1,244 @@
+{
+ "owner": "gauravgupta0612",
+ "projects": [
+  {
+   "slug": "ai-native-dev-platform",
+   "name": "AI-Native Developer Platform",
+   "tagline": "A security-first platform for building AI developer tools: multi-model routing, safe agents, code intelligence and enterprise controls.",
+   "repo": "gauravgupta0612/ai-native-dev-platform",
+   "release_key": "ai-native-dev-platform",
+   "ext": [],
+   "tags": [
+    "TypeScript",
+    "Java",
+    "Python",
+    "LLM",
+    "MCP"
+   ]
+  },
+  {
+   "slug": "tavrion-studio",
+   "name": "Tavrion Studio",
+   "tagline": "A VS Code-style IDE that opens, builds, runs and debugs Eclipse Java projects.",
+   "repo": "gauravgupta0612/tavrion-studio",
+   "release_key": "tavrion-studio",
+   "ext": [],
+   "tags": [
+    "Electron",
+    "Java",
+    "Eclipse / OSGi",
+    "Monaco"
+   ]
+  },
+  {
+   "slug": "devflow",
+   "name": "DevFlow",
+   "tagline": "One VS Code extension for the daily developer workflow: Environment Doctor, Git Assistant, Build Doctor, API Workspace and a Project Dashboard.",
+   "repo": "",
+   "release_key": null,
+   "ext": [
+    "devflow-toolkit"
+   ],
+   "tags": [
+    "VS Code",
+    "TypeScript",
+    "Developer productivity"
+   ]
+  },
+  {
+   "slug": "salesforce-devpilot-pack",
+   "name": "Salesforce DevPilot Pack",
+   "tagline": "A Salesforce developer pack for VS Code built around a Change Impact Analyzer, with health and release checks that run locally.",
+   "repo": "gauravgupta0612/Salesforce-DevPilot-Pack",
+   "release_key": "Salesforce-DevPilot-Pack",
+   "ext": [
+    "salesforce-devpilot-pack"
+   ],
+   "tags": [
+    "VS Code",
+    "Salesforce",
+    "Apex / LWC",
+    "CI reports"
+   ]
+  },
+  {
+   "slug": "jarpilot",
+   "name": "JarPilot for IBM i",
+   "tagline": "Fast, safe JAR installation on the IBM i IFS: validate, checksum, back up, replace atomically and roll back with one command.",
+   "repo": "gauravgupta0612/jatpilot",
+   "release_key": "jatpilot",
+   "ext": [
+    "jarpilot"
+   ],
+   "tags": [
+    "IBM i",
+    "Shell / PASE",
+    "PowerShell",
+    "CL"
+   ]
+  },
+  {
+   "slug": "routinel",
+   "name": "Routinel \u2013 API Finder & Client",
+   "tagline": "Finds every HTTP API in your workspace, in any supported language, and calls it from a built-in Postman-style client.",
+   "repo": "gauravgupta0612/dataman-api-lens",
+   "release_key": "dataman-api-lens",
+   "ext": [
+    "routinel"
+   ],
+   "tags": [
+    "VS Code",
+    "TypeScript",
+    "REST",
+    "OpenAPI"
+   ]
+  },
+  {
+   "slug": "devsuite",
+   "name": "DevSuite",
+   "tagline": "One shared analysis engine and five focused VS Code extensions: RepoPilot, DevImpact, CodeGuard, TraceLens and BugTrail.",
+   "repo": "gauravgupta0612/devsuite",
+   "release_key": "devsuite",
+   "ext": [
+    "bugtrail",
+    "repopilot",
+    "devimpact",
+    "devsuite-tracelens",
+    "devsuite-codeguard",
+    "devsuite-pack"
+   ],
+   "tags": [
+    "VS Code",
+    "Monorepo",
+    "Static analysis",
+    "IBM i"
+   ]
+  },
+  {
+   "slug": "ibm-i-zos-explorer",
+   "name": "IBM i & z/OS Explorer",
+   "tagline": "One VS Code sidebar for IBM i (SSH + SQL) and z/OS (z/OSMF): data sets, members, IFS, USS, JCL, spool and commands.",
+   "repo": "gauravgupta0612/IBM-i-z-OS-Explorer",
+   "release_key": "IBM-i-z-OS-Explorer",
+   "ext": [
+    "ibmi-zos-explorer"
+   ],
+   "tags": [
+    "VS Code",
+    "IBM i",
+    "z/OS",
+    "z/OSMF"
+   ]
+  },
+  {
+   "slug": "vanthrex-for-ibm-i",
+   "name": "Vanthrex for IBM i",
+   "tagline": "An all-in-one IBM i workbench for VS Code: connect, edit, compile, SQL, code checks, debugging and system tools.",
+   "repo": "gauravgupta0612/silverlake-ibmi",
+   "release_key": "silverlake-ibmi",
+   "ext": [
+    "vanthrex-ibmi"
+   ],
+   "tags": [
+    "VS Code",
+    "TypeScript",
+    "IBM i",
+    "RPG / CL / SQL"
+   ]
+  }
+ ],
+ "posts": [
+  {
+   "title": "Designing an AI-native developer platform",
+   "slug": "ai-native-dev-platform",
+   "dek": "One API for every model, agents that ask before they act, and your secrets kept on your machine.",
+   "date": "2026-11-13"
+  },
+  {
+   "title": "Tavrion Studio: an IDE that speaks Eclipse",
+   "slug": "tavrion-studio",
+   "dek": "Why I built a lightweight, VS Code-style IDE for Eclipse workspaces, and what ships in the Windows installer.",
+   "date": "2026-11-12"
+  },
+  {
+   "title": "DevFlow: a productivity toolkit that works offline",
+   "slug": "devflow",
+   "dek": "Checking environments, guarding commits and diagnosing failed builds, with no AI subscription required.",
+   "date": "2026-10-19"
+  },
+  {
+   "title": "Salesforce DevPilot Pack: know what your change will break",
+   "slug": "salesforce-devpilot-pack",
+   "dek": "Bringing my Salesforce years back into VS Code with dependency graphs, risk scores and one-click release checks.",
+   "date": "2026-10-18"
+  },
+  {
+   "title": "JarPilot: deploying JARs to IBM i without the drama",
+   "slug": "jarpilot",
+   "dek": "Every install validated, checksummed, backed up and logged, with rollback one command away.",
+   "date": "2026-10-10"
+  },
+  {
+   "title": "Routinel: find every API in your code and call it",
+   "slug": "routinel",
+   "dek": "Route + Sentinel: endpoint discovery, a Postman-style client and a mock server, all inside VS Code.",
+   "date": "2026-10-09"
+  },
+  {
+   "title": "DevSuite: one engine, five focused extensions",
+   "slug": "devsuite",
+   "dek": "Why I split one large idea into small tools that share a single code-analysis core.",
+   "date": "2026-10-09"
+  },
+  {
+   "title": "IBM i & z/OS Explorer: two platforms, one sidebar",
+   "slug": "ibm-i-zos-explorer",
+   "dek": "A single extension for developers who work on both IBM midrange and mainframe systems.",
+   "date": "2026-10-09"
+  },
+  {
+   "title": "Vanthrex for IBM i: thirty releases in five weeks",
+   "slug": "vanthrex-for-ibm-i",
+   "dek": "How a weekend VS Code experiment became a full IBM i workbench, release by release.",
+   "date": "2026-10-03"
+  }
+ ],
+ "pages": [
+  [
+   "Home",
+   "index.html"
+  ],
+  [
+   "Downloads & release notes",
+   "downloads.html"
+  ],
+  [
+   "Journal",
+   "blog/index.html"
+  ],
+  [
+   "RDi 9.9 fix pack list",
+   "rdi-9-9.html"
+  ],
+  [
+   "Experience",
+   "index.html#experience"
+  ],
+  [
+   "Skills",
+   "index.html#skills"
+  ],
+  [
+   "Book a meeting",
+   "meetings.html"
+  ],
+  [
+   "Community",
+   "community.html"
+  ],
+  [
+   "Contact",
+   "index.html#contact"
+  ]
+ ]
+}

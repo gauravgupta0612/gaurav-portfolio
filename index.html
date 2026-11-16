@@ -27,6 +27,7 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
     <a class="brand" href="index.html" aria-label="Gaurav Gupta, home"><span class="logo">GG</span><span class="brand-name">Gaurav Gupta</span></a>
     <nav class="nav" aria-label="Main"><ul><li><a href="index.html" class="active" aria-current="page">Home</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="blog/index.html">Journal</a></li><li><a href="downloads.html">Downloads</a></li><li><a href="rdi-9-9.html">RDi 9.9</a></li><li><a href="index.html#experience">Experience</a></li><li><a href="meetings.html">Meetings</a></li><li><a href="community.html">Community</a></li><li><a href="index.html#contact">Contact</a></li></ul></nav>
     <div class="top-actions">
+      <button class="search-btn" data-palette aria-label="Search the site (Ctrl+K)"><i class="fas fa-magnifying-glass"></i><span>Search</span><kbd>Ctrl K</kbd></button>
       <button class="icon-btn theme-btn" aria-label="Switch light or dark theme" title="Light / dark"><i class="fas fa-circle-half-stroke"></i></button>
       <a class="btn primary sm hide-sm" href="downloads.html"><i class="fas fa-download"></i> Downloads</a>
       <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
@@ -39,7 +40,7 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="pill"><span class="dot"></span> Senior Software Engineer · ARCAD Software · 6+ years</span>
-      <h1>I build the tools that bring <span class="grad">IBM i, Java &amp; AI</span> development into the next decade.</h1>
+      <h1>I build the tools that bring <span class="grad rotator" data-words="IBM i|Java &amp; Eclipse|AI|VS Code|z/OS">IBM i, Java &amp; AI</span><br>development into the next decade.</h1>
       <p class="lead">IBM i, z/OS and Java systems run some of the world's most important businesses. The developers who look after them deserve editors that check code as they type, debuggers that just work, AI that protects their secrets, and deployments they can undo with one command. That is what I build.</p>
       <div class="cta">
         <a class="btn primary lg" href="#projects"><i class="fas fa-cubes"></i> Explore projects</a>
@@ -48,14 +49,14 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
       </div>
       <dl class="stats">
         <div><dt data-count="9">9</dt><dd>products since Sep 2026</dd></div>
-        <div><dt data-count="37">37</dt><dd>public releases</dd></div>
+        <div><dt data-count="37" id="statReleases">37</dt><dd>public releases</dd></div>
         <div><dt data-count="6" data-suffix="+">6+</dt><dd>years shipping software</dd></div>
-        <div><dt data-count="262">262</dt><dd>VS Code Marketplace installs</dd></div>
+        <div><dt data-count="262" id="statInstalls">262</dt><dd>VS Code Marketplace installs</dd></div>
       </dl>
     </div>
     <div class="hero-visual">
       <div class="orbit"><div class="photo"><img src="media/image (1).png" alt="Gaurav Gupta"></div></div>
-      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v3.3.0 · 101 installs · 15 releases</span></div></a>
+      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span id="vanthrexLive">v3.3.0 · 101 installs · 15 releases</span></div></a>
       <a class="float f2" href="blog/tavrion-studio.html"><i class="fas fa-laptop-code"></i><div><strong>Tavrion Studio</strong><span>Windows .exe · v1.5.0</span></div></a>
     </div>
   </div>
@@ -65,8 +66,10 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
 <section id="updates" class="section">
   <div class="wrap narrow-wide">
     <div class="section-head reveal"><span class="eyebrow">What's new</span><h2>Latest releases</h2>
-      <p>Updated automatically from GitHub every few hours. Every version is on the <a href="downloads.html">Downloads</a> page.</p></div>
-    <ul class="updates"><li class="reveal"><time datetime="2026-11-16">16 Nov 2026</time>
+      <p>Pulled live from GitHub when you open this page. Every version is on the <a href="downloads.html">Downloads</a> page.</p>
+      <span class="live-pill" id="livePill"><span class="dot"></span> <span id="liveText">Showing saved data</span></span></div>
+    <div class="card activity reveal"><div class="activity-head"><h3>Release activity</h3><span id="activitySum" class="muted"></span></div><div id="activity" class="activity-chart" aria-label="Releases per week"></div></div>
+    <ul class="updates" id="updatesList"><li class="reveal"><time datetime="2026-11-16">16 Nov 2026</time>
   <div class="upd-body"><div class="upd-title"><a href="blog/vanthrex-for-ibm-i.html">Vanthrex for IBM i v3.3.0</a><span class="ver">v3.3.0</span></div>
   <p>System and security insights — what Code for IBM i and Db2 for i users had to look for elsewhere.</p></div><div class="upd-act"><a class="btn primary sm" href="https://github.com/gauravgupta0612/silverlake-ibmi/releases/download/v3.3.0/vanthrex-ibmi-3.3.0.vsix"><i class="fas fa-download"></i> Download</a></div></li><li class="reveal"><time datetime="2026-11-13">13 Nov 2026</time>
   <div class="upd-body"><div class="upd-title"><a href="blog/tavrion-studio.html">Tavrion Studio 1.5.0</a><span class="ver">v1.5.0</span></div>
@@ -91,90 +94,90 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
     <div class="section-head reveal"><span class="eyebrow">Projects</span><h2>Products I've shipped since 20 September 2026</h2>
       <p>Nine tools, each with a story, a release history and a download. Filter by the area you care about.</p></div>
     <div class="filters" role="group" aria-label="Filter projects"><button class="filter on" data-filter="all">All</button><button class="filter" data-filter="ibmi">IBM i / z</button><button class="filter" data-filter="vscode">VS Code</button><button class="filter" data-filter="java">Java & Eclipse</button><button class="filter" data-filter="ai">AI</button><button class="filter" data-filter="desktop">Desktop apps</button><button class="filter" data-filter="salesforce">Salesforce</button></div>
-    <div class="grid projects-grid"><article class="card project reveal" data-cats="ai java">
+    <div class="grid projects-grid"><article class="card project reveal tilt" data-slug="ai-native-dev-platform" data-cats="ai java">
   <div class="card-media"><img src="media/projects/ai-platform-architecture.png" alt="AI-Native Developer Platform screenshot" loading="lazy"></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v0.2.0</span><span class="date">13 Nov 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v0.2.0</span><span class="stars" data-live="stars" hidden></span><span class="date">13 Nov 2026</span></div>
     <h3><a href="blog/ai-native-dev-platform.html">AI-Native Developer Platform</a></h3>
     <p>A security-first platform for building AI developer tools: multi-model routing, safe agents, code intelligence and enterprise controls.</p>
     <div class="chips"><span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">LLM</span><span class="chip">MCP</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>TypeScript, Java 17, Python, LLM routing (OpenAI, Claude, Gemini, Ollama), agent design, MCP, code indexing (incl. IBM i RPG), security &amp; audit controls, CI/CD, npm &amp; JitPack publishing</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/ai-native-dev-platform.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/ai-native-dev-platform"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/ai-native-dev-platform" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
   </div>
-</article><article class="card project reveal" data-cats="java desktop">
+</article><article class="card project reveal tilt" data-slug="tavrion-studio" data-cats="java desktop">
   <div class="card-media art art-tavrion-studio"><img class="card-icon" src="media/projects/tavrion-icon.png" alt="" loading="lazy"></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v1.5.0</span><span class="date">12 Nov 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v1.5.0</span><span class="stars" data-live="stars" hidden></span><span class="date">12 Nov 2026</span></div>
     <h3><a href="blog/tavrion-studio.html">Tavrion Studio</a></h3>
     <p>A VS Code-style IDE that opens, builds, runs and debugs Eclipse Java projects.</p>
     <div class="chips"><span class="chip">Electron</span><span class="chip">Java</span><span class="chip">Eclipse / OSGi</span><span class="chip">Monaco</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>Electron, Node.js, Java (javac, JDWP/jdb debugger), Eclipse JDT &amp; PDE model, OSGi (Equinox/Felix), p2 &amp; Maven resolution, Monaco editor, Windows installer (NSIS)</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/tavrion-studio.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/tavrion-studio/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/tavrion-studio" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
   </div>
-</article><article class="card project reveal" data-cats="vscode">
+</article><article class="card project reveal tilt" data-slug="devflow" data-cats="vscode">
   <div class="card-media art art-devflow"><img class="card-icon" src="media/projects/devflow-icon.png" alt="" loading="lazy"></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v0.1.0</span><span class="date">19 Oct 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v0.1.0</span><span class="stars" data-live="stars" hidden></span><span class="date">19 Oct 2026</span></div>
     <h3><a href="blog/devflow.html">DevFlow</a></h3>
     <p>One VS Code extension for the daily developer workflow: Environment Doctor, Git Assistant, Build Doctor, API Workspace and a Project Dashboard.</p>
     <div class="chips"><span class="chip">VS Code</span><span class="chip">TypeScript</span><span class="chip">Developer productivity</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>VS Code API, TypeScript, Git hooks &amp; secret scanning, Maven/Gradle/npm/Python build diagnostics, REST tooling</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/devflow.html">Read story <i class="fas fa-arrow-right"></i></a><span class="icon-links"></span></div>
   </div>
-</article><article class="card project reveal" data-cats="vscode salesforce">
+</article><article class="card project reveal tilt" data-slug="salesforce-devpilot-pack" data-cats="vscode salesforce">
   <div class="card-media art art-salesforce-devpilot-pack"><img class="card-icon" src="media/projects/devpilot-icon.png" alt="" loading="lazy"></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v1.0.0</span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 2 installs</span><span class="date">18 Oct 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v1.0.0</span><span class="stars" data-live="stars" hidden></span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 2 installs</span><span class="date">18 Oct 2026</span></div>
     <h3><a href="blog/salesforce-devpilot-pack.html">Salesforce DevPilot Pack</a></h3>
     <p>A Salesforce developer pack for VS Code built around a Change Impact Analyzer, with health and release checks that run locally.</p>
     <div class="chips"><span class="chip">VS Code</span><span class="chip">Salesforce</span><span class="chip">Apex / LWC</span><span class="chip">CI reports</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>Salesforce DX, Apex, LWC, Aura, Flows, metadata dependency graphs, risk scoring, VS Code API, GitLab &amp; Jenkins reporting</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/salesforce-devpilot-pack.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
   </div>
-</article><article class="card project reveal" data-cats="ibmi">
+</article><article class="card project reveal tilt" data-slug="jarpilot" data-cats="ibmi">
   <div class="card-media art art-jarpilot"><i class="fas fa-rocket"></i></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v1.0.0</span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 2 installs</span><span class="date">10 Oct 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v1.0.0</span><span class="stars" data-live="stars" hidden></span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 2 installs</span><span class="date">10 Oct 2026</span></div>
     <h3><a href="blog/jarpilot.html">JarPilot for IBM i</a></h3>
     <p>Fast, safe JAR installation on the IBM i IFS: validate, checksum, back up, replace atomically and roll back with one command.</p>
     <div class="chips"><span class="chip">IBM i</span><span class="chip">Shell / PASE</span><span class="chip">PowerShell</span><span class="chip">CL</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>IBM i IFS &amp; PASE (QSH), CL (CRTBNDCL, CHGAUT, CHGOWN), SSH, PowerShell, Bash, SHA-256 integrity, atomic deployment &amp; rollback, VS Code extension</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/jarpilot.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/jatpilot/releases"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/jatpilot" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
   </div>
-</article><article class="card project reveal" data-cats="vscode">
+</article><article class="card project reveal tilt" data-slug="routinel" data-cats="vscode">
   <div class="card-media"><img src="media/projects/routinel-client.png" alt="Routinel – API Finder &amp; Client screenshot" loading="lazy"></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v1.3.0</span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 6 installs</span><span class="date">9 Oct 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v1.3.0</span><span class="stars" data-live="stars" hidden></span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 6 installs</span><span class="date">9 Oct 2026</span></div>
     <h3><a href="blog/routinel.html">Routinel – API Finder &amp; Client</a></h3>
     <p>Finds every HTTP API in your workspace, in any supported language, and calls it from a built-in Postman-style client.</p>
     <div class="chips"><span class="chip">VS Code</span><span class="chip">TypeScript</span><span class="chip">REST</span><span class="chip">OpenAPI</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>Static analysis of Express/NestJS/Spring/FastAPI/Django routes, OpenAPI 3, Postman v2.1, VS Code SecretStorage, mock servers, TypeScript</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/routinel.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/dataman-api-lens/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/dataman-api-lens" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
   </div>
-</article><article class="card project reveal" data-cats="vscode ibmi">
+</article><article class="card project reveal tilt" data-slug="devsuite" data-cats="vscode ibmi">
   <div class="card-media art art-devsuite"><i class="fas fa-layer-group"></i></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v0.1</span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 122 installs</span><span class="date">9 Oct 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v0.1</span><span class="stars" data-live="stars" hidden></span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 122 installs</span><span class="date">9 Oct 2026</span></div>
     <h3><a href="blog/devsuite.html">DevSuite</a></h3>
     <p>One shared analysis engine and five focused VS Code extensions: RepoPilot, DevImpact, CodeGuard, TraceLens and BugTrail.</p>
     <div class="chips"><span class="chip">VS Code</span><span class="chip">Monorepo</span><span class="chip">Static analysis</span><span class="chip">IBM i</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>Monorepo design, shared analysis engine, parsers for JS/TS, Python, Java, Go, C# and IBM i RPG/CL/DDS/SQL/COBOL, dependency graphs, GitHub Actions release pipelines</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/devsuite.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/devsuite/releases"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/devsuite" aria-label="Source code"><i class="fab fa-github"></i></a></span></div>
   </div>
-</article><article class="card project reveal" data-cats="vscode ibmi">
+</article><article class="card project reveal tilt" data-slug="ibm-i-zos-explorer" data-cats="vscode ibmi">
   <div class="card-media art art-ibm-i-zos-explorer"><i class="fas fa-server"></i></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v1.1.0</span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 29 installs · <i class="fas fa-star"></i> 5.0</span><span class="date">9 Oct 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v1.1.0</span><span class="stars" data-live="stars" hidden></span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 29 installs · <i class="fas fa-star"></i> 5.0</span><span class="date">9 Oct 2026</span></div>
     <h3><a href="blog/ibm-i-zos-explorer.html">IBM i &amp; z/OS Explorer</a></h3>
     <p>One VS Code sidebar for IBM i (SSH + SQL) and z/OS (z/OSMF): data sets, members, IFS, USS, JCL, spool and commands.</p>
     <div class="chips"><span class="chip">VS Code</span><span class="chip">IBM i</span><span class="chip">z/OS</span><span class="chip">z/OSMF</span></div>
     <details class="skills-more"><summary>Skills used</summary><p>IBM i (SSH, SQL, CL, spool, QSYSOPR), z/OS (z/OSMF REST, JCL, TSO, MVS console, PDS/PDSE, USS), VS Code API, TypeScript</p></details>
     <div class="card-actions"><a class="btn ghost sm" href="blog/ibm-i-zos-explorer.html">Read story <i class="fas fa-arrow-right"></i></a><a class="btn primary sm" href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/latest"><i class="fas fa-download"></i> Get it</a><span class="icon-links"><a href="https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer" aria-label="Source code"><i class="fab fa-github"></i></a><a href="https://gauravgupta0612.github.io/IBM-i-z-OS-Explorer-doc/" aria-label="Documentation"><i class="fas fa-book"></i></a></span></div>
   </div>
-</article><article class="card project reveal" data-cats="vscode ibmi ai">
+</article><article class="card project reveal tilt" data-slug="vanthrex-for-ibm-i" data-cats="vscode ibmi ai">
   <div class="card-media"><img src="media/projects/vanthrex-rpg-checks.png" alt="Vanthrex for IBM i screenshot" loading="lazy"></div>
   <div class="card-body">
-    <div class="card-top"><span class="ver">v3.3.0</span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 101 installs · <i class="fas fa-star"></i> 5.0</span><span class="date">3 Oct 2026</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v3.3.0</span><span class="stars" data-live="stars" hidden></span><span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> 101 installs · <i class="fas fa-star"></i> 5.0</span><span class="date">3 Oct 2026</span></div>
     <h3><a href="blog/vanthrex-for-ibm-i.html">Vanthrex for IBM i</a></h3>
     <p>An all-in-one IBM i workbench for VS Code: connect, edit, compile, SQL, code checks, debugging and system tools.</p>
     <div class="chips"><span class="chip">VS Code</span><span class="chip">TypeScript</span><span class="chip">IBM i</span><span class="chip">RPG / CL / SQL</span></div>
@@ -279,6 +282,16 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
   </div>
 </div>
 <button id="chatbotToggle" class="chatbot-toggle" title="Open assistant" aria-label="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="palette-box">
+    <div class="palette-input"><i class="fas fa-magnifying-glass"></i><input id="paletteInput" type="text" placeholder="Search projects, releases, journal, pages…" autocomplete="off" aria-label="Search"><kbd>Esc</kbd></div>
+    <ul id="paletteList" role="listbox"></ul>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Ctrl</kbd><kbd>K</kbd> toggle</span></div>
+  </div>
+</div>
+<script>window.GG_ROOT = "";</script>
 <script src="js/site.js"></script>
+<script src="js/live.js" defer></script>
 </body>
 </html>

@@ -27,6 +27,7 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
     <a class="brand" href="../index.html" aria-label="Gaurav Gupta, home"><span class="logo">GG</span><span class="brand-name">Gaurav Gupta</span></a>
     <nav class="nav" aria-label="Main"><ul><li><a href="../index.html">Home</a></li><li><a href="../index.html#projects">Projects</a></li><li><a href="../blog/index.html" class="active" aria-current="page">Journal</a></li><li><a href="../downloads.html">Downloads</a></li><li><a href="../rdi-9-9.html">RDi 9.9</a></li><li><a href="../index.html#experience">Experience</a></li><li><a href="../meetings.html">Meetings</a></li><li><a href="../community.html">Community</a></li><li><a href="../index.html#contact">Contact</a></li></ul></nav>
     <div class="top-actions">
+      <button class="search-btn" data-palette aria-label="Search the site (Ctrl+K)"><i class="fas fa-magnifying-glass"></i><span>Search</span><kbd>Ctrl K</kbd></button>
       <button class="icon-btn theme-btn" aria-label="Switch light or dark theme" title="Light / dark"><i class="fas fa-circle-half-stroke"></i></button>
       <a class="btn primary sm hide-sm" href="../downloads.html"><i class="fas fa-download"></i> Downloads</a>
       <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
@@ -91,6 +92,16 @@ try { var t = localStorage.getItem("gg-theme"); if (t) document.documentElement.
   </div>
 </div>
 <button id="chatbotToggle" class="chatbot-toggle" title="Open assistant" aria-label="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
+
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="palette-box">
+    <div class="palette-input"><i class="fas fa-magnifying-glass"></i><input id="paletteInput" type="text" placeholder="Search projects, releases, journal, pages…" autocomplete="off" aria-label="Search"><kbd>Esc</kbd></div>
+    <ul id="paletteList" role="listbox"></ul>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Ctrl</kbd><kbd>K</kbd> toggle</span></div>
+  </div>
+</div>
+<script>window.GG_ROOT = "../";</script>
 <script src="../js/site.js"></script>
+<script src="../js/live.js" defer></script>
 </body>
 </html>

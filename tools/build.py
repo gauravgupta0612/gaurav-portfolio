@@ -88,6 +88,7 @@ def masthead(root, active):
     <a class="brand" href="{root}index.html" aria-label="Gaurav Gupta, home"><span class="logo">GG</span><span class="brand-name">Gaurav Gupta</span></a>
     <nav class="nav" aria-label="Main"><ul>{lis}</ul></nav>
     <div class="top-actions">
+      <button class="search-btn" data-palette aria-label="Search the site (Ctrl+K)"><i class="fas fa-magnifying-glass"></i><span>Search</span><kbd>Ctrl K</kbd></button>
       <button class="icon-btn theme-btn" aria-label="Switch light or dark theme" title="Light / dark"><i class="fas fa-circle-half-stroke"></i></button>
       <a class="btn primary sm hide-sm" href="{root}downloads.html"><i class="fas fa-download"></i> Downloads</a>
       <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
@@ -124,8 +125,18 @@ CHAT = """
 <button id="chatbotToggle" class="chatbot-toggle" title="Open assistant" aria-label="Open assistant"><i class="fas fa-comments"></i><span class="chatbot-badge">AI</span></button>
 """
 
+PALETTE = """
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="palette-box">
+    <div class="palette-input"><i class="fas fa-magnifying-glass"></i><input id="paletteInput" type="text" placeholder="Search projects, releases, journal, pages…" autocomplete="off" aria-label="Search"><kbd>Esc</kbd></div>
+    <ul id="paletteList" role="listbox"></ul>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Ctrl</kbd><kbd>K</kbd> toggle</span></div>
+  </div>
+</div>
+"""
+
 def tail(root, chat=True):
-    return (CHAT if chat else "") + f'<script src="{root}js/site.js"></script>\n</body>\n</html>\n'
+    return (CHAT if chat else "") + PALETTE + f'<script>window.GG_ROOT = "{root}";</script>\n<script src="{root}js/site.js"></script>\n<script src="{root}js/live.js" defer></script>\n</body>\n</html>\n'
 
 def releases_for(p):
     return REL.get(p["release_key"] or "", [])
@@ -166,10 +177,10 @@ def build_index():
         if p.get("docs"): icons.append(f'<a href="{p["docs"]}" aria-label="Documentation"><i class="fas fa-book"></i></a>')
         if p.get("marketplace"): icons.append(f'<a href="{p["marketplace"]}" aria-label="VS Code Marketplace"><i class="fas fa-store"></i></a>')
         chips = "".join(f'<span class="chip">{t}</span>' for t in p["tags"])
-        cards.append(f"""<article class="card project reveal" data-cats="{' '.join(CATS.get(p['slug'], []))}">
+        cards.append(f"""<article class="card project reveal tilt" data-slug="{p['slug']}" data-cats="{' '.join(CATS.get(p['slug'], []))}">
   {media(p, '')}
   <div class="card-body">
-    <div class="card-top"><span class="ver">v{p['latest']}</span>{installs(p['slug']) or ''}<span class="date">{fdate(p['date'], True)}</span></div>
+    <div class="card-top"><span class="ver" data-live="ver">v{p['latest']}</span><span class="stars" data-live="stars" hidden></span>{installs(p['slug']) or ''}<span class="date">{fdate(p['date'], True)}</span></div>
     <h3><a href="blog/{p['slug']}.html">{html.escape(p['name'])}</a></h3>
     <p>{html.escape(p['tagline'])}</p>
     <div class="chips">{chips}</div>
@@ -236,7 +247,7 @@ def build_index():
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="pill"><span class="dot"></span> Senior Software Engineer · ARCAD Software · 6+ years</span>
-      <h1>I build the tools that bring <span class="grad">IBM i, Java &amp; AI</span> development into the next decade.</h1>
+      <h1>I build the tools that bring <span class="grad rotator" data-words="IBM i|Java &amp; Eclipse|AI|VS Code|z/OS">IBM i, Java &amp; AI</span><br>development into the next decade.</h1>
       <p class="lead">IBM i, z/OS and Java systems run some of the world's most important businesses. The developers who look after them deserve editors that check code as they type, debuggers that just work, AI that protects their secrets, and deployments they can undo with one command. That is what I build.</p>
       <div class="cta">
         <a class="btn primary lg" href="#projects"><i class="fas fa-cubes"></i> Explore projects</a>
@@ -245,14 +256,14 @@ def build_index():
       </div>
       <dl class="stats">
         <div><dt data-count="{len(PROJECTS)}">{len(PROJECTS)}</dt><dd>products since Sep 2026</dd></div>
-        <div><dt data-count="{total_rel}">{total_rel}</dt><dd>public releases</dd></div>
+        <div><dt data-count="{total_rel}" id="statReleases">{total_rel}</dt><dd>public releases</dd></div>
         <div><dt data-count="6" data-suffix="+">6+</dt><dd>years shipping software</dd></div>
-        <div><dt data-count="{TOTAL_INSTALLS}">{TOTAL_INSTALLS}</dt><dd>VS Code Marketplace installs</dd></div>
+        <div><dt data-count="{TOTAL_INSTALLS}" id="statInstalls">{TOTAL_INSTALLS}</dt><dd>VS Code Marketplace installs</dd></div>
       </dl>
     </div>
     <div class="hero-visual">
       <div class="orbit"><div class="photo"><img src="media/image (1).png" alt="Gaurav Gupta"></div></div>
-      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v{P["vanthrex-for-ibm-i"]["latest"]} · {vinst:,} installs · {vrel} releases</span></div></a>
+      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span id="vanthrexLive">v{P["vanthrex-for-ibm-i"]["latest"]} · {vinst:,} installs · {vrel} releases</span></div></a>
       <a class="float f2" href="blog/tavrion-studio.html"><i class="fas fa-laptop-code"></i><div><strong>Tavrion Studio</strong><span>Windows .exe · v1.5.0</span></div></a>
     </div>
   </div>
@@ -262,8 +273,10 @@ def build_index():
 <section id="updates" class="section">
   <div class="wrap narrow-wide">
     <div class="section-head reveal"><span class="eyebrow">What's new</span><h2>Latest releases</h2>
-      <p>Updated automatically from GitHub every few hours. Every version is on the <a href="downloads.html">Downloads</a> page.</p></div>
-    <ul class="updates">{updates}</ul>
+      <p>Pulled live from GitHub when you open this page. Every version is on the <a href="downloads.html">Downloads</a> page.</p>
+      <span class="live-pill" id="livePill"><span class="dot"></span> <span id="liveText">Showing saved data</span></span></div>
+    <div class="card activity reveal"><div class="activity-head"><h3>Release activity</h3><span id="activitySum" class="muted"></span></div><div id="activity" class="activity-chart" aria-label="Releases per week"></div></div>
+    <ul class="updates" id="updatesList">{updates}</ul>
   </div>
 </section>
 
@@ -475,5 +488,15 @@ def build_downloads():
     open(os.path.join(OUT, "downloads.html"), "w", encoding="utf-8").write(page)
 
 from rdi import build_rdi
-build_index(); build_posts(); build_downloads(); build_rdi(OUT, head, masthead, footer, tail)
+def build_site_json():
+    data = {"owner": "gauravgupta0612",
+            "projects": [{"slug": p["slug"], "name": p["name"], "tagline": p["tagline"], "repo": (p.get("repo") or "").replace("https://github.com/", ""),
+                          "release_key": p["release_key"], "ext": EXT_OF.get(p["slug"], []), "tags": p["tags"]} for p in ORDERED],
+            "posts": [{"title": p["blog_title"], "slug": p["slug"], "dek": p["dek"], "date": p["date"]} for p in POSTS],
+            "pages": [["Home", "index.html"], ["Downloads & release notes", "downloads.html"], ["Journal", "blog/index.html"],
+                      ["RDi 9.9 fix pack list", "rdi-9-9.html"], ["Experience", "index.html#experience"], ["Skills", "index.html#skills"],
+                      ["Book a meeting", "meetings.html"], ["Community", "community.html"], ["Contact", "index.html#contact"]]}
+    json.dump(data, open(os.path.join(OUT, "data", "site.json"), "w", encoding="utf-8"), indent=1)
+
+build_index(); build_posts(); build_downloads(); build_rdi(OUT, head, masthead, footer, tail); build_site_json()
 print("built", len(POSTS), "posts")
