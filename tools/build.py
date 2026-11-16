@@ -5,6 +5,15 @@ from content import PROJECTS, ORDER, GH
 OUT = sys.argv[1]
 REL = json.load(open(os.path.join(OUT, "data", "releases.json"), encoding="utf-8"))
 P = {p["slug"]: p for p in PROJECTS}
+
+def vkey(tag):
+    return tag.split("-v")[-1].lstrip("v")
+
+# Newest GitHub release wins: version badges and histories update automatically after every release.
+for _p in PROJECTS:
+    _rels = REL.get(_p["release_key"] or "", [])
+    if _rels and _p["slug"] != "devsuite":
+        _p["latest"] = vkey(_rels[0]["tag"])
 ORDERED = [P[s] for s in ORDER]
 POSTS = sorted(PROJECTS, key=lambda p: p["date"], reverse=True)
 
@@ -207,7 +216,7 @@ def build_index():
     </div>
     <div class="hero-visual">
       <div class="orbit"><div class="photo"><img src="media/image (1).png" alt="Gaurav Gupta"></div></div>
-      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v3.2.1 · {vrel} releases on GitHub</span></div></a>
+      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v{P["vanthrex-for-ibm-i"]["latest"]} · {vrel} releases on GitHub</span></div></a>
       <a class="float f2" href="blog/tavrion-studio.html"><i class="fas fa-laptop-code"></i><div><strong>Tavrion Studio</strong><span>Windows .exe · v1.5.0</span></div></a>
     </div>
   </div>
@@ -291,7 +300,15 @@ def release_block(p, root):
     rels = releases_for(p)
     parts = ['<h2>Release history</h2>']
     if p["history"]:
-        lis = "".join(f'<li><span class="tv">v{v}</span> · <span class="td">{fdate(d)}</span><br>{t}</li>' for v, d, t in reversed(p["history"]))
+        by_v = {vkey(r["tag"]): r for r in rels}
+        items, seen = [], set()
+        for v, d, t in p["history"]:
+            if v in by_v: d = by_v[v]["date"]
+            items.append((v, d, t)); seen.add(v)
+        for v, r in by_v.items():
+            if v not in seen: items.append((v, r["date"], html.escape(r.get("summary", "")) or "New release."))
+        items.sort(key=lambda x: "9999" if x[1] == "upcoming" else x[1])
+        lis = "".join(f'<li><span class="tv">v{v}</span> · <span class="td">{fdate(d)}</span><br>{t}</li>' for v, d, t in reversed(items))
         parts.append(f'<ul class="timeline">{lis}</ul>')
     elif rels:
         lis = "".join(f'<li><span class="tv">{r["name"]}</span> · <span class="td">{fdate(r["date"])}</span></li>' for r in rels)
@@ -363,7 +380,7 @@ def build_downloads():
         rows = []
         for j, r in enumerate(rels):
             v = r["tag"].split("-v")[-1].lstrip("v")
-            note = hist.get(v, "")
+            note = hist.get(v, "") or html.escape(r.get("summary", ""))
             if p["slug"] == "devsuite": note = r["name"].rsplit(" v", 1)[0]
             assets = "".join(f'<a class="dl" href="{a["url"]}">⬇ {html.escape(a["name"])}</a> <span class="size">{mb(a["size"])}</span><br>' for a in r["assets"]) \
                      or f'<a class="dl" href="{r["url"]}">Release page</a>'

@@ -1,0 +1,45 @@
+# Keeps the website in step with GitHub Releases of every project.
+# Runs every 3 hours, on demand (Actions tab -> Run workflow), and instantly
+# when a project repository sends a "new-release" repository_dispatch event.
+name: Update releases on website
+
+on:
+  schedule:
+    - cron: "23 */3 * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [new-release]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-releases
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch releases and rebuild pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/update-releases.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git add data/releases.json index.html downloads.html rdi-9-9.html blog
+          if git diff --cached --quiet; then
+            echo "No new releases."
+            exit 0
+          fi
+          git config user.name "gauravgupta0612"
+          git config user.email "gauravgupta0612@users.noreply.github.com"
+          git commit -m "Update releases on website"
+          git push

@@ -1,10 +1,25 @@
 {
  "silverlake-ibmi": [
   {
+   "tag": "v3.3.0",
+   "date": "2026-11-16",
+   "name": "Vanthrex for IBM i v3.3.0",
+   "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v3.3.0",
+   "summary": "System and security insights \u2014 what Code for IBM i and Db2 for i users had to look for elsewhere.",
+   "assets": [
+    {
+     "name": "vanthrex-ibmi-3.3.0.vsix",
+     "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/download/v3.3.0/vanthrex-ibmi-3.3.0.vsix",
+     "size": 5660520
+    }
+   ]
+  },
+  {
    "tag": "v3.2.1",
    "date": "2026-11-05",
    "name": "Vanthrex for IBM i v3.2.1",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v3.2.1",
+   "summary": "IFS Space Map: opening it on a folder such as /home/USER failed with SQL0443 INVALID OMITLIST PARAMETER SPECIFIED. The file systems to leave out (QSYS.LIB, QNTC, QFileSvr.400, QOPT, QDLS) are now passed only when they ar\u2026",
    "assets": [
     {
      "name": "vanthrex-ibmi-3.2.1.vsix",
@@ -18,6 +33,7 @@
    "date": "2026-11-05",
    "name": "Vanthrex for IBM i v3.2.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v3.2.0",
+   "summary": "Visual insights \u2014 see a library and a night of batch work at a glance.",
    "assets": [
     {
      "name": "vanthrex-ibmi-3.2.0.vsix",
@@ -31,6 +47,7 @@
    "date": "2026-11-04",
    "name": "Vanthrex for IBM i v3.1.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v3.1.0",
+   "summary": "More power in the editor",
    "assets": [
     {
      "name": "vanthrex-ibmi-3.1.0.vsix",
@@ -44,6 +61,7 @@
    "date": "2026-11-04",
    "name": "Vanthrex for IBM i v3.0.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v3.0.0",
+   "summary": "Vanthrex 3.0 \u2014 everything for IBM i development in one extension. AS/400 GO menus and green-screen commands, one-step import from Code for IBM i, team setup files, team coding standards and a code health report for whole\u2026",
    "assets": [
     {
      "name": "vanthrex-ibmi-3.0.0.vsix",
@@ -57,6 +75,7 @@
    "date": "2026-11-03",
    "name": "Vanthrex for IBM i v2.6.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v2.6.0",
+   "summary": "Daily RPG development \u2014 about 150 small features for the code you write every day. Everything works on the open source, with no round trip to the IBM i, so it is instant and works offline.",
    "assets": [
     {
      "name": "vanthrex-ibmi-2.6.0.vsix",
@@ -70,6 +89,7 @@
    "date": "2026-11-03",
    "name": "Vanthrex for IBM i v2.5.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v2.5.0",
+   "summary": "AI with your data protected",
    "assets": [
     {
      "name": "vanthrex-ibmi-2.5.0.vsix",
@@ -83,6 +103,7 @@
    "date": "2026-10-26",
    "name": "Vanthrex for IBM i v2.4.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v2.4.0",
+   "summary": "Local development (like Code for IBM i, with less setup)",
    "assets": [
     {
      "name": "vanthrex-ibmi-2.4.0.vsix",
@@ -96,6 +117,7 @@
    "date": "2026-10-17",
    "name": "Vanthrex for IBM i v2.3.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v2.3.0",
+   "summary": "Create from anywhere",
    "assets": [
     {
      "name": "vanthrex-ibmi-2.3.0.vsix",
@@ -109,6 +131,7 @@
    "date": "2026-10-15",
    "name": "Vanthrex for IBM i v2.2.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v2.2.0",
+   "summary": "New: System Tracker \u2014 the whole system in one place",
    "assets": [
     {
      "name": "vanthrex-ibmi-2.2.0.vsix",
@@ -122,6 +145,7 @@
    "date": "2026-10-12",
    "name": "Vanthrex for IBM i v2.1.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v2.1.0",
+   "summary": "New: Security Admin center for users with SECADM",
    "assets": [
     {
      "name": "vanthrex-ibmi-2.1.0.vsix",
@@ -135,6 +159,7 @@
    "date": "2026-10-12",
    "name": "Vanthrex for IBM i v2.0.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v2.0.0",
+   "summary": "Vanthrex for IBM i 2.0 \u2014 20 new features",
    "assets": [
     {
      "name": "vanthrex-ibmi-2.0.0.vsix",
@@ -148,6 +173,7 @@
    "date": "2026-10-12",
    "name": "Vanthrex for IBM i v1.3.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v1.3.0",
+   "summary": "New: see your screens and your database, compare two systems, and share spooled files",
    "assets": [
     {
      "name": "vanthrex-ibmi-1.3.0.vsix",
@@ -161,6 +187,7 @@
    "date": "2026-10-12",
    "name": "Vanthrex for IBM i v1.2.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v1.2.0",
+   "summary": "New: safer and sturdier \u2014 protection for production systems, a self-check, and errors that explain themselves",
    "assets": [
     {
      "name": "vanthrex-ibmi-1.2.0.vsix",
@@ -174,6 +201,7 @@
    "date": "2026-10-11",
    "name": "Vanthrex for IBM i v1.1.0",
    "url": "https://github.com/gauravgupta0612/silverlake-ibmi/releases/tag/v1.1.0",
+   "summary": "New: data, performance, code quality and unit tests",
    "assets": [
     {
      "name": "vanthrex-ibmi-1.1.0.vsix",
@@ -189,6 +217,7 @@
    "date": "2026-11-13",
    "name": "Tavrion Studio 1.5.0",
    "url": "https://github.com/gauravgupta0612/Tavrion-studio/releases/tag/v1.5.0",
+   "summary": "Tavrion Studio 1.5.0 for Windows",
    "assets": [
     {
      "name": "Tavrion.Studio.Portable.1.5.0.exe",
@@ -207,6 +236,7 @@
    "date": "2026-11-13",
    "name": "Tavrion Studio 1.4.0",
    "url": "https://github.com/gauravgupta0612/Tavrion-studio/releases/tag/v1.4.0",
+   "summary": "Tavrion Studio 1.4.0 for Windows",
    "assets": [
     {
      "name": "Tavrion.Studio.Portable.1.4.0.exe",
@@ -228,6 +258,7 @@
    "date": "2026-10-10",
    "name": "JarPilot v1.0.0",
    "url": "https://github.com/gauravgupta0612/jatpilot/releases/tag/v1.0.0",
+   "summary": "",
    "assets": []
   }
  ],
@@ -237,6 +268,7 @@
    "date": "2026-10-18",
    "name": "Salesforce DevPilot Pack v1.0.0",
    "url": "https://github.com/gauravgupta0612/Salesforce-DevPilot-Pack/releases/tag/v1.0.0",
+   "summary": "First release of Salesforce DevPilot Pack, a VS Code developer pack for Salesforce with its own analysis engine. All analysis runs locally.",
    "assets": []
   }
  ],
@@ -246,6 +278,7 @@
    "date": "2026-10-10",
    "name": "Routinel v1.3.0",
    "url": "https://github.com/gauravgupta0612/dataman-api-lens/releases/tag/v1.3.0",
+   "summary": "1.3.0 - 2026-10-10",
    "assets": [
     {
      "name": "routinel-1.3.0.vsix",
@@ -259,6 +292,7 @@
    "date": "2026-10-09",
    "name": "Routinel v1.2.1",
    "url": "https://github.com/gauravgupta0612/dataman-api-lens/releases/tag/v1.2.1",
+   "summary": "1.2.1 - 2026-10-09",
    "assets": [
     {
      "name": "routinel-1.2.1.vsix",
@@ -272,6 +306,7 @@
    "date": "2026-10-09",
    "name": "Routinel v1.1.2",
    "url": "https://github.com/gauravgupta0612/dataman-api-lens/releases/tag/v1.1.2",
+   "summary": "1.1.2 - 2026-10-10",
    "assets": [
     {
      "name": "routinel-1.1.2.vsix",
@@ -285,6 +320,7 @@
    "date": "2026-10-09",
    "name": "Routinel v1.1.1",
    "url": "https://github.com/gauravgupta0612/dataman-api-lens/releases/tag/v1.1.1",
+   "summary": "1.1.1 - 2026-10-10",
    "assets": [
     {
      "name": "routinel-1.1.1.vsix",
@@ -300,6 +336,7 @@
    "date": "2026-10-10",
    "name": "TraceLens v0.1.1",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/tracelens-v0.1.1",
+   "summary": "",
    "assets": [
     {
      "name": "devsuite-tracelens-0.1.1.vsix",
@@ -313,6 +350,7 @@
    "date": "2026-10-10",
    "name": "TraceLens v0.1.0",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/tracelens-v0.1.0",
+   "summary": "",
    "assets": [
     {
      "name": "tracelens-0.1.0.vsix",
@@ -326,6 +364,7 @@
    "date": "2026-10-10",
    "name": "RepoPilot v0.1.4",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/repopilot-v0.1.4",
+   "summary": "",
    "assets": [
     {
      "name": "repopilot-0.1.4.vsix",
@@ -339,6 +378,7 @@
    "date": "2026-10-10",
    "name": "RepoPilot v0.1.3",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/repopilot-v0.1.3",
+   "summary": "",
    "assets": [
     {
      "name": "repopilot-0.1.3.vsix",
@@ -352,6 +392,7 @@
    "date": "2026-10-10",
    "name": "RepoPilot v0.1.2",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/repopilot-v0.1.2",
+   "summary": "",
    "assets": [
     {
      "name": "repopilot-0.1.2.vsix",
@@ -365,6 +406,7 @@
    "date": "2026-10-10",
    "name": "RepoPilot v0.1.1",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/repopilot-v0.1.1",
+   "summary": "",
    "assets": [
     {
      "name": "repopilot-0.1.1.vsix",
@@ -378,6 +420,7 @@
    "date": "2026-10-10",
    "name": "DevSuite Pack v0.1.0",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/pack-v0.1.0",
+   "summary": "",
    "assets": [
     {
      "name": "devsuite-pack-0.1.0.vsix",
@@ -391,6 +434,7 @@
    "date": "2026-10-10",
    "name": "DevImpact v0.1.0",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/devimpact-v0.1.0",
+   "summary": "",
    "assets": [
     {
      "name": "devimpact-0.1.0.vsix",
@@ -404,6 +448,7 @@
    "date": "2026-10-10",
    "name": "CodeGuard v0.1.1",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/codeguard-v0.1.1",
+   "summary": "",
    "assets": [
     {
      "name": "devsuite-codeguard-0.1.1.vsix",
@@ -417,6 +462,7 @@
    "date": "2026-10-10",
    "name": "CodeGuard v0.1.0",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/codeguard-v0.1.0",
+   "summary": "",
    "assets": [
     {
      "name": "codeguard-0.1.0.vsix",
@@ -430,6 +476,7 @@
    "date": "2026-10-10",
    "name": "BugTrail v0.1.0",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/bugtrail-v0.1.0",
+   "summary": "",
    "assets": [
     {
      "name": "bugtrail-0.1.0.vsix",
@@ -443,6 +490,7 @@
    "date": "2026-10-09",
    "name": "RepoPilot v0.1.0",
    "url": "https://github.com/gauravgupta0612/devsuite/releases/tag/repopilot-v0.1.0",
+   "summary": "",
    "assets": [
     {
      "name": "repopilot-0.1.0.vsix",
@@ -458,6 +506,7 @@
    "date": "2026-10-09",
    "name": "IBM i & z/OS Explorer v1.1.0",
    "url": "https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/tag/v1.1.0",
+   "summary": "Search text in a partitioned data set, or in every PDS of a data set filter; results open at the matching line.",
    "assets": [
     {
      "name": "ibmi-zos-explorer-1.1.0.vsix",
@@ -471,6 +520,7 @@
    "date": "2026-10-09",
    "name": "IBM i & z/OS Explorer v1.0.0",
    "url": "https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/tag/v1.0.0",
+   "summary": "First release of IBM i & z/OS Explorer by Gaurav Gupta.",
    "assets": [
     {
      "name": "ibmi-zos-explorer-1.0.0.vsix",

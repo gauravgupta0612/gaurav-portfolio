@@ -383,3 +383,7 @@ To add a new project, add it to `PROJECTS` and `ORDER` in `tools/content.py` and
 
 ### HTTPS
 Every page upgrades insecure requests and redirects http → https in the browser; `server.js` also redirects to HTTPS and sends an HSTS header when the Node server is used.
+
+### Automatic release updates
+`.github/workflows/update-releases.yml` runs every 3 hours (and on demand from the Actions tab). It fetches the GitHub Releases of every project listed in `tools/update-releases.py`, rebuilds the pages and commits as gauravgupta0612 when something changed. New versions, download files, release dates and the first line of each release note appear on the home page, the journal and the Downloads page automatically.
+A brand-new project still needs one entry in `tools/content.py` (story, tags, skills) and its repository in `REPOS`.
