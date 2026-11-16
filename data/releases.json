@@ -213,6 +213,25 @@
  ],
  "tavrion-studio": [
   {
+   "tag": "v1.5.1",
+   "date": "2026-11-16",
+   "name": "Tavrion Studio 1.5.1",
+   "url": "https://github.com/gauravgupta0612/Tavrion-studio/releases/tag/v1.5.1",
+   "summary": "Tavrion Studio 1.5.1 for Windows",
+   "assets": [
+    {
+     "name": "Tavrion.Studio.Portable.1.5.1.exe",
+     "url": "https://github.com/gauravgupta0612/Tavrion-studio/releases/download/v1.5.1/Tavrion.Studio.Portable.1.5.1.exe",
+     "size": 83670889
+    },
+    {
+     "name": "Tavrion.Studio.Setup.1.5.1.exe",
+     "url": "https://github.com/gauravgupta0612/Tavrion-studio/releases/download/v1.5.1/Tavrion.Studio.Setup.1.5.1.exe",
+     "size": 83903958
+    }
+   ]
+  },
+  {
    "tag": "v1.5.0",
    "date": "2026-11-13",
    "name": "Tavrion Studio 1.5.0",
