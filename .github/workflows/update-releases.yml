@@ -1,4 +1,4 @@
-# Keeps the website in step with GitHub Releases of every project.
+# Keeps the website in step with GitHub Releases and VS Code Marketplace installs of every project.
 # Runs every 3 hours, on demand (Actions tab -> Run workflow), and instantly
 # when a project repository sends a "new-release" repository_dispatch event.
 name: Update releases on website
@@ -34,7 +34,7 @@ jobs:
 
       - name: Commit and push if anything changed
         run: |
-          git add data/releases.json index.html downloads.html rdi-9-9.html blog
+          git add data/releases.json data/marketplace.json index.html downloads.html rdi-9-9.html blog
           if git diff --cached --quiet; then
             echo "No new releases."
             exit 0

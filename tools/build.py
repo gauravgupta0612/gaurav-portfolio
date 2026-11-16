@@ -5,6 +5,27 @@ from content import PROJECTS, ORDER, GH
 OUT = sys.argv[1]
 REL = json.load(open(os.path.join(OUT, "data", "releases.json"), encoding="utf-8"))
 P = {p["slug"]: p for p in PROJECTS}
+try:
+    MKT = json.load(open(os.path.join(OUT, "data", "marketplace.json"), encoding="utf-8"))
+except Exception:
+    MKT = {"checked": "", "extensions": []}
+EXT = {e["id"].split(".", 1)[1]: e for e in MKT["extensions"]}
+EXT_OF = {"vanthrex-for-ibm-i": ["vanthrex-ibmi"], "ibm-i-zos-explorer": ["ibmi-zos-explorer"], "routinel": ["routinel"],
+          "devsuite": ["bugtrail", "repopilot", "devimpact", "devsuite-tracelens", "devsuite-codeguard", "devsuite-pack"],
+          "salesforce-devpilot-pack": ["salesforce-devpilot-pack"], "jarpilot": ["jarpilot"], "devflow": ["devflow-toolkit"]}
+TOTAL_INSTALLS = sum(e["installs"] for e in MKT["extensions"])
+REPO_PROJECT = {}
+
+def stars_txt(e):
+    return "★ %.1f (%d)" % (e["rating"], e["ratings"]) if e.get("rating") else "–"
+
+def installs(slug):
+    xs = [EXT[n] for n in EXT_OF.get(slug, []) if n in EXT]
+    if not xs: return None
+    n = sum(x["installs"] for x in xs)
+    rated = [x for x in xs if x.get("rating")]
+    stars = f' · <i class="fas fa-star"></i> {rated[0]["rating"]:.1f}' if len(xs) == 1 and rated else ""
+    return f'<span class="installs" title="VS Code Marketplace installs"><i class="fas fa-download"></i> {n:,} install{"s" if n != 1 else ""}{stars}</span>'
 
 def vkey(tag):
     return tag.split("-v")[-1].lstrip("v")
@@ -148,7 +169,7 @@ def build_index():
         cards.append(f"""<article class="card project reveal" data-cats="{' '.join(CATS.get(p['slug'], []))}">
   {media(p, '')}
   <div class="card-body">
-    <div class="card-top"><span class="ver">v{p['latest']}</span><span class="date">{fdate(p['date'], True)}</span></div>
+    <div class="card-top"><span class="ver">v{p['latest']}</span>{installs(p['slug']) or ''}<span class="date">{fdate(p['date'], True)}</span></div>
     <h3><a href="blog/{p['slug']}.html">{html.escape(p['name'])}</a></h3>
     <p>{html.escape(p['tagline'])}</p>
     <div class="chips">{chips}</div>
@@ -192,6 +213,21 @@ def build_index():
     marquee_items = ["IBM i", "RPGLE", "CL", "Db2 for i", "RDi 9.9", "z/OS", "Java 21", "Eclipse / OSGi", "VS Code", "TypeScript", "Electron", "LLMs", "MCP", "Salesforce", "GitHub Actions"]
     marquee = "".join(f"<span>{m}</span>" for m in marquee_items * 2)
     vrel = len(REL.get("silverlake-ibmi", []))
+    vinst = EXT.get("vanthrex-ibmi", {}).get("installs", 0)
+    # What's new: latest releases across every project
+    feed = []
+    for proj in PROJECTS:
+        for r in REL.get(proj["release_key"] or "", []):
+            feed.append((r["date"], proj, r))
+    feed.sort(key=lambda x: x[0], reverse=True)
+    def feed_item(d, proj, r):
+        dl = r["assets"][0]["url"] if r["assets"] else r["url"]
+        files = f'<a class="btn primary sm" href="{dl}"><i class="fas fa-download"></i> {"Download" if r["assets"] else "Release"}</a>'
+        note = html.escape(r.get("summary") or "")
+        return f"""<li class="reveal"><time datetime="{d}">{fdate(d, True)}</time>
+  <div class="upd-body"><div class="upd-title"><a href="blog/{proj['slug']}.html">{html.escape(r['name'] or proj['name'])}</a><span class="ver">{html.escape(r['tag'])}</span></div>
+  {f'<p>{note}</p>' if note else ''}</div><div class="upd-act">{files}</div></li>"""
+    updates = "".join(feed_item(*f) for f in feed[:8])
 
     page = head("Gaurav Gupta — Developer tools for IBM i, Java & AI",
                 "Gaurav Gupta builds modern developer tools for IBM i, Java and AI: Vanthrex for IBM i, Tavrion Studio, the AI-Native Developer Platform and more, with release notes and downloads.", "", path="") + masthead("", "home") + f"""
@@ -211,16 +247,24 @@ def build_index():
         <div><dt data-count="{len(PROJECTS)}">{len(PROJECTS)}</dt><dd>products since Sep 2026</dd></div>
         <div><dt data-count="{total_rel}">{total_rel}</dt><dd>public releases</dd></div>
         <div><dt data-count="6" data-suffix="+">6+</dt><dd>years shipping software</dd></div>
-        <div><dt data-count="213">213</dt><dd>Trailhead badges</dd></div>
+        <div><dt data-count="{TOTAL_INSTALLS}">{TOTAL_INSTALLS}</dt><dd>VS Code Marketplace installs</dd></div>
       </dl>
     </div>
     <div class="hero-visual">
       <div class="orbit"><div class="photo"><img src="media/image (1).png" alt="Gaurav Gupta"></div></div>
-      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v{P["vanthrex-for-ibm-i"]["latest"]} · {vrel} releases on GitHub</span></div></a>
+      <a class="float f1" href="blog/vanthrex-for-ibm-i.html"><i class="fas fa-terminal"></i><div><strong>Vanthrex for IBM i</strong><span>v{P["vanthrex-for-ibm-i"]["latest"]} · {vinst:,} installs · {vrel} releases</span></div></a>
       <a class="float f2" href="blog/tavrion-studio.html"><i class="fas fa-laptop-code"></i><div><strong>Tavrion Studio</strong><span>Windows .exe · v1.5.0</span></div></a>
     </div>
   </div>
   <div class="marquee" aria-hidden="true"><div class="track">{marquee}</div></div>
+</section>
+
+<section id="updates" class="section">
+  <div class="wrap narrow-wide">
+    <div class="section-head reveal"><span class="eyebrow">What's new</span><h2>Latest releases</h2>
+      <p>Updated automatically from GitHub every few hours. Every version is on the <a href="downloads.html">Downloads</a> page.</p></div>
+    <ul class="updates">{updates}</ul>
+  </div>
 </section>
 
 <section id="projects" class="section">
@@ -238,7 +282,7 @@ def build_index():
       <span class="eyebrow">Flagship</span>
       <h2>Vanthrex for IBM i</h2>
       <p class="lead">A complete IBM i workbench for VS Code: more than 50 RPG, CL, SQL and DDS checks as you type, one-click quick fixes, debugging, a System Tracker, GO menus for AS/400 veterans, and an AI assistant that never sees your secrets.</p>
-      <ul class="ticks"><li>About 30 releases in five weeks</li><li>Translated into 5 languages</li><li>Production-safe connections with Read-only mode</li><li>One-step import from Code for IBM i</li></ul>
+      <ul class="ticks"><li>{vinst:,} installs on the VS Code Marketplace, rated {EXT.get("vanthrex-ibmi", {}).get("rating") or 5:.1f} ★</li><li>{vrel} releases on GitHub since 3 October 2026</li><li>Translated into 5 languages</li><li>Production-safe connections with Read-only mode</li><li>One-step import from Code for IBM i</li></ul>
       <div class="cta"><a class="btn primary" href="https://marketplace.visualstudio.com/items?itemName=gauravgupta0612.vanthrex-ibmi"><i class="fas fa-store"></i> VS Code Marketplace</a><a class="btn ghost" href="blog/vanthrex-for-ibm-i.html">Read the story</a></div>
     </div>
     <div class="spot-shot reveal"><div class="window"><div class="window-bar"><span></span><span></span><span></span></div><img src="media/projects/vanthrex-toolbox.png" alt="Vanthrex Developer Toolbox in VS Code" loading="lazy"></div></div>
@@ -412,12 +456,16 @@ def build_downloads():
 <caption>{html.escape(p['name'])}<small>{html.escape(p['tagline'])} — {' · '.join(extra) or 'available on request'} · <a href="blog/{p['slug']}.html">Read the story</a></small></caption>
 <thead><tr><th>Version</th><th>Date</th><th>What changed</th><th>Files</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table>""")
+    mrows = "".join(f'<tr><td><a href="https://marketplace.visualstudio.com/items?itemName={e["id"]}">{html.escape(e["name"])}</a><br><span class="size">{e["id"]}</span></td><td class="v">{e["version"]}</td><td class="num">{e["installs"]:,}</td><td>{stars_txt(e)}</td><td><a class="dl" href="vscode:extension/{e["id"]}">Install in VS Code</a></td></tr>' for e in MKT["extensions"])
+    mkt_html = f"""<table class="ledger" id="marketplace"><caption>VS Code Marketplace<small>{TOTAL_INSTALLS:,} installs across {len(MKT["extensions"])} extensions · updated automatically · last checked {fdate(MKT.get("checked") or datetime.date.today().isoformat())}</small></caption>
+<thead><tr><th>Extension</th><th>Version</th><th>Installs</th><th>Rating</th><th></th></tr></thead><tbody>{mrows}</tbody></table>""" if MKT["extensions"] else ""
     page = head("Downloads & Release Notes — Gaurav Gupta", "Every release of Gaurav Gupta's projects: Windows installers (.exe), VS Code extensions (.vsix) and release notes.", "", path="downloads.html") + masthead("", "downloads") + f"""
 <main class="wrap">
 <section class="section">
   <div class="section-head"><span class="eyebrow">Downloads</span><h2>Downloads &amp; Release Notes</h2>
     <p>Every published release, with its installer or extension file. Windows <code>.exe</code> files install directly; <code>.vsix</code> files install in VS Code with <em>Extensions → … → Install from VSIX</em>.</p></div>
   <div class="search"><i class="fas fa-magnifying-glass"></i><input type="search" id="dlSearch" placeholder="Search releases, versions or file names…" aria-label="Search releases"></div>
+  {mkt_html}
   <ul class="toc">{toc}</ul>
   {''.join(tables)}
   <p style="font-style:italic;color:var(--ink-soft)">Files are hosted on GitHub Releases. Last updated {fdate(datetime.date.today().isoformat())}.</p>

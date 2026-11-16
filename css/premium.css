@@ -360,3 +360,21 @@ code, kbd { font-family: "JetBrains Mono", Consolas, monospace; font-size: .86em
   .section { padding-top: 70px; }
 }
 @media print { .topbar, .chatbot-toggle, .chatbot-widget, .to-top, .bg-glow, .progress { display: none !important; } }
+
+/* ---------- Installs, updates feed, marketplace ---------- */
+.installs { font-size: 12px; padding: 2px 9px; border-radius: 999px; background: rgba(34,211,238,.12); color: var(--brand-2); border: 1px solid rgba(34,211,238,.3); white-space: nowrap; }
+.installs i { font-size: 10.5px; margin-right: 3px; }
+.card-top { gap: 8px; }
+.card-top .date { margin-left: auto; }
+.narrow-wide { max-width: 980px; }
+.updates { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.updates li { display: grid; grid-template-columns: 110px 1fr auto; gap: 18px; align-items: center; padding: 16px 20px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); transition: border-color .2s, transform .2s; }
+.updates li:hover { border-color: rgba(124,92,255,.5); transform: translateX(4px); }
+.updates time { font-size: 13px; color: var(--faint); font-weight: 600; }
+.upd-title { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.upd-title a { color: var(--text); font-weight: 600; font-family: "Space Grotesk"; font-size: 17px; }
+.upd-title a:hover { color: var(--brand-2); }
+.upd-title .ver { font-size: 12px; }
+.upd-body p { margin: 4px 0 0; color: var(--muted); font-size: 14.5px; }
+.ledger td.num { font-family: "Space Grotesk"; font-weight: 700; font-size: 18px; color: var(--text); }
+@media (max-width: 640px) { .updates li { grid-template-columns: 1fr; gap: 8px; } }
