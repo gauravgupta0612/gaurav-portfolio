@@ -1,11 +1,11 @@
 {
- "checked": "2026-11-16",
+ "checked": "2026-11-17",
  "extensions": [
   {
    "id": "gauravgupta0612.vanthrex-ibmi",
    "name": "Vanthrex \u2013 IBM i Development Tools (RPG, CL, SQL)",
    "version": "3.3.0",
-   "installs": 107,
+   "installs": 109,
    "rating": 5.0,
    "ratings": 2
   },
@@ -13,7 +13,7 @@
    "id": "gauravgupta0612.bugtrail",
    "name": "BugTrail \u2014 Debugging Memory",
    "version": "0.1.0",
-   "installs": 52,
+   "installs": 53,
    "rating": null,
    "ratings": null
   },
