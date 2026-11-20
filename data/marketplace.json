@@ -5,7 +5,7 @@
    "id": "gauravgupta0612.vanthrex-ibmi",
    "name": "Vanthrex \u2013 IBM i Development Tools (RPG, CL, SQL)",
    "version": "3.3.0",
-   "installs": 126,
+   "installs": 129,
    "rating": 5.0,
    "ratings": 2
   },
@@ -13,7 +13,7 @@
    "id": "gauravgupta0612.bugtrail",
    "name": "BugTrail \u2014 Debugging Memory",
    "version": "0.1.0",
-   "installs": 54,
+   "installs": 55,
    "rating": null,
    "ratings": null
   },
@@ -21,7 +21,7 @@
    "id": "gauravgupta0612.ibmi-zos-explorer",
    "name": "IBM i & z/OS Explorer",
    "version": "1.1.0",
-   "installs": 33,
+   "installs": 34,
    "rating": 5.0,
    "ratings": 1
   },
