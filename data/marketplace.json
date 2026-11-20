@@ -1,11 +1,11 @@
 {
- "checked": "2026-11-19",
+ "checked": "2026-11-20",
  "extensions": [
   {
    "id": "gauravgupta0612.vanthrex-ibmi",
    "name": "Vanthrex \u2013 IBM i Development Tools (RPG, CL, SQL)",
    "version": "3.3.0",
-   "installs": 124,
+   "installs": 126,
    "rating": 5.0,
    "ratings": 2
   },
