@@ -13,7 +13,7 @@
    "id": "gauravgupta0612.bugtrail",
    "name": "BugTrail \u2014 Debugging Memory",
    "version": "0.1.0",
-   "installs": 56,
+   "installs": 57,
    "rating": null,
    "ratings": null
   },
@@ -74,16 +74,16 @@
    "ratings": null
   },
   {
-   "id": "gauravgupta0612.salesforce-devpilot-pack",
-   "name": "Salesforce DevPilot Pack",
+   "id": "gauravgupta0612.jarpilot",
+   "name": "JarPilot for IBM i",
    "version": "1.0.0",
-   "installs": 2,
+   "installs": 3,
    "rating": null,
    "ratings": null
   },
   {
-   "id": "gauravgupta0612.jarpilot",
-   "name": "JarPilot for IBM i",
+   "id": "gauravgupta0612.salesforce-devpilot-pack",
+   "name": "Salesforce DevPilot Pack",
    "version": "1.0.0",
    "installs": 2,
    "rating": null,
