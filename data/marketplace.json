@@ -5,7 +5,7 @@
    "id": "gauravgupta0612.vanthrex-ibmi",
    "name": "Vanthrex \u2013 IBM i Development Tools (RPG, CL, SQL)",
    "version": "3.3.0",
-   "installs": 139,
+   "installs": 140,
    "rating": 5.0,
    "ratings": 2
   },
@@ -21,7 +21,7 @@
    "id": "gauravgupta0612.ibmi-zos-explorer",
    "name": "IBM i & z/OS Explorer",
    "version": "1.1.0",
-   "installs": 36,
+   "installs": 37,
    "rating": 5.0,
    "ratings": 1
   },
@@ -29,7 +29,7 @@
    "id": "gauravgupta0612.repopilot",
    "name": "RepoPilot \u2014 Project Understanding Assistant",
    "version": "0.1.4",
-   "installs": 22,
+   "installs": 23,
    "rating": null,
    "ratings": null
   },
